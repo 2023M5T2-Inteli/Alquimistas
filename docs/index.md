@@ -58,14 +58,13 @@ Concepção de sistema de automação industrial
 
 # Autores
 
-* Aluno 1
-* Aluno 2
-* Aluno 3
-* Aluno 4
-* Aluno 5
-* Aluno 6
-* Aluno 7
-* Aluno 8
+* Bruno Leão
+* Filipi Kikuchi
+* Gabriela Rodrigues
+* Henrique Santos
+* Jackson Aguiar
+* Luana Parra
+* Vitor Zeferino
 
 
 # Visão Geral do Projeto
