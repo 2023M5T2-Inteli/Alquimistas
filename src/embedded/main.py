@@ -20,30 +20,22 @@ device.pose()
 # Primeiro movimento (max "x")
 # Primeira Bandeija
 device.move_to(xHome, yHome, zHome, rHome, wait=True)
-device.move_to(90, -179, 114, -63, wait=True)
-device.move_to(129, -196, -40, -57, wait=True)
-device.move_to(90, -179, 114, -63, wait=True)
-device.move_to(xHome, yHome, zHome, rHome, wait=True)
 # device.move_to(193, 212, -43, 47, wait=True)
 # device.move_to(32, 217, -34, 81, wait=True)
 # device.move_to(48, 217, 116, 75, wait=True)
 # device.move_to(xHome, yHome, zHome, rHome, wait=True)
 
-# Segunda Bandeija
-# device.move_to(90, -179, 114, -63, wait=True)
-# device.move_to(129, -196, -40, -57, wait=True)
-# device.move_to(90, -179, 114, -63, wait=True)
-device.move_to(xHome, yHome, zHome, rHome, wait=True)
+# # Segunda Bandeija
 # device.move_to(323, -14, -44, -4, wait=True)
 # device.move_to(167, -9, -12, -5, wait=True)
 # device.move_to(190, 4, 87, 1, wait=True)
-# device.pose()
+# # device.pose()
 
-# Terceira Bandeija
-device.move_to(90, -179, 114, -63, wait=True)
-device.move_to(129, -196, -40, -57, wait=True)
-device.move_to(90, -179, 114, -63, wait=True)
-device.move_to(xHome, yHome, zHome, rHome, wait=True)
+# # Terceira Bandeija
+# device.move_to(90, -179, 114, -63, wait=True)
+# device.move_to(129, -196, -40, -57, wait=True)
+# device.move_to(90, -179, 114, -63, wait=True)
+# device.move_to(xHome, yHome, zHome, rHome, wait=True)
 # device.pose()
 
 # device_position = device.pose()

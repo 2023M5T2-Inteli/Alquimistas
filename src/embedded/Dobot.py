@@ -1,12 +1,17 @@
 import DobotDllType as DType
 
+# Constants for connection messages
+
 CON_STR = {
     DType.DobotConnect.DobotConnect_NoError:  "DobotConnect_NoError",
     DType.DobotConnect.DobotConnect_NotFound: "DobotConnect_NotFound",
     DType.DobotConnect.DobotConnect_Occupied: "DobotConnect_Occupied"
 }
 
+# Dobot Class
 class Dobot():
+
+    # Initializes the Dobot
 
     def __init__(self, x = 0, y = 0, z = 0, r = 0):
         self.api = DType.load()
@@ -17,12 +22,21 @@ class Dobot():
         self.connected = False
         self.verifyConnection()
 
+    # Disconnects the Dobot
 
     def __del__(self):
         self.disconnect()
 
+    # Verifies Dobot's connection
 
     def verifyConnection(self):
+
+        # If it's connected, just output its state
+        # Otherwise, it will try to connect with it and
+        # Then returns the status of connection. If the
+        # connection is successfull, it will set all of
+        # the base parameters.
+
         if(self.connected):
             print("Dobot already connected!")
         else:
@@ -44,10 +58,13 @@ class Dobot():
                 return self.connected
             
 
+    # Returns it to the Home position and disconnect
+
     def disconnect(self):
         self.moveHome()
         DType.DisconnectDobot(self.api)
 
+    # Inserts a delay between commands
 
     def commandDelay(self, lastIndex):
         DType.SetQueuedCmdStartExec(self.api)
@@ -55,19 +72,38 @@ class Dobot():
             DType.dSleep(2000)
         DType.SetQueuedCmdStopExec(self.api)
 
+    # Moves the Dobot to the coodinates (x,y,z,r)
 
-    def moveArmXY(self,x,y,z):
-        lastIndex = DType.SetPTPCmd(self.api, DType.PTPMode.PTPMOVLXYZMode, x, y, z, 0)[0]
+    def moveArmXY(self,x,y,z,r):
+        lastIndex = DType.SetPTPCmd(self.api, 2, x, y, z, r)[0]
         self.commandDelay(lastIndex)
 
+    # Rotates the suction tool by 'rot' degrees
+    
+    def rotateTool(self, rot):
+        x,y,z,r = self.getPos()
+        self.moveArmXY(x,y,z,r)
+        self.moveArmXY(x,y,z,r+rot)
+        self.moveArmXY(x,y,z,r)
+        
+    # Draws a line with the specificated size  
+
+    def drawLine(self,x,y,z,r,size):
+        self.moveArmXY(x,y,z,r)
+        self.moveArmXY(x+size,y,z,r)
+        self.moveArmXY(x,y,z,r)
+
+    # Returns to Default position
 
     def moveHome(self):
-        lastIndex = DType.SetPTPCmd(self.api, DType.PTPMode.PTPMOVLXYZMode, self.x_home, self.y_home, self.z_home, self.r_home)[0]
+        lastIndex = DType.SetPTPCmd(self.api, 2, self.x_home, self.y_home, self.z_home, self.r_home, 1)[0]
         self.commandDelay(lastIndex)
     
+    # Prints in terminal all the data from
+    # It and them returns x,y,z,r in array form
     
     def getPos(self):
         (x, y, z, r, j1, j2, j3, j4) = DType.GetPose(self.api)
         print(f"X-Axis: {x}; Y-Axis: {y}; Z-Axis: {z}; R-Axis: {r}")
         print(f"Joint1: {j1}; Joint2: {j2}; Joint3: {j3}; Joint4: {j4};")
-        return [x,y,z]
+        return [x,y,z,r]
