@@ -4,9 +4,13 @@ body{
 
 .flex{
     display: flex;
-    justify-content: flex-end;
-    margin-top: 4%;
-    margin-right: 3%;
+    justify-content: space-between;
+}
+
+.logo{
+    width: 160px;
+    height: 70px;
+    margin-left: 1%;
 }
 
 .form {
@@ -15,6 +19,8 @@ body{
     border-radius: 25px;
     padding: 1.5rem;
     background: #161616;
+    margin-top: 4%;
+    margin-right: 3%;
 }
 
 .title{
