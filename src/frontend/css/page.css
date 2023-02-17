@@ -1,12 +1,18 @@
-.black{
+body{
     background: black;
 }
 
+.flex{
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 4%;
+    margin-right: 3%;
+}
+
 .form {
-    width: clamp(320px, 30%, 430px);
-    margin: 0 auto;
-    border: 1px solid #ccc;
-    border-radius: 0.35rem;
+    width: 400px;
+    height: 500px;
+    border-radius: 25px;
     padding: 1.5rem;
     background: #161616;
 }
@@ -15,24 +21,28 @@
     font-family: 'Montserrat', sans-serif;
     margin: 0;
     display: grid;
-    place-items: center;
+    place-items: left;
     color: #FFFFFF;
+    margin-bottom: 4%;
+    font-size: 24px;
 }
 
 .sub-title{
     font-family: 'Montserrat', sans-serif;
     margin: 0;
     display: grid;
-    place-items: center;
+    place-items: left;
     color: #ffffff79;
     margin-bottom: 10%;
 }
 
 .seletion-group{
     display: grid;
+    align-items: center;
     grid-template-columns: repeat(2,1fr);
     gap: 0.5rem;
-    border-bottom: 2px solid #FFFFFF4D;
+    border-bottom: 1px solid #FFFFFF4D;
+    margin: 5%;
 }
 
 .btn{
@@ -45,12 +55,18 @@
     color: #FFFFFF;
     text-align: center;
     border-radius: 25px;
+    border: none;
     width: 70%;
     margin-left: auto;
     cursor: pointer;
     transition: 0.3s;
+    margin-bottom: 6%;
 }
+/* .container-btn{
+}
+.container-net{
+} */
 
 .btn:hover{
-    box-shadow: 0 0 0 2px #fff, 0 0 0 3px #FFFFFF29;
+    box-shadow: 0 0 0 2px #fff;
 }
