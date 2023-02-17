@@ -8,9 +8,14 @@ body{
 }
 
 .logo{
-    width: 160px;
+    width: 25%;
     height: 70px;
     margin-left: 1%;
+}
+
+.arm{
+    width: 100%;
+    height: 540px;
 }
 
 .form {
