@@ -20,6 +20,7 @@ class Dobot():
         self.z_home = z
         self.r_home = r
         self.connected = False
+        self.picking = True
         self.verifyConnection()
 
     # Disconnects the Dobot
@@ -107,3 +108,15 @@ class Dobot():
         print(f"X-Axis: {x}; Y-Axis: {y}; Z-Axis: {z}; R-Axis: {r}")
         print(f"Joint1: {j1}; Joint2: {j2}; Joint3: {j3}; Joint4: {j4};")
         return [x,y,z,r]
+
+    def pickToggle(self):
+        DType.SetHHTTrigMode(self.api, hhtTrigMode=1)
+        DType.SetHHTTrigOutputEnabled(self.api, True)
+        # lastIndex = DType.SetPTPCmd(self.api, DType.PTPMode.PTPMOVLXYZMode, self.x_home, self.y_home, 40, 0)[0]
+        lastIndex = DType.SetEndEffectorGripper(self.api, 1, self.picking, isQueued=0)[0]
+        self.picking = False if self.picking else True
+        print(DType.GetHHTTrigOutput(self.api))
+        self.commandDelay(lastIndex)
+        
+        
+
