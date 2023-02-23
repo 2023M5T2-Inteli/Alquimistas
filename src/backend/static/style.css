@@ -15,20 +15,18 @@ body{
 
 .arm{
     width: 45%;
-    height: 500px;    
+    height: 600px;    
     position: absolute;
-    left: 0;
-    bottom: 0;
 }
 
 .form {
-    width: 400px;
+    width: 500px;
     height: 500px;
     border-radius: 25px;
     padding: 1.5rem;
     background: #161616;
     margin-top: 4%;
-    margin-right: 3%;
+    margin-right: 5%;
 }
 
 .title{
@@ -59,6 +57,14 @@ body{
     margin: 5%;
 }
 
+.seletion-group2{
+    display: grid;
+    align-items: center;
+    grid-template-columns: repeat(2,1fr);
+    gap: 0.5rem;
+    margin: 5%;
+}
+
 .btn{
     font-family: 'Montserrat', sans-serif;
     display: flex;
@@ -76,11 +82,15 @@ body{
     transition: 0.3s;
     margin-bottom: 6%;
 }
-/* .container-btn{
-}
-.container-net{
-} */
 
 .btn:hover{
     box-shadow: 0 0 0 2px #fff;
+}
+
+.card{
+    background-color: rgba(255, 255, 255, 0.15);
+    width: 30vw;
+    border-radius: 20pt;
+    height: 80px;
+    padding: 20px
 }
