@@ -3,7 +3,7 @@
 <td>
 <a href= "https://www.ipt.br/"><img src="https://www.ipt.br/imagens/logo_ipt.gif" alt="IPT" border="0" width="70%"></a>
 </td>
-<td><a href= "https://www.inteli.edu.br/"><img src="https://www.inteli.edu.br/wp-content/uploads/2021/08/20172028/marca_1-2.png" alt="Inteli - Instituto de Tecnologia e Liderança" border="0" width="30%"></a>
+<td><a href= "https://www.inteli.edu.br/"><img src="https://www.inteli.edu.br/wp-content/uploads/2022/04/28103439/Logo-Container.png" alt="Inteli - Instituto de Tecnologia e Liderança" border="0" width="30%"></a>
 </td>
 </tr>
 </table>
@@ -11,10 +11,6 @@
 <font size="+12"><center>
 Concepção de sistema de automação industrial
 </center></font>
-
->*Observação 1: A estrutura inicial deste documento é só um exemplo. O seu grupo deverá alterar esta estrutura de acordo com o que está sendo solicitado nos artefatos.*
-
->*Observação 2: O índice abaixo não precisa ser editado se você utilizar o Visual Studio Code com a extensão **Markdown All in One**. Essa extensão atualiza o índice automaticamente quando o arquivo é salvo.*
 
 **Conteúdo**
 
@@ -25,26 +21,36 @@ Concepção de sistema de automação industrial
   - [Objetivos](#objetivos)
     - [Objetivos gerais](#objetivos-gerais)
     - [Objetivos específicos](#objetivos-específicos)
+    - [Escopo Macro](#escopo-macro)
   - [Partes interessadas](#partes-interessadas)
 - [Análise do Problema](#análise-do-problema)
   - [Análise da área de atuação](#análise-da-área-de-atuação)
   - [Análise do cenário: Matriz SWOT](#análise-do-cenário-matriz-swot)
   - [Proposta de Valor: Value Proposition Canvas](#proposta-de-valor-value-proposition-canvas)
   - [Matriz de Risco](#matriz-de-risco)
+  - [Matriz Oceano Azul](#matriz-oceano-azul)
+  - [Análise Financeira](#análise-financeira)
 - [Requisitos do Sistema](#requisitos-do-sistema)
   - [Personas](#personas)
+  - [Jornada do Usuário](#jornada-do-usuário)
   - [Histórias dos usuários (user stories)](#histórias-dos-usuários-user-stories)
 - [Arquitetura do Sistema](#arquitetura-do-sistema)
+  - [Arquitetura da Solução - Versão 1](#arquitetura-da-solução---versão-1)
   - [Módulos do Sistema e Visão Geral (Big Picture)](#módulos-do-sistema-e-visão-geral-big-picture)
   - [Descrição dos Subsistemas](#descrição-dos-subsistemas)
     - [Requisitos de software](#requisitos-de-software)
   - [Tecnologias Utilizadas](#tecnologias-utilizadas)
 - [UX e UI Design](#ux-e-ui-design)
-  - [Wireframe + Storyboard](#wireframe--storyboard)
+  - [Wireframe + Storyboard - Versão 1](#wireframe--storyboard---versão-1)
   - [Design de Interface - Guia de Estilos](#design-de-interface---guia-de-estilos)
 - [Projeto de Banco de Dados](#projeto-de-banco-de-dados)
   - [Modelo Conceitual](#modelo-conceitual)
   - [Modelo Lógico](#modelo-lógico)
+- [Teste de Hardware - Versão 1](#teste-de-hardware---versão-1)
+  - [Braço robótico (Dobot Magician)](#braço-robótico-dobot-magician)
+    - [Conexão com o servidor](#conexão-com-o-servidor)
+  - [Eletroimã](#eletroimã)
+  - [Shaker](#shaker)
 - [Teste de Software](#teste-de-software)
   - [Testes Unitários](#testes-unitários)
   - [Teste de Usabilidade](#teste-de-usabilidade)
@@ -58,39 +64,52 @@ Concepção de sistema de automação industrial
 
 # Autores
 
-* Aluno 1
-* Aluno 2
-* Aluno 3
-* Aluno 4
-* Aluno 5
-* Aluno 6
-* Aluno 7
-* Aluno 8
+* Bruno Leão
+* Filipi Kikuchi
+* Gabriela Rodrigues
+* Henrique Santos
+* Jackson Aguiar
+* Luana Parra
+* Vitor Zeferino
 
 
 # Visão Geral do Projeto
 
 ## Empresa
-
-*Descrição_da_empresa*
+<br>	O Instituto de Pesquisas Tecnológicas (IPT), vinculado à Secretaria de Desenvolvimento Econômico do Estado de São Paulo,  há 123 anos colabora para o processo de desenvolvimento do País, provê soluções tecnológicas para a indústria, governos e sociedade, habilitando-os a superar os desafios da nossa época. </br>
+<br>	Desse modo, como um dos maiores institutos de pesquisas do Brasil, o IPT conta com laboratórios capacitados e equipe de pesquisadores e técnicos altamente qualificados, atuando basicamente em quatro grandes áreas - inovação, pesquisa e desenvolvimento; serviços tecnológicos; desenvolvimento & apoio metrológico, e informação & educação em tecnologia. </br>
 
 ## O Problema
-
-*Descrição_do_problema*
+<br>	Considerando que a separação magnética pode ser uma excelente técnica para avaliação da liberação de minerais/materiais com propriedades magnéticas e que, em uma etapa preliminar exploratória, não estão disponíveis grandes quantidades de amostras para serem submetidas a ensaios em equipamentos de separação magnética com operação contínua, a automação deste procedimento é benéfica do ponto de vista de agilidade e precisão. </br>
+<br>	Posto isso, o processo atual é manual, ou seja, o operador aproxima um ímã de ferrite ou de terras raras, envolto em um saco plástico, do material submerso em água, espalhado em uma bandeja plástica, tentando manter uma distância constante e, consequentemente, o campo eletromagnético aplicado sobre as partículas. O material ferromagnético gruda no ímã e é posteriormente depositado em outro recipiente. </br>
+<br>	Assim, por ser um processo manual, a constância da distância é imprecisa e, considerando que o campo eletromagnético é inversamente proporcional à distância, o campo aplicado sobre as partículas também é impreciso, dificultando a determinação do campo necessário para a separação dos minerais. Além disso, para testar diferentes campos é necessário a troca dos ímãs utilizados, resultando na necessidade de se ter diversos ímãs disponíveis. </br>
 
 ## Objetivos
 
 ### Objetivos gerais
-
-*Lista_de_objetivos_gerais*
+<br>	Desenvolver um equipamento automatizado que tenha capacidade de aplicar um campo magnético constante, com intensidade e distância ajustáveis, ao longo de todo a amostra promovendo assim uma separação dos minerais magnéticos, que serão depositados em um recipiente diferente dos minerais não magnéticos que permanecerão depositados na bandeja original.</br>
 
 ### Objetivos específicos
+<br> A seguir estão os objetivos/benefícios esperados com o desenvolvimento do projeto: </br>
+* Manutenção de uma campo magnético constante sobre toda a amostra, reduzindo os erros de ensaio decorrentes da ação humana;
+* Maior qualidade na execução do ensaio, principalmente no que tange a repetibilidade e reprodutibilidade;  
+* Maior flexibilidade de ensaios, pois o uso de eletroímãs ajustáveis dispensa a necessidade de se ter ímãs com o campo desejado; 
+* Determinação mais precisa do campo magnético adequado para diferentes ensaios. 
 
-*Lista_de_objetivos específicos*
+### Escopo Macro
+
+* Um braço robótico capaz de posicionar um manipulador em posição e distância controladas sobre a bandeja de amostras;
+* Eletroímã montado no manipulador do braço robótico com campo magnético ajustável na faixa de 800 a 12.000 Gauss; 
+* Estrutura para calibração de posicionamento do braço; 
+* Estrutura para calibração de eletroímã; 
+* Automação da bandeja de amostra para promover a agitação das partículas; 
+* Recipiente com automatização de pesagem para receber material coletado (opcional); 
+* Relatório apresentando todos os dados pertinentes do ensaio (opcional). 
 
 ## Partes interessadas
 
-*Lista_e_apresentação_das_partes_interessadas*
+* IPT - Instituto de Pesquisas Tecnológicas
+* INTELI - Instituto de Tecnologia e Liderança
 
 # Análise do Problema
 
@@ -104,16 +123,43 @@ Concepção de sistema de automação industrial
 
 *Matriz_SWOT*
 
-
 ## Proposta de Valor: Value Proposition Canvas
 
-*Value_Proposition_Canvas*
-
+![img](https://github.com/2023M5T2-Inteli/alquimistas/blob/main/docs/img/sprint1/proposta-de-valor.png)
 
 ## Matriz de Risco
 
-*Matriz_de_risco*
+![img](https://github.com/2023M5T2-Inteli/alquimistas/blob/main/docs/img/sprint1/matriz-de-risco.png)
 
+## Matriz Oceano Azul
+
+![img](https://github.com/2023M5T2-Inteli/alquimistas/blob/main/docs/img/sprint1/matriz-oceano-azul.png)
+
+## Análise Financeira
+
+### Análise de custo do processo atual
+
+Inicialmente, os custos relacionados ao processo atual provém da compra dos
+equipamentos (ímãs de neodímio) e remuneração de mão de obra. Em um primeiro
+momento, projetamos que o salário médio de um Técnico é de R$ 2.833/mês.
+Considerando uma carga horária de 8 horas por dia, podemos chegar na estimativa de
+R11,80/hora. Através de entrevistas com o parceiro, cada sessão de separação
+magnética dura cerca de 30 minutos. Consequentemente, o custo do processo é de
+R$5,90. Somado à isso o custo médio dos ímãs projetados em R$663,00 cada, que
+devido à sua natureza, não precisam ser substituídos a curto prazo.
+
+### Análise de custo da solução
+A solução contempla a utilização de um braço robótico (Dobot Magician Lite),
+microcontroladores Raspberry Pi Pico W, sensores e atuadores como componentes
+físicos.
+
+![img](https://github.com/2023M5T2-Inteli/alquimistas/blob/main/docs/img/sprint1/analise_financeira.png)
+
+### ROI - Return Over Investment
+Analisando os gastos atuais e os custos com equipamento, pode-se estimar o tempo
+necessário para recuperar o valor do investimento. Segue a análise:
+
+![img](https://github.com/2023M5T2-Inteli/alquimistas/blob/main/docs/img/sprint1/roi.png)
 
 # Requisitos do Sistema
 
@@ -121,32 +167,94 @@ Concepção de sistema de automação industrial
 
 ## Personas
 
-*Descrição_das_personas*
+![img](https://github.com/2023M5T2-Inteli/alquimistas/blob/main/docs/img/sprint1/persona.png)
+João Silva, 35 anos
+Formação: Engenheiro Químico
+Empresa: Instituto de Pesquisa e Tecnologia (IPT) - Setor: Materiais Avançados - Salário: R$3000,00 por mês
+Projeto de trabalho: Separação Magnética em Projetos de Mineração
+Interesses/Hobbies: Tecnologia, robótica, automação industrial, jogar futebol, viajar e ler sobre novas descobertas científicas
+Personalidade: Dinâmico, curioso e apaixonado por soluções tecnológicas inovadoras.
 
+## Jornada do Usuário
+
+![img](https://github.com/2023M5T2-Inteli/alquimistas/blob/main/docs/img/sprint1/jornada-do-usuario.png)
 
 ## Histórias dos usuários (user stories)
 
-*Descrição_das_histórias_dos_usuários*
-
+1. Como pesquisador, eu quero acionar o robô, para que ele inicie o processo de limpar a amostra.
+2. Como supervisor, eu quero automatizar o processo, para melhorar a acurácia do relatório.
+3. Como supervisor, eu quero automatizar o processo, para melhorar a gestão de tempo com a equipe.
 
 # Arquitetura do Sistema
 
+## Arquitetura da Solução - Versão 1
+
+![img](https://github.com/2023M5T2-Inteli/alquimistas/blob/main/docs/img/sprint1/arquitetura-da-solucao-v1.png)
+
 ## Módulos do Sistema e Visão Geral (Big Picture)
+
+Com base na estrutura de Arquitetura desenvolvida para a solução proposta, avaliamos os inputs e outputs esperados para cada sistema de blocos e cada componente do sistema. 
+
+![img](https://github.com/2023M5T2-Inteli/alquimistas/blob/main/docs/img/sprint2/inputs_outputs.png)
 
 ## Descrição dos Subsistemas
 
-### Requisitos de software
+### Bloco de Interface 
+O Bloco de Interface consiste em um sistema visivel para o usuário poder realizar o controle dos componentes do projeto. Sendo o principal processo o ciclo de coleta de materiais por meio de campos magnéticos. Mas podendo também interagir de forma individual com os demais componentes do sistema. 
 
+### Braço Robótico
+O componente do braço robótico é o Dobot Magician Lite, desse modo, esse é o principal responsável por executar a trajetória do processo descrito no item "Bloco de Interface". 
+O Magician Lite é um braço robótico inteligente leve e multifuncional, tornou-se um excelente produto para educação e aprendizado em inteligência artificial.
+
+### Backend - Computador
+Sistema integrado que abarca o código do servidor de interface, assim como os controles do Microcontrolador Raspberry Pi Pico. 
+
+### Embarcados 
+1. Raspberry Pi Pico: A Raspberry Pi Pico é uma placa microcontrolada de baixo custo e alta performance, com interfaces digitais flexíveis. 
+2. Ponte H: A ponte H é um circuito que serve para variar o sentido da corrente em uma determinada carga, bem como controlar sua potência.
+  <br>2.1. Elétroimã: O eletroímã é um dispositivo formado por um núcleo de ferro envolto por um solenoide (bobina) que, mediante uma indução de corrente, gera campo magnético.
+  <br>2.2. Shaker: O Micro Motor Vibracall é um tipo de motor de tamanho bem reduzido, responsável por produzir vibrações.
+
+### Requisitos de software
 
 ## Tecnologias Utilizadas
 
+### Bloco de Interface 
+- HTML 
+- CSS 
+- JavaScript 
+- Bootstrap
+- Python
+
+### Braço Robótico
+- Dobot Magician Lite 
+- Software - Dobot 
+- Python 
+
+### Backend - Computador
+- IDE: Thonny 
+- Python 
+- MicroPython 
+
+### Embarcados 
+- IDE: Thonny 
+- Python 
+- MicroPython 
 
 # UX e UI Design
 
-## Wireframe + Storyboard
+## Wireframe + Storyboard - Versão 1
+
+Para o desenvolvimento da interface do usuário optamos por uma aplicação web, a qual sua primeira versão consiste em uma página para realizar a conexão com os elementos: Wifi, Shaker e Eletroimã.
+
+[Wireframe no Figma](https://www.figma.com/file/SURaYJTPLilelYLFrS4gdi/Front-IPT?node-id=0%3A1&t=6frlueaWTHFUkmnN-0)
 
 ## Design de Interface - Guia de Estilos
+A estrutura da interface foi desenvolvida com base nas necessidades de entradas e saídas vinculadas ao bloco de Interface na Arquitetura da Solução. 
 
+Desse modo, foi desenvolvida uma interface gráfica no Figma que tem como objetivo o acionamento de componentes do sistema: 
+
+![img](https://github.com/2023M5T2-Inteli/alquimistas/blob/main/docs/img/sprint2/interface.png)
 
 # Projeto de Banco de Dados
 
@@ -154,6 +262,18 @@ Concepção de sistema de automação industrial
 
 ## Modelo Lógico
 
+# Teste de Hardware - Versão 1 
+
+## Braço robótico (Dobot Magician)
+Inicialmente, foi realizada a conexão do braço via USB. Posto isso, ao conectar a um notebook com o código desenvolvido em python (COLOCAR O LINK PARA O CÓDIGO NO GITHUB) foi possível testar os primeiros movimentos do Dobot. 
+Dessa maneira, durante o desenvolvimento do código testamos os limites do braço, além de seu alcance com as três bandejas já posicionadas para a realização da separação magnética. Assim, o teste foi bem sucedido e ao observar o código estão presentes as melhores coordenadas.
+### Conexão com o servidor
+
+## Eletroimã
+Para o funcionamento do eltroimã foi utilizada a ponte H (um circuito que serve para variar o sentido da corrente em uma determinada carga, bem como controlar sua potência) que aciona o imã, sem o uso do PWM, com um botão on/off básico. Assim, abaixo é possível observar o eletroimã sendo acionado:
+
+## Shaker
+Assim como o eletroimã, para o shaker foi utilizada a ponte H (um circuito que serve para variar o sentido da corrente em uma determinada carga, bem como controlar sua potência) que o aciona, sem o uso do PWM, com um botão on/off básico.
 
 # Teste de Software
 
@@ -175,3 +295,5 @@ Concepção de sistema de automação industrial
 
 
 # Referências
+
+
