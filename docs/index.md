@@ -41,11 +41,16 @@ Concepção de sistema de automação industrial
     - [Requisitos de software](#requisitos-de-software)
   - [Tecnologias Utilizadas](#tecnologias-utilizadas)
 - [UX e UI Design](#ux-e-ui-design)
-  - [Wireframe + Storyboard](#wireframe--storyboard)
+  - [Wireframe + Storyboard - Versão 1](#wireframe--storyboard---versão-1)
   - [Design de Interface - Guia de Estilos](#design-de-interface---guia-de-estilos)
 - [Projeto de Banco de Dados](#projeto-de-banco-de-dados)
   - [Modelo Conceitual](#modelo-conceitual)
   - [Modelo Lógico](#modelo-lógico)
+- [Teste de Hardware - Versão 1](#teste-de-hardware---versão-1)
+  - [Braço robótico (Dobot Magician)](#braço-robótico-dobot-magician)
+    - [Conexão com o servidor](#conexão-com-o-servidor)
+  - [Eletroimã](#eletroimã)
+  - [Shaker](#shaker)
 - [Teste de Software](#teste-de-software)
   - [Testes Unitários](#testes-unitários)
   - [Teste de Usabilidade](#teste-de-usabilidade)
@@ -71,12 +76,10 @@ Concepção de sistema de automação industrial
 # Visão Geral do Projeto
 
 ## Empresa
-
 <br>	O Instituto de Pesquisas Tecnológicas (IPT), vinculado à Secretaria de Desenvolvimento Econômico do Estado de São Paulo,  há 123 anos colabora para o processo de desenvolvimento do País, provê soluções tecnológicas para a indústria, governos e sociedade, habilitando-os a superar os desafios da nossa época. </br>
 <br>	Desse modo, como um dos maiores institutos de pesquisas do Brasil, o IPT conta com laboratórios capacitados e equipe de pesquisadores e técnicos altamente qualificados, atuando basicamente em quatro grandes áreas - inovação, pesquisa e desenvolvimento; serviços tecnológicos; desenvolvimento & apoio metrológico, e informação & educação em tecnologia. </br>
 
 ## O Problema
-
 <br>	Considerando que a separação magnética pode ser uma excelente técnica para avaliação da liberação de minerais/materiais com propriedades magnéticas e que, em uma etapa preliminar exploratória, não estão disponíveis grandes quantidades de amostras para serem submetidas a ensaios em equipamentos de separação magnética com operação contínua, a automação deste procedimento é benéfica do ponto de vista de agilidade e precisão. </br>
 <br>	Posto isso, o processo atual é manual, ou seja, o operador aproxima um ímã de ferrite ou de terras raras, envolto em um saco plástico, do material submerso em água, espalhado em uma bandeja plástica, tentando manter uma distância constante e, consequentemente, o campo eletromagnético aplicado sobre as partículas. O material ferromagnético gruda no ímã e é posteriormente depositado em outro recipiente. </br>
 <br>	Assim, por ser um processo manual, a constância da distância é imprecisa e, considerando que o campo eletromagnético é inversamente proporcional à distância, o campo aplicado sobre as partículas também é impreciso, dificultando a determinação do campo necessário para a separação dos minerais. Além disso, para testar diferentes campos é necessário a troca dos ímãs utilizados, resultando na necessidade de se ter diversos ímãs disponíveis. </br>
@@ -84,11 +87,9 @@ Concepção de sistema de automação industrial
 ## Objetivos
 
 ### Objetivos gerais
-
 <br>	Desenvolver um equipamento automatizado que tenha capacidade de aplicar um campo magnético constante, com intensidade e distância ajustáveis, ao longo de todo a amostra promovendo assim uma separação dos minerais magnéticos, que serão depositados em um recipiente diferente dos minerais não magnéticos que permanecerão depositados na bandeja original.</br>
 
 ### Objetivos específicos
-
 <br> A seguir estão os objetivos/benefícios esperados com o desenvolvimento do projeto: </br>
 * Manutenção de uma campo magnético constante sobre toda a amostra, reduzindo os erros de ensaio decorrentes da ação humana;
 * Maior qualidade na execução do ensaio, principalmente no que tange a repetibilidade e reprodutibilidade;  
@@ -124,19 +125,19 @@ Concepção de sistema de automação industrial
 
 ## Proposta de Valor: Value Proposition Canvas
 
-![Alt text](\img\sprint1\proposta-de-valor.png)
+![img](https://github.com/2023M5T2-Inteli/alquimistas/blob/main/docs/img/sprint1/proposta-de-valor.png)
 
 ## Matriz de Risco
 
-![Alt text](\img\sprint1\matriz-de-riscos.png)
+![img](https://github.com/2023M5T2-Inteli/alquimistas/blob/main/docs/img/sprint1/matriz-de-riscos.png)
 
 ## Matriz Oceano Azul
 
-![Alt text](\img\sprint1\matriz-oceano-azul.png)
+![img](https://github.com/2023M5T2-Inteli/alquimistas/blob/main/docs/img/sprint1/matriz-oceano-azul.png)
 
 ## Análise Financeira
 
-![Alt text](\img\sprint1\roi.png)
+![img](https://github.com/2023M5T2-Inteli/alquimistas/blob/main/docs/img/sprint1/roi.png)
 
 # Requisitos do Sistema
 
@@ -144,7 +145,7 @@ Concepção de sistema de automação industrial
 
 ## Personas
 
-![Alt text](\img\sprint1\persona.png)
+![img](https://github.com/2023M5T2-Inteli/alquimistas/blob/main/docs/img/sprint1/persona.png)
 João Silva, 35 anos
 Formação: Engenheiro Químico
 Empresa: Instituto de Pesquisa e Tecnologia (IPT) - Setor: Materiais Avançados - Salário: R$3000,00 por mês
@@ -154,7 +155,7 @@ Personalidade: Dinâmico, curioso e apaixonado por soluções tecnológicas inov
 
 ## Jornada do Usuário
 
-![Alt text](\img\sprint1\jornada-do-usuario.png)
+![img](https://github.com/2023M5T2-Inteli/alquimistas/blob/main/docs/img/sprint1/jornada-do-usuario.png)
 
 ## Histórias dos usuários (user stories)
 
@@ -166,7 +167,7 @@ Personalidade: Dinâmico, curioso e apaixonado por soluções tecnológicas inov
 
 ## Arquitetura da Solução - Versão 1
 
-![Alt text](\img\sprint1\arquitetura-da-solucao-v1.png)
+![img](https://github.com/2023M5T2-Inteli/alquimistas/blob/main/docs/img/sprint1/arquitetura-da-solucao-v1.png)
 
 ## Módulos do Sistema e Visão Geral (Big Picture)
 
@@ -180,10 +181,13 @@ Personalidade: Dinâmico, curioso e apaixonado por soluções tecnológicas inov
 
 # UX e UI Design
 
-## Wireframe + Storyboard
+## Wireframe + Storyboard - Versão 1
+
+Para o desenvolvimento da interface do usuário optamos por uma aplicação web, a qual sua primeira versão consiste em uma página para realizar a conexão com os elementos: Wifi, Shaker e Eletroimã.
+
+[Wireframe no Figma](https://www.figma.com/file/SURaYJTPLilelYLFrS4gdi/Front-IPT?node-id=0%3A1&t=6frlueaWTHFUkmnN-0)
 
 ## Design de Interface - Guia de Estilos
-
 
 # Projeto de Banco de Dados
 
@@ -191,6 +195,18 @@ Personalidade: Dinâmico, curioso e apaixonado por soluções tecnológicas inov
 
 ## Modelo Lógico
 
+# Teste de Hardware - Versão 1 
+
+## Braço robótico (Dobot Magician)
+Inicialmente, foi realizada a conexão do braço via USB. Posto isso, ao conectar a um notebook com o código desenvolvido em python (COLOCAR O LINK PARA O CÓDIGO NO GITHUB) foi possível testar os primeiros movimentos do Dobot. 
+Dessa maneira, durante o desenvolvimento do código testamos os limites do braço, além de seu alcance com as três bandejas já posicionadas para a realização da separação magnética. Assim, o teste foi bem sucedido e ao observar o código estão presentes as melhores coordenadas.
+### Conexão com o servidor
+
+## Eletroimã
+Para o funcionamento do eltroimã foi utilizada a ponte H (um circuito que serve para variar o sentido da corrente em uma determinada carga, bem como controlar sua potência) que aciona o imã, sem o uso do PWM, com um botão on/off básico. Assim, abaixo é possível observar o eletroimã sendo acionado:
+
+## Shaker
+Assim como o eletroimã, para o shaker foi utilizada a ponte H (um circuito que serve para variar o sentido da corrente em uma determinada carga, bem como controlar sua potência) que o aciona, sem o uso do PWM, com um botão on/off básico.
 
 # Teste de Software
 
@@ -212,3 +228,5 @@ Personalidade: Dinâmico, curioso e apaixonado por soluções tecnológicas inov
 
 
 # Referências
+
+
