@@ -30,6 +30,9 @@ Concepção de sistema de automação industrial
   - [Matriz de Risco](#matriz-de-risco)
   - [Matriz Oceano Azul](#matriz-oceano-azul)
   - [Análise Financeira](#análise-financeira)
+    - [Análise de custo do processo atual](#análise-de-custo-do-processo-atual)
+    - [Análise de custo da solução](#análise-de-custo-da-solução)
+    - [ROI - Return Over Investment](#roi---return-over-investment)
 - [Requisitos do Sistema](#requisitos-do-sistema)
   - [Personas](#personas)
   - [Jornada do Usuário](#jornada-do-usuário)
@@ -38,8 +41,16 @@ Concepção de sistema de automação industrial
   - [Arquitetura da Solução - Versão 1](#arquitetura-da-solução---versão-1)
   - [Módulos do Sistema e Visão Geral (Big Picture)](#módulos-do-sistema-e-visão-geral-big-picture)
   - [Descrição dos Subsistemas](#descrição-dos-subsistemas)
+    - [Bloco de Interface](#bloco-de-interface)
+    - [Braço Robótico](#braço-robótico)
+    - [Backend - Computador](#backend---computador)
+    - [Embarcados](#embarcados)
     - [Requisitos de software](#requisitos-de-software)
   - [Tecnologias Utilizadas](#tecnologias-utilizadas)
+    - [Bloco de Interface](#bloco-de-interface-1)
+    - [Braço Robótico](#braço-robótico-1)
+    - [Backend - Computador](#backend---computador-1)
+    - [Embarcados](#embarcados-1)
 - [UX e UI Design](#ux-e-ui-design)
   - [Wireframe + Storyboard - Versão 1](#wireframe--storyboard---versão-1)
   - [Design de Interface - Guia de Estilos](#design-de-interface---guia-de-estilos)
@@ -48,7 +59,6 @@ Concepção de sistema de automação industrial
   - [Modelo Lógico](#modelo-lógico)
 - [Teste de Hardware - Versão 1](#teste-de-hardware---versão-1)
   - [Braço robótico (Dobot Magician)](#braço-robótico-dobot-magician)
-    - [Conexão com o servidor](#conexão-com-o-servidor)
   - [Eletroimã](#eletroimã)
   - [Shaker](#shaker)
 - [Teste de Software](#teste-de-software)
@@ -169,10 +179,17 @@ necessário para recuperar o valor do investimento. Segue a análise:
 
 ![img](https://github.com/2023M5T2-Inteli/alquimistas/blob/main/docs/img/sprint1/persona.png)
 João Silva, 35 anos
+
 Formação: Engenheiro Químico
-Empresa: Instituto de Pesquisa e Tecnologia (IPT) - Setor: Materiais Avançados - Salário: R$3000,00 por mês
+
+Empresa: Instituto de Pesquisa e Tecnologia (IPT) - Setor: 
+
+Materiais Avançados - Salário: R$3000,00 por mês
+
 Projeto de trabalho: Separação Magnética em Projetos de Mineração
+
 Interesses/Hobbies: Tecnologia, robótica, automação industrial, jogar futebol, viajar e ler sobre novas descobertas científicas
+
 Personalidade: Dinâmico, curioso e apaixonado por soluções tecnológicas inovadoras.
 
 ## Jornada do Usuário
@@ -204,6 +221,7 @@ O Bloco de Interface consiste em um sistema visivel para o usuário poder realiz
 
 ### Braço Robótico
 O componente do braço robótico é o Dobot Magician Lite, desse modo, esse é o principal responsável por executar a trajetória do processo descrito no item "Bloco de Interface". 
+
 O Magician Lite é um braço robótico inteligente leve e multifuncional, tornou-se um excelente produto para educação e aprendizado em inteligência artificial.
 
 ### Backend - Computador
@@ -265,15 +283,21 @@ Desse modo, foi desenvolvida uma interface gráfica no Figma que tem como objeti
 # Teste de Hardware - Versão 1 
 
 ## Braço robótico (Dobot Magician)
-Inicialmente, foi realizada a conexão do braço via USB. Posto isso, ao conectar a um notebook com o código desenvolvido em python (COLOCAR O LINK PARA O CÓDIGO NO GITHUB) foi possível testar os primeiros movimentos do Dobot. 
-Dessa maneira, durante o desenvolvimento do código testamos os limites do braço, além de seu alcance com as três bandejas já posicionadas para a realização da separação magnética. Assim, o teste foi bem sucedido e ao observar o código estão presentes as melhores coordenadas.
-### Conexão com o servidor
+Inicialmente, foi realizada a conexão do braço via USB. Posto isso, ao conectar a um notebook com o código desenvolvido em python foi possível testar os primeiros movimentos do Dobot. 
+
+Dessa maneira, durante o desenvolvimento do código testamos os limites do braço, além de seu alcance com as três bandejas já posicionadas para a realização da separação magnética. 
+
+Ademais, para a distribuição da movimentação entre as três bandejas desenvolvemos um teste de movimento, além de que em um das bandejas testamos a garra girando para atuar como "shaker".
+
+Assim, o teste foi bem sucedido e ao observar o código estão presentes as melhores coordenadas.
+[Vídeo do Braço Robótico](https://drive.google.com/file/d/1XXnbOXCwqovBhM7tpWrfgjDaCpf1ItxG/view?usp=share_link)
+[Vídeo do Braço Robótico funcionando com o Eletroimã](https://drive.google.com/file/d/1wATEEbIaDI8gdZqeeBoirgRW7wp0ONYF/view?usp=share_link)
 
 ## Eletroimã
-Para o funcionamento do eltroimã foi utilizada a ponte H (um circuito que serve para variar o sentido da corrente em uma determinada carga, bem como controlar sua potência) que aciona o imã, sem o uso do PWM, com um botão on/off básico. Assim, abaixo é possível observar o eletroimã sendo acionado:
+A partir da arquitetura da solução, para o funcionamento do eletroimã foi utilizada a ponte H que aciona o imã, sem o uso do PWM, com um botão on/off básico. Assim, abaixo é possível observar o teste do eletroimã sendo acionado: [Vídeo do Eletroimã](https://drive.google.com/file/d/1XMPLq9Y_FeFcGYrzqDrQreFy3z2WW-NQ/view?usp=share_link)
 
 ## Shaker
-Assim como o eletroimã, para o shaker foi utilizada a ponte H (um circuito que serve para variar o sentido da corrente em uma determinada carga, bem como controlar sua potência) que o aciona, sem o uso do PWM, com um botão on/off básico.
+Assim como o eletroimã, e a partir da arquitetura da solução, para o shaker (atuador) foi utilizada a ponte H que o aciona. Posto isso, é possível observar o teste do shaker sendo acionado: [Vídeo do Shaker](https://drive.google.com/file/d/1aKnpKJqT3iWdUGoq9t6nZmuSdV9F_K-X/view?usp=share_link)
 
 # Teste de Software
 
