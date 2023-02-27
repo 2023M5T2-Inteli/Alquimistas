@@ -144,7 +144,7 @@ Concepção de sistema de automação industrial
 
 ## Personas
 
-![Alt text](\img\sprint1\persona.png)
+![img](https://github.com/2023M5T2-Inteli/alquimistas/blob/main/docs/img/sprint1/persona.png)
 João Silva, 35 anos
 Formação: Engenheiro Químico
 Empresa: Instituto de Pesquisa e Tecnologia (IPT) - Setor: Materiais Avançados - Salário: R$3000,00 por mês
@@ -154,7 +154,7 @@ Personalidade: Dinâmico, curioso e apaixonado por soluções tecnológicas inov
 
 ## Jornada do Usuário
 
-![Alt text](\img\sprint1\jornada-do-usuario.png)
+![img](https://github.com/2023M5T2-Inteli/alquimistas/blob/main/docs/img/sprint1/jornada-do-usuario.png)
 
 ## Histórias dos usuários (user stories)
 
@@ -166,7 +166,7 @@ Personalidade: Dinâmico, curioso e apaixonado por soluções tecnológicas inov
 
 ## Arquitetura da Solução - Versão 1
 
-![Alt text](\img\sprint1\arquitetura-da-solucao-v1.png)
+![img](https://github.com/2023M5T2-Inteli/alquimistas/blob/main/docs/img/sprint1/arquitetura-da-solucao-v1.png)
 
 ## Módulos do Sistema e Visão Geral (Big Picture)
 
