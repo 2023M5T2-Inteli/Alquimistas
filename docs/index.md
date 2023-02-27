@@ -12,10 +12,6 @@
 Concepção de sistema de automação industrial
 </center></font>
 
->*Observação 1: A estrutura inicial deste documento é só um exemplo. O seu grupo deverá alterar esta estrutura de acordo com o que está sendo solicitado nos artefatos.*
-
->*Observação 2: O índice abaixo não precisa ser editado se você utilizar o Visual Studio Code com a extensão **Markdown All in One**. Essa extensão atualiza o índice automaticamente quando o arquivo é salvo.*
-
 **Conteúdo**
 
 - [Autores](#autores)
@@ -25,16 +21,21 @@ Concepção de sistema de automação industrial
   - [Objetivos](#objetivos)
     - [Objetivos gerais](#objetivos-gerais)
     - [Objetivos específicos](#objetivos-específicos)
+    - [Escopo Macro](#escopo-macro)
   - [Partes interessadas](#partes-interessadas)
 - [Análise do Problema](#análise-do-problema)
   - [Análise da área de atuação](#análise-da-área-de-atuação)
   - [Análise do cenário: Matriz SWOT](#análise-do-cenário-matriz-swot)
   - [Proposta de Valor: Value Proposition Canvas](#proposta-de-valor-value-proposition-canvas)
   - [Matriz de Risco](#matriz-de-risco)
+  - [Matriz Oceano Azul](#matriz-oceano-azul)
+  - [Análise Financeira](#análise-financeira)
 - [Requisitos do Sistema](#requisitos-do-sistema)
   - [Personas](#personas)
+  - [Jornada do Usuário](#jornada-do-usuário)
   - [Histórias dos usuários (user stories)](#histórias-dos-usuários-user-stories)
 - [Arquitetura do Sistema](#arquitetura-do-sistema)
+  - [Arquitetura da Solução - Versão 1](#arquitetura-da-solução---versão-1)
   - [Módulos do Sistema e Visão Geral (Big Picture)](#módulos-do-sistema-e-visão-geral-big-picture)
   - [Descrição dos Subsistemas](#descrição-dos-subsistemas)
     - [Requisitos de software](#requisitos-de-software)
@@ -71,26 +72,43 @@ Concepção de sistema de automação industrial
 
 ## Empresa
 
-  O Instituto de Pesquisas Tecnológicas (IPT), vinculado à Secretaria de Desenvolvimento Econômico do Estado de São Paulo,  há 123 anos colabora para o processo de desenvolvimento do País, provê soluções tecnológicas para a indústria, governos e sociedade, habilitando-os a superar os desafios da nossa época.
-	Desse modo, como um dos maiores institutos de pesquisas do Brasil, o IPT conta com laboratórios capacitados e equipe de pesquisadores e técnicos altamente qualificados, atuando basicamente em quatro grandes áreas - inovação, pesquisa e desenvolvimento; serviços tecnológicos; desenvolvimento & apoio metrológico, e informação & educação em tecnologia.
+<br>	O Instituto de Pesquisas Tecnológicas (IPT), vinculado à Secretaria de Desenvolvimento Econômico do Estado de São Paulo,  há 123 anos colabora para o processo de desenvolvimento do País, provê soluções tecnológicas para a indústria, governos e sociedade, habilitando-os a superar os desafios da nossa época. </br>
+<br>	Desse modo, como um dos maiores institutos de pesquisas do Brasil, o IPT conta com laboratórios capacitados e equipe de pesquisadores e técnicos altamente qualificados, atuando basicamente em quatro grandes áreas - inovação, pesquisa e desenvolvimento; serviços tecnológicos; desenvolvimento & apoio metrológico, e informação & educação em tecnologia. </br>
 
 ## O Problema
 
-*Descrição_do_problema*
+<br>	Considerando que a separação magnética pode ser uma excelente técnica para avaliação da liberação de minerais/materiais com propriedades magnéticas e que, em uma etapa preliminar exploratória, não estão disponíveis grandes quantidades de amostras para serem submetidas a ensaios em equipamentos de separação magnética com operação contínua, a automação deste procedimento é benéfica do ponto de vista de agilidade e precisão. </br>
+<br>	Posto isso, o processo atual é manual, ou seja, o operador aproxima um ímã de ferrite ou de terras raras, envolto em um saco plástico, do material submerso em água, espalhado em uma bandeja plástica, tentando manter uma distância constante e, consequentemente, o campo eletromagnético aplicado sobre as partículas. O material ferromagnético gruda no ímã e é posteriormente depositado em outro recipiente. </br>
+<br>	Assim, por ser um processo manual, a constância da distância é imprecisa e, considerando que o campo eletromagnético é inversamente proporcional à distância, o campo aplicado sobre as partículas também é impreciso, dificultando a determinação do campo necessário para a separação dos minerais. Além disso, para testar diferentes campos é necessário a troca dos ímãs utilizados, resultando na necessidade de se ter diversos ímãs disponíveis. </br>
 
 ## Objetivos
 
 ### Objetivos gerais
 
-*Lista_de_objetivos_gerais*
+<br>	Desenvolver um equipamento automatizado que tenha capacidade de aplicar um campo magnético constante, com intensidade e distância ajustáveis, ao longo de todo a amostra promovendo assim uma separação dos minerais magnéticos, que serão depositados em um recipiente diferente dos minerais não magnéticos que permanecerão depositados na bandeja original.</br>
 
 ### Objetivos específicos
 
-*Lista_de_objetivos específicos*
+<br> A seguir estão os objetivos/benefícios esperados com o desenvolvimento do projeto: </br>
+* Manutenção de uma campo magnético constante sobre toda a amostra, reduzindo os erros de ensaio decorrentes da ação humana;
+* Maior qualidade na execução do ensaio, principalmente no que tange a repetibilidade e reprodutibilidade;  
+* Maior flexibilidade de ensaios, pois o uso de eletroímãs ajustáveis dispensa a necessidade de se ter ímãs com o campo desejado; 
+* Determinação mais precisa do campo magnético adequado para diferentes ensaios. 
+
+### Escopo Macro
+
+* Um braço robótico capaz de posicionar um manipulador em posição e distância controladas sobre a bandeja de amostras;
+* Eletroímã montado no manipulador do braço robótico com campo magnético ajustável na faixa de 800 a 12.000 Gauss; 
+* Estrutura para calibração de posicionamento do braço; 
+* Estrutura para calibração de eletroímã; 
+* Automação da bandeja de amostra para promover a agitação das partículas; 
+* Recipiente com automatização de pesagem para receber material coletado (opcional); 
+* Relatório apresentando todos os dados pertinentes do ensaio (opcional). 
 
 ## Partes interessadas
 
-*Lista_e_apresentação_das_partes_interessadas*
+* IPT - Instituto de Pesquisas Tecnológicas
+* INTELI - Instituto de Tecnologia e Liderança
 
 # Análise do Problema
 
@@ -104,16 +122,21 @@ Concepção de sistema de automação industrial
 
 *Matriz_SWOT*
 
-
 ## Proposta de Valor: Value Proposition Canvas
 
-*Value_Proposition_Canvas*
-
+![Alt text](\img\sprint1\proposta-de-valor.png)
 
 ## Matriz de Risco
 
-*Matriz_de_risco*
+![Alt text](\img\sprint1\matriz-de-riscos.png)
 
+## Matriz Oceano Azul
+
+![Alt text](\img\sprint1\matriz-oceano-azul.png)
+
+## Análise Financeira
+
+![Alt text](\img\sprint1\roi.png)
 
 # Requisitos do Sistema
 
@@ -121,15 +144,29 @@ Concepção de sistema de automação industrial
 
 ## Personas
 
-*Descrição_das_personas*
+![Alt text](\img\sprint1\persona.png)
+João Silva, 35 anos
+Formação: Engenheiro Químico
+Empresa: Instituto de Pesquisa e Tecnologia (IPT) - Setor: Materiais Avançados - Salário: R$3000,00 por mês
+Projeto de trabalho: Separação Magnética em Projetos de Mineração
+Interesses/Hobbies: Tecnologia, robótica, automação industrial, jogar futebol, viajar e ler sobre novas descobertas científicas
+Personalidade: Dinâmico, curioso e apaixonado por soluções tecnológicas inovadoras.
 
+## Jornada do Usuário
+
+![Alt text](\img\sprint1\jornada-do-usuario.png)
 
 ## Histórias dos usuários (user stories)
 
-*Descrição_das_histórias_dos_usuários*
-
+1. Como pesquisador, eu quero acionar o robô, para que ele inicie o processo de limpar a amostra.
+2. Como supervisor, eu quero automatizar o processo, para melhorar a acurácia do relatório.
+3. Como supervisor, eu quero automatizar o processo, para melhorar a gestão de tempo com a equipe.
 
 # Arquitetura do Sistema
+
+## Arquitetura da Solução - Versão 1
+
+![Alt text](\img\sprint1\arquitetura-da-solucao-v1.png)
 
 ## Módulos do Sistema e Visão Geral (Big Picture)
 
