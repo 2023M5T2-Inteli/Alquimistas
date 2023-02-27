@@ -171,13 +171,15 @@ Personalidade: Dinâmico, curioso e apaixonado por soluções tecnológicas inov
 
 ## Módulos do Sistema e Visão Geral (Big Picture)
 
+Com base na estrutura de Arquitetura desenvolvida para a solução proposta, avaliamos os inputs e outputs esperados para cada sistema de blocos e cada componente do sistema. 
+
+![img](https://github.com/2023M5T2-Inteli/alquimistas/blob/main/docs/img/sprint2/inputs_outputs.png)
+
 ## Descrição dos Subsistemas
 
 ### Requisitos de software
 
-
 ## Tecnologias Utilizadas
-
 
 # UX e UI Design
 
@@ -188,6 +190,11 @@ Para o desenvolvimento da interface do usuário optamos por uma aplicação web,
 [Wireframe no Figma](https://www.figma.com/file/SURaYJTPLilelYLFrS4gdi/Front-IPT?node-id=0%3A1&t=6frlueaWTHFUkmnN-0)
 
 ## Design de Interface - Guia de Estilos
+A estrutura da interface foi desenvolvida com base nas necessidades de entradas e saídas vinculadas ao bloco de Interface na Arquitetura da Solução. 
+
+Desse modo, foi desenvolvida uma interface gráfica no Figma que tem como objetivo o acionamento de componentes do sistema: 
+
+![img](https://github.com/2023M5T2-Inteli/alquimistas/blob/main/docs/img/sprint2/interface.png)
 
 # Projeto de Banco de Dados
 
