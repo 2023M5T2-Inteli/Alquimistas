@@ -14,18 +14,14 @@ while True:
     if Button1.value() == 1:
         IN1.high()
         IN2.low()
-        IN3.high()
-        IN4.low()
-        print("Ligar Lado 1")
+        print("Componentes ligados")
         
     elif Button2.value() == 1:
         IN1.low()
         IN2.high()
-        IN3.low()
-        IN4.high()
-        print("Ligar Lado 2")
+        print("Componentes ligados")
 
     else:
         IN1.low()
         IN2.low()
-        print("Desligar tudo")
+        print("Componentes desligados")

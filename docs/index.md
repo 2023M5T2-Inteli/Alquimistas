@@ -3,7 +3,7 @@
 <td>
 <a href= "https://www.ipt.br/"><img src="https://www.ipt.br/imagens/logo_ipt.gif" alt="IPT" border="0" width="70%"></a>
 </td>
-<td><a href= "https://www.inteli.edu.br/"><img src="https://www.inteli.edu.br/wp-content/uploads/2021/08/20172028/marca_1-2.png" alt="Inteli - Instituto de Tecnologia e Liderança" border="0" width="30%"></a>
+<td><a href= "https://www.inteli.edu.br/"><img src="https://www.inteli.edu.br/wp-content/uploads/2022/04/28103439/Logo-Container.png" alt="Inteli - Instituto de Tecnologia e Liderança" border="0" width="30%"></a>
 </td>
 </tr>
 </table>
@@ -30,6 +30,9 @@ Concepção de sistema de automação industrial
   - [Matriz de Risco](#matriz-de-risco)
   - [Matriz Oceano Azul](#matriz-oceano-azul)
   - [Análise Financeira](#análise-financeira)
+    - [Análise de custo do processo atual](#análise-de-custo-do-processo-atual)
+    - [Análise de custo da solução](#análise-de-custo-da-solução)
+    - [ROI - Return Over Investment](#roi---return-over-investment)
 - [Requisitos do Sistema](#requisitos-do-sistema)
   - [Personas](#personas)
   - [Jornada do Usuário](#jornada-do-usuário)
@@ -38,8 +41,16 @@ Concepção de sistema de automação industrial
   - [Arquitetura da Solução - Versão 1](#arquitetura-da-solução---versão-1)
   - [Módulos do Sistema e Visão Geral (Big Picture)](#módulos-do-sistema-e-visão-geral-big-picture)
   - [Descrição dos Subsistemas](#descrição-dos-subsistemas)
+    - [Bloco de Interface](#bloco-de-interface)
+    - [Braço Robótico](#braço-robótico)
+    - [Backend - Computador](#backend---computador)
+    - [Embarcados](#embarcados)
     - [Requisitos de software](#requisitos-de-software)
   - [Tecnologias Utilizadas](#tecnologias-utilizadas)
+    - [Bloco de Interface](#bloco-de-interface-1)
+    - [Braço Robótico](#braço-robótico-1)
+    - [Backend - Computador](#backend---computador-1)
+    - [Embarcados](#embarcados-1)
 - [UX e UI Design](#ux-e-ui-design)
   - [Wireframe + Storyboard - Versão 1](#wireframe--storyboard---versão-1)
   - [Design de Interface - Guia de Estilos](#design-de-interface---guia-de-estilos)
@@ -48,7 +59,6 @@ Concepção de sistema de automação industrial
   - [Modelo Lógico](#modelo-lógico)
 - [Teste de Hardware - Versão 1](#teste-de-hardware---versão-1)
   - [Braço robótico (Dobot Magician)](#braço-robótico-dobot-magician)
-    - [Conexão com o servidor](#conexão-com-o-servidor)
   - [Eletroimã](#eletroimã)
   - [Shaker](#shaker)
 - [Teste de Software](#teste-de-software)
@@ -129,13 +139,35 @@ Concepção de sistema de automação industrial
 
 ## Matriz de Risco
 
-![img](https://github.com/2023M5T2-Inteli/alquimistas/blob/main/docs/img/sprint1/matriz-de-riscos.png)
+![img](https://github.com/2023M5T2-Inteli/alquimistas/blob/main/docs/img/sprint1/matriz-de-risco.png)
 
 ## Matriz Oceano Azul
 
 ![img](https://github.com/2023M5T2-Inteli/alquimistas/blob/main/docs/img/sprint1/matriz-oceano-azul.png)
 
 ## Análise Financeira
+
+### Análise de custo do processo atual
+
+Inicialmente, os custos relacionados ao processo atual provém da compra dos
+equipamentos (ímãs de neodímio) e remuneração de mão de obra. Em um primeiro
+momento, projetamos que o salário médio de um Técnico é de R$ 2.833/mês.
+Considerando uma carga horária de 8 horas por dia, podemos chegar na estimativa de
+R11,80/hora. Através de entrevistas com o parceiro, cada sessão de separação
+magnética dura cerca de 30 minutos. Consequentemente, o custo do processo é de
+R$5,90. Somado à isso o custo médio dos ímãs projetados em R$663,00 cada, que
+devido à sua natureza, não precisam ser substituídos a curto prazo.
+
+### Análise de custo da solução
+A solução contempla a utilização de um braço robótico (Dobot Magician Lite),
+microcontroladores Raspberry Pi Pico W, sensores e atuadores como componentes
+físicos.
+
+![img](https://github.com/2023M5T2-Inteli/alquimistas/blob/main/docs/img/sprint1/analise_financeira.png)
+
+### ROI - Return Over Investment
+Analisando os gastos atuais e os custos com equipamento, pode-se estimar o tempo
+necessário para recuperar o valor do investimento. Segue a análise:
 
 ![img](https://github.com/2023M5T2-Inteli/alquimistas/blob/main/docs/img/sprint1/roi.png)
 
@@ -147,10 +179,17 @@ Concepção de sistema de automação industrial
 
 ![img](https://github.com/2023M5T2-Inteli/alquimistas/blob/main/docs/img/sprint1/persona.png)
 João Silva, 35 anos
+
 Formação: Engenheiro Químico
-Empresa: Instituto de Pesquisa e Tecnologia (IPT) - Setor: Materiais Avançados - Salário: R$3000,00 por mês
+
+Empresa: Instituto de Pesquisa e Tecnologia (IPT) - Setor: 
+
+Materiais Avançados - Salário: R$3000,00 por mês
+
 Projeto de trabalho: Separação Magnética em Projetos de Mineração
+
 Interesses/Hobbies: Tecnologia, robótica, automação industrial, jogar futebol, viajar e ler sobre novas descobertas científicas
+
 Personalidade: Dinâmico, curioso e apaixonado por soluções tecnológicas inovadoras.
 
 ## Jornada do Usuário
@@ -177,9 +216,48 @@ Com base na estrutura de Arquitetura desenvolvida para a solução proposta, ava
 
 ## Descrição dos Subsistemas
 
+### Bloco de Interface 
+O Bloco de Interface consiste em um sistema visivel para o usuário poder realizar o controle dos componentes do projeto. Sendo o principal processo o ciclo de coleta de materiais por meio de campos magnéticos. Mas podendo também interagir de forma individual com os demais componentes do sistema. 
+
+### Braço Robótico
+O componente do braço robótico é o Dobot Magician Lite, desse modo, esse é o principal responsável por executar a trajetória do processo descrito no item "Bloco de Interface". 
+
+O Magician Lite é um braço robótico inteligente leve e multifuncional, tornou-se um excelente produto para educação e aprendizado em inteligência artificial.
+
+### Backend - Computador
+Sistema integrado que abarca o código do servidor de interface, assim como os controles do Microcontrolador Raspberry Pi Pico. 
+
+### Embarcados 
+1. Raspberry Pi Pico: A Raspberry Pi Pico é uma placa microcontrolada de baixo custo e alta performance, com interfaces digitais flexíveis. 
+2. Ponte H: A ponte H é um circuito que serve para variar o sentido da corrente em uma determinada carga, bem como controlar sua potência.
+  <br>2.1. Elétroimã: O eletroímã é um dispositivo formado por um núcleo de ferro envolto por um solenoide (bobina) que, mediante uma indução de corrente, gera campo magnético.
+  <br>2.2. Shaker: O Micro Motor Vibracall é um tipo de motor de tamanho bem reduzido, responsável por produzir vibrações.
+
 ### Requisitos de software
 
 ## Tecnologias Utilizadas
+
+### Bloco de Interface 
+- HTML 
+- CSS 
+- JavaScript 
+- Bootstrap
+- Python
+
+### Braço Robótico
+- Dobot Magician Lite 
+- Software - Dobot 
+- Python 
+
+### Backend - Computador
+- IDE: Thonny 
+- Python 
+- MicroPython 
+
+### Embarcados 
+- IDE: Thonny 
+- Python 
+- MicroPython 
 
 # UX e UI Design
 
@@ -205,15 +283,21 @@ Desse modo, foi desenvolvida uma interface gráfica no Figma que tem como objeti
 # Teste de Hardware - Versão 1 
 
 ## Braço robótico (Dobot Magician)
-Inicialmente, foi realizada a conexão do braço via USB. Posto isso, ao conectar a um notebook com o código desenvolvido em python (COLOCAR O LINK PARA O CÓDIGO NO GITHUB) foi possível testar os primeiros movimentos do Dobot. 
-Dessa maneira, durante o desenvolvimento do código testamos os limites do braço, além de seu alcance com as três bandejas já posicionadas para a realização da separação magnética. Assim, o teste foi bem sucedido e ao observar o código estão presentes as melhores coordenadas.
-### Conexão com o servidor
+Inicialmente, foi realizada a conexão do braço via USB. Posto isso, ao conectar a um notebook com o código desenvolvido em python foi possível testar os primeiros movimentos do Dobot. 
+
+Dessa maneira, durante o desenvolvimento do código testamos os limites do braço, além de seu alcance com as três bandejas já posicionadas para a realização da separação magnética. 
+
+Ademais, para a distribuição da movimentação entre as três bandejas desenvolvemos um teste de movimento, além de que em um das bandejas testamos a garra girando para atuar como "shaker".
+
+Assim, o teste foi bem sucedido e ao observar o código estão presentes as melhores coordenadas.
+[Vídeo do Braço Robótico](https://drive.google.com/file/d/1XXnbOXCwqovBhM7tpWrfgjDaCpf1ItxG/view?usp=share_link)
+[Vídeo do Braço Robótico funcionando com o Eletroimã](https://drive.google.com/file/d/1wATEEbIaDI8gdZqeeBoirgRW7wp0ONYF/view?usp=share_link)
 
 ## Eletroimã
-Para o funcionamento do eltroimã foi utilizada a ponte H (um circuito que serve para variar o sentido da corrente em uma determinada carga, bem como controlar sua potência) que aciona o imã, sem o uso do PWM, com um botão on/off básico. Assim, abaixo é possível observar o eletroimã sendo acionado:
+A partir da arquitetura da solução, para o funcionamento do eletroimã foi utilizada a ponte H que aciona o imã, sem o uso do PWM, com um botão on/off básico. Assim, abaixo é possível observar o teste do eletroimã sendo acionado: [Vídeo do Eletroimã](https://drive.google.com/file/d/1XMPLq9Y_FeFcGYrzqDrQreFy3z2WW-NQ/view?usp=share_link)
 
 ## Shaker
-Assim como o eletroimã, para o shaker foi utilizada a ponte H (um circuito que serve para variar o sentido da corrente em uma determinada carga, bem como controlar sua potência) que o aciona, sem o uso do PWM, com um botão on/off básico.
+Assim como o eletroimã, e a partir da arquitetura da solução, para o shaker (atuador) foi utilizada a ponte H que o aciona. Posto isso, é possível observar o teste do shaker sendo acionado: [Vídeo do Shaker](https://drive.google.com/file/d/1aKnpKJqT3iWdUGoq9t6nZmuSdV9F_K-X/view?usp=share_link)
 
 # Teste de Software
 
