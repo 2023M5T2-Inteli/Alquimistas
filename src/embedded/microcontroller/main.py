@@ -1,27 +1,31 @@
 from machine import Pin
 from time import sleep
 
-IN1 = Pin(0, Pin.OUT)
-IN2 = Pin(1, Pin.OUT)
-IN3 = Pin(2, Pin.OUT)
-IN4 = Pin(3, Pin.OUT)
+class Componentes:
+    def _init_(self, in1_pin, in2_pin, in3_pin, in4_pin, button1_pin, button2_pin):
+        self.IN1 = Pin(in1_pin, Pin.OUT)
+        self.IN2 = Pin(in2_pin, Pin.OUT)
+        self.IN3 = Pin(in3_pin, Pin.OUT)
+        self.IN4 = Pin(in4_pin, Pin.OUT)
+        self.Button1 = Pin(button1_pin, Pin.IN)
+        self.Button2 = Pin(button2_pin, Pin.IN)
 
-Button1 = Pin(16, Pin.IN)
-Button2 = Pin(17, Pin.IN)
+    def ligar_componentes(self):
+        if self.Button1.value() == 1:
+            self.IN1.high()
+            self.IN2.low()
+            print("Componentes ligados")
+        elif self.Button2.value() == 1:
+            self.IN1.low()
+            self.IN2.high()
+            print("Componentes ligados")
+        else:
+            self.IN1.low()
+            self.IN2.low()
+            print("Componentes desligados")
+
+componentes = Componentes(0, 1, 2, 3, 16, 17)
 
 while True:
     sleep(2)
-    if Button1.value() == 1:
-        IN1.high()
-        IN2.low()
-        print("Componentes ligados")
-        
-    elif Button2.value() == 1:
-        IN1.low()
-        IN2.high()
-        print("Componentes ligados")
-
-    else:
-        IN1.low()
-        IN2.low()
-        print("Componentes desligados")
+    componentes.ligar_componentes()
