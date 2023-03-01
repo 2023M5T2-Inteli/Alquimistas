@@ -252,6 +252,12 @@ O braço mecânico foi testado nas seguintes etapas.
 
 [Vídeo do Teste do Braço Robótico](https://www.youtube.com/embed/9Ak5891op9U)
 
+<iframe width="560" height="315"
+src="https://youtu.be/9Ak5891op9U" 
+frameborder="0" 
+allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+allowfullscreen></iframe>
+
 [Vídeo do Braço Robótico funcionando com o Eletroimã](https://youtube.com/shorts/RmgzJqTKww4?feature=share)
 
 
