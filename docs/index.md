@@ -290,14 +290,25 @@ Dessa maneira, durante o desenvolvimento do código testamos os limites do braç
 Ademais, para a distribuição da movimentação entre as três bandejas desenvolvemos um teste de movimento, além de que em um das bandejas testamos a garra girando para atuar como "shaker".
 
 Assim, o teste foi bem sucedido e ao observar o código estão presentes as melhores coordenadas.
-[Vídeo do Braço Robótico](https://drive.google.com/file/d/1XXnbOXCwqovBhM7tpWrfgjDaCpf1ItxG/view?usp=share_link)
-[Vídeo do Braço Robótico funcionando com o Eletroimã](https://drive.google.com/file/d/1wATEEbIaDI8gdZqeeBoirgRW7wp0ONYF/view?usp=share_link)
+
+### Vídeo do Braço Robótico
+<iframe width="560" height="315" src="https://www.youtube.com/embed/9Ak5891op9U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+### Vídeo do Braço Robótico funcionando com o Eletroimã
+<iframe width="560" height="315" src="https://youtube.com/shorts/RmgzJqTKww4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
 
 ## Eletroimã
-A partir da arquitetura da solução, para o funcionamento do eletroimã foi utilizada a ponte H que aciona o imã, sem o uso do PWM, com um botão on/off básico. Assim, abaixo é possível observar o teste do eletroimã sendo acionado: [Vídeo do Eletroimã](https://drive.google.com/file/d/1XMPLq9Y_FeFcGYrzqDrQreFy3z2WW-NQ/view?usp=share_link)
+A partir da arquitetura da solução, para o funcionamento do eletroimã foi utilizada a ponte H que aciona o imã, sem o uso do PWM, com um botão on/off básico. Assim, abaixo é possível observar o teste do eletroimã sendo acionado:
+
+### Vídeo do Eletroimã
+<iframe width="560" height="315" src="https://youtube.com/shorts/ryoXvXvyKvg?feature=share" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 ## Shaker
-Assim como o eletroimã, e a partir da arquitetura da solução, para o shaker (atuador) foi utilizada a ponte H que o aciona. Posto isso, é possível observar o teste do shaker sendo acionado: [Vídeo do Shaker](https://drive.google.com/file/d/1aKnpKJqT3iWdUGoq9t6nZmuSdV9F_K-X/view?usp=share_link)
+Assim como o eletroimã, e a partir da arquitetura da solução, para o shaker (atuador) foi utilizada a ponte H que o aciona. Posto isso, é possível observar o teste do shaker sendo acionado: 
+
+### Vídeo do Shaker
+<iframe width="560" height="315" src="https://youtube.com/shorts/p4DXiTl25Kk?feature=share" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 # Teste de Software
 
