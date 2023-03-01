@@ -279,7 +279,7 @@ Posto isso, é possível observar o teste do shaker sendo acionado:
 #### Vídeo do Shaker
 
 <video width="560" height="315" autoplay>
-  <source src="https://youtube.com/embed/p4DXiTl25Kk?feature=share" type="video/mp4">
+  <source src="video/video1.mp4" type="video/mp4">
 </video>
 
 
