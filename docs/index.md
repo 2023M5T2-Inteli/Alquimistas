@@ -210,14 +210,10 @@ Personalidade: Dinâmico, curioso e apaixonado por soluções tecnológicas inov
 
 ## Módulos do Sistema e Visão Geral (Big Picture)
 
-Com base na estrutura de Arquitetura desenvolvida para a solução proposta, avaliamos os inputs e outputs esperados para cada sistema de blocos e cada componente do sistema. 
-
-![img](https://github.com/2023M5T2-Inteli/alquimistas/blob/main/docs/img/sprint2/inputs_outputs.png)
-
 ## Descrição dos Subsistemas
 
 ### Bloco de Interface 
-O Bloco de Interface consiste em um sistema visivel para o usuário poder realizar o controle dos componentes do projeto. Sendo o principal processo o ciclo de coleta de materiais por meio de campos magnéticos. Mas podendo também interagir de forma individual com os demais componentes do sistema. 
+O Bloco de Interface consiste em um sistema visual para o usuário poder realizar o controle dos componentes do projeto. Sendo o principal processo o ciclo de coleta de materiais por meio de campos magnéticos. Mas podendo também interagir de forma individual com os demais componentes do sistema. 
 
 ### Braço Robótico
 O componente do braço robótico é o Dobot Magician Lite, desse modo, esse é o principal responsável por executar a trajetória do processo descrito no item "Bloco de Interface". 
@@ -232,6 +228,43 @@ Sistema integrado que abarca o código do servidor de interface, assim como os c
 2. Ponte H: A ponte H é um circuito que serve para variar o sentido da corrente em uma determinada carga, bem como controlar sua potência.
   <br>2.1. Elétroimã: O eletroímã é um dispositivo formado por um núcleo de ferro envolto por um solenoide (bobina) que, mediante uma indução de corrente, gera campo magnético.
   <br>2.2. Shaker: O Micro Motor Vibracall é um tipo de motor de tamanho bem reduzido, responsável por produzir vibrações.
+
+## Relatório de entrada e saídas
+Com base na estrutura de Arquitetura desenvolvida para a solução proposta, avaliamos os inputs e outputs esperados para cada sistema de blocos e cada componente do sistema. 
+|Indice|Bloco              |Componente de Entrada|Leitura da Entrada              |Componente de Saída |Leitura da Saída                    |Descrição                                                                                                                       |
+|------|-------------------|---------------------|--------------------------------|--------------------|------------------------------------|--------------------------------------------------------------------------------------------------------------------------------|
+|1	   |Robô               |Computador 	         |Sinal de Inicio                 |Dobot Magician Lite |Movimentação                        |Ao acionarmos via computador, o robô irá se movimentar de acordo com as coordenadas corretas.                                   |
+|2	   |Robô               |Computador 	         |Sinal de Encerramento	          |Dobot Magician Lite |Pausa no Movimento	                |Ao encerrarmos o movimento via computador, o robô irá parar de se movimentar.                                                   |
+|3	   |Backend 	       |Computador 	         |Acionamento da Raspberry Pi Pico|Raspberry Pi Pico   |Inicia o Código no Microcontrolador	|Ao iniciar o código o raspberry pi pico se torna responsável pela atuação de alguns componentes no sistema.                     |
+|4	   |Sistemas Embarcados|Raspberry Pi Pico	 |Sinal de Inicio - Acionamento   |Ponte H	           |Alimentação do Shaker e do Eletroimã|Ao iniciar o código o raspberry pi pico ele alimenta a ponte H e essa por sua vez alimenta os componentes do Shaker e Eletroimã |
+|5	   |Sistemas Embarcados|Ponte H	             |Sinal de Inicio - Acionamento   |Shaker 	           |Vibração do Shaker 	                |Ao iniciar a alimentação do shaker haverá um botão de acionamento na interface que irá permitir o acionamento do Shaker.        |
+|6	   |Sistemas Embarcados|Ponte H	             |Sinal de Inicio - Acionamento   |Eletroimã	       |Criação de Campo Magnético	        |Ao iniciar a alimentação do eletroimã haverá um botão de acionamento na interface que irá permitir o acionamento do mesmo.      |
+|7	   |Interface	       |Computador 	         |Acionamento do Shaker           |Shaker 	           |Vibração do Shaker 	                |Ao acionar o shaker via interface, ele inicia sua atuação.                                                                      |
+|8	   |Interface	       |Computador 	         |Acionamento do Eletroimã	      |Eletroimã	       |Criação de Campo Magnético	        |Ao acionar o eletroimã via interface, ele inicia sua atuação.                                                                   |
+## Testes de Componentes - Versão 1 
+
+### Braço robótico (Dobot Magician)
+O braço mecânico foi testado nas seguintes etapas.
+
+1. Inicialmente, foi realizada a conexão do braço via USB. Posto isso, foi possível explorar as movimentações e funcionalidades do robô (além dos 'acessórios' do robô, como a garra, caneta, sucção) a partir do software Dobot Studio.
+2. Com o conhecimento dos limites da movimentação do braço e seu alcance em relação as três bandejasjá posicionadas para a realização da separação magnética, foi instalada a biblioteca pronta, PyDobot, que realiza a comunicação com o robô e códigos em Python, onde testamos os movimentos do Dobot. Posteriormente, criamos uma classe para o desenvolvimento do script da movimentação do robô.
+3. Após um feedback do cliente, criamos um movimento da garra em uma das bandejas, que poderá funcionar como um "shaker".
+
+
+[Vídeo do Teste do Braço Robótico](https://drive.google.com/file/d/1XXnbOXCwqovBhM7tpWrfgjDaCpf1ItxG/view?usp=share_link)
+[Vídeo do Braço Robótico funcionando com o Eletroimã](https://drive.google.com/file/d/1wATEEbIaDI8gdZqeeBoirgRW7wp0ONYF/view?usp=share_link)
+
+### Eletroimã (na Ponte H)
+
+A partir da arquitetura da solução, estudamos o método de PWM para o funcionamento do eletroimã. Contudo, após discussões no grupo foi utilizada a ponte H que aciona o imã com um botão liga e desliga básico. Posteriormente, será possível conectar esse script ao servidor, e consequentemente ao frontend. 
+
+Assim, abaixo é possível observar o teste do eletroimã sendo acionado: [Vídeo do Eletroimã](https://drive.google.com/file/d/1XMPLq9Y_FeFcGYrzqDrQreFy3z2WW-NQ/view?usp=share_link)
+
+### Shaker (na Ponte H)
+
+Assim como o eletroimã, e a partir da arquitetura da solução, para o funcionamento do shaker (atuador) foi testado na ponte H, por ser um método mais simples. 
+
+Posto isso, é possível observar o teste do shaker sendo acionado: [Vídeo do Shaker](https://drive.google.com/file/d/1aKnpKJqT3iWdUGoq9t6nZmuSdV9F_K-X/view?usp=share_link)
 
 ### Requisitos de software
 
@@ -263,41 +296,25 @@ Sistema integrado que abarca o código do servidor de interface, assim como os c
 
 ## Wireframe + Storyboard - Versão 1
 
-Para o desenvolvimento da interface do usuário optamos por uma aplicação web, a qual sua primeira versão consiste em uma página para realizar a conexão com os elementos: Wifi, Shaker e Eletroimã.
+Para o desenvolvimento da interface do usuário optamos por uma aplicação web, com uma estrutura desenvolvida com base nas necessidades de entradas e saídas vinculadas ao bloco de Interface na Arquitetura da Solução.
+
+Dessa maneira, a primeira versão consiste em uma página com um modal para realizar o acionamento dos componentes do sistema: Wifi, Shaker e Eletroimã.
+
+![img](https://github.com/2023M5T2-Inteli/alquimistas/blob/main/docs/img/sprint2/interface.png)
 
 [Wireframe no Figma](https://www.figma.com/file/SURaYJTPLilelYLFrS4gdi/Front-IPT?node-id=0%3A1&t=6frlueaWTHFUkmnN-0)
 
+
 ## Design de Interface - Guia de Estilos
-A estrutura da interface foi desenvolvida com base nas necessidades de entradas e saídas vinculadas ao bloco de Interface na Arquitetura da Solução. 
 
 Desse modo, foi desenvolvida uma interface gráfica no Figma que tem como objetivo o acionamento de componentes do sistema: 
 
-![img](https://github.com/2023M5T2-Inteli/alquimistas/blob/main/docs/img/sprint2/interface.png)
 
 # Projeto de Banco de Dados
 
 ## Modelo Conceitual
 
 ## Modelo Lógico
-
-# Teste de Hardware - Versão 1 
-
-## Braço robótico (Dobot Magician)
-Inicialmente, foi realizada a conexão do braço via USB. Posto isso, ao conectar a um notebook com o código desenvolvido em python foi possível testar os primeiros movimentos do Dobot. 
-
-Dessa maneira, durante o desenvolvimento do código testamos os limites do braço, além de seu alcance com as três bandejas já posicionadas para a realização da separação magnética. 
-
-Ademais, para a distribuição da movimentação entre as três bandejas desenvolvemos um teste de movimento, além de que em um das bandejas testamos a garra girando para atuar como "shaker".
-
-Assim, o teste foi bem sucedido e ao observar o código estão presentes as melhores coordenadas.
-[Vídeo do Braço Robótico](https://drive.google.com/file/d/1XXnbOXCwqovBhM7tpWrfgjDaCpf1ItxG/view?usp=share_link)
-[Vídeo do Braço Robótico funcionando com o Eletroimã](https://drive.google.com/file/d/1wATEEbIaDI8gdZqeeBoirgRW7wp0ONYF/view?usp=share_link)
-
-## Eletroimã
-A partir da arquitetura da solução, para o funcionamento do eletroimã foi utilizada a ponte H que aciona o imã, sem o uso do PWM, com um botão on/off básico. Assim, abaixo é possível observar o teste do eletroimã sendo acionado: [Vídeo do Eletroimã](https://drive.google.com/file/d/1XMPLq9Y_FeFcGYrzqDrQreFy3z2WW-NQ/view?usp=share_link)
-
-## Shaker
-Assim como o eletroimã, e a partir da arquitetura da solução, para o shaker (atuador) foi utilizada a ponte H que o aciona. Posto isso, é possível observar o teste do shaker sendo acionado: [Vídeo do Shaker](https://drive.google.com/file/d/1aKnpKJqT3iWdUGoq9t6nZmuSdV9F_K-X/view?usp=share_link)
 
 # Teste de Software
 
