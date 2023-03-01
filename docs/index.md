@@ -328,12 +328,10 @@ Ademais, para a distribuição da movimentação entre as três bandejas desenvo
 Assim, o teste foi bem sucedido e ao observar o código estão presentes as melhores coordenadas.
 
 ### Vídeo do Braço Robótico
-
 <iframe width="560" height="315" src="https://www.youtube.com/embed/9Ak5891op9U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 ### Vídeo do Braço Robótico funcionando com o Eletroimã
 <iframe width="560" height="315" src="https://youtube.com/shorts/RmgzJqTKww4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-
 
 ## Eletroimã
 A partir da arquitetura da solução, para o funcionamento do eletroimã foi utilizada a ponte H que aciona o imã, sem o uso do PWM, com um botão on/off básico. Assim, abaixo é possível observar o teste do eletroimã sendo acionado:
