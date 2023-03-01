@@ -3,7 +3,7 @@
 <td>
 <a href= "https://www.ipt.br/"><img src="https://www.ipt.br/imagens/logo_ipt.gif" alt="IPT" border="0" width="70%"></a>
 </td>
-<td><a href= "https://www.inteli.edu.br/"><img src="https://www.inteli.edu.br/wp-content/uploads/2022/04/28103439/Logo-Container.png" alt="Inteli - Instituto de Tecnologia e Liderança" border="0" width="30%"></a>
+<td><a href= "https://www.inteli.edu.br/"><img src="https://camo.githubusercontent.com/2dec1e5c541f0802d0d2e49a39062ea6d9a375d8a8086ffed7e69e686b2f227e/68747470733a2f2f7777772e696e74656c692e6564752e62722f77702d636f6e74656e742f75706c6f6164732f323032312f30382f32303137323032382f6d617263615f312d322e706e67" alt="Inteli - Instituto de Tecnologia e Liderança" border="0" width="30%"></a>
 </td>
 </tr>
 </table>
@@ -328,6 +328,7 @@ Ademais, para a distribuição da movimentação entre as três bandejas desenvo
 Assim, o teste foi bem sucedido e ao observar o código estão presentes as melhores coordenadas.
 
 ### Vídeo do Braço Robótico
+
 <iframe width="560" height="315" src="https://www.youtube.com/embed/9Ak5891op9U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 ### Vídeo do Braço Robótico funcionando com o Eletroimã
