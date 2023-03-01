@@ -250,10 +250,9 @@ O braço mecânico foi testado nas seguintes etapas.
 2. Com o conhecimento dos limites da movimentação do braço e seu alcance em relação as três bandejasjá posicionadas para a realização da separação magnética, foi instalada a biblioteca pronta, PyDobot, que realiza a comunicação com o robô e códigos em Python, onde testamos os movimentos do Dobot. Posteriormente, criamos uma classe para o desenvolvimento do script da movimentação do robô.
 3. Após um feedback do cliente, criamos um movimento da garra em uma das bandejas, que poderá funcionar como um "shaker".
 
+[Vídeo do Teste do Braço Robótico](https://www.youtube.com/embed/9Ak5891op9U)
 
-[Vídeo do Teste do Braço Robótico]("https://www.youtube.com/embed/9Ak5891op9U")
-
-[Vídeo do Braço Robótico funcionando com o Eletroimã]("https://youtube.com/shorts/RmgzJqTKww4?feature=share")
+[Vídeo do Braço Robótico funcionando com o Eletroimã](https://youtube.com/shorts/RmgzJqTKww4?feature=share)
 
 
 ### Eletroimã (na Ponte H)
@@ -262,7 +261,7 @@ A partir da arquitetura da solução, estudamos o método de PWM para o funciona
 
 Assim, abaixo é possível observar o teste do eletroimã sendo acionado: 
 
-[Vídeo do Eletroimã]("https://youtube.com/shorts/ryoXvXvyKvg?feature=share")
+[Vídeo do Eletroimã](https://youtube.com/shorts/ryoXvXvyKvg?feature=share)
 
 
 ### Shaker (na Ponte H)
@@ -271,7 +270,7 @@ Assim como o eletroimã, e a partir da arquitetura da solução, para o funciona
 
 Posto isso, é possível observar o teste do shaker sendo acionado: 
 
-[Vídeo do Shaker]("https://youtube.com/shorts/p4DXiTl25Kk?feature=share")
+[Vídeo do Shaker](https://youtube.com/shorts/p4DXiTl25Kk?feature=share)
 
 
 ### Requisitos de software
