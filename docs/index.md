@@ -278,9 +278,10 @@ Posto isso, é possível observar o teste do shaker sendo acionado:
 
 #### Vídeo do Shaker
 
-<iframe width="420" height="315"
-src="https://youtube.com/embed/p4DXiTl25Kk?feature=share">
-</iframe>
+<video width="560" height="315" autoplay>
+  <source src="https://youtube.com/embed/p4DXiTl25Kk?feature=share" type="video/mp4">
+</video>
+
 
 ### Requisitos de software
 
