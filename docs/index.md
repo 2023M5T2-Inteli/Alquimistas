@@ -251,13 +251,10 @@ O braço mecânico foi testado nas seguintes etapas.
 3. Após um feedback do cliente, criamos um movimento da garra em uma das bandejas, que poderá funcionar como um "shaker".
 
 
-#### Vídeo do Teste do Braço Robótico
+[Vídeo do Teste do Braço Robótico]("https://www.youtube.com/embed/9Ak5891op9U")
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/9Ak5891op9U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+[Vídeo do Braço Robótico funcionando com o Eletroimã]("https://youtube.com/shorts/RmgzJqTKww4?feature=share")
 
-#### Vídeo do Braço Robótico funcionando com o Eletroimã
-
-<iframe width="560" height="315" src="https://youtube.com/shorts/RmgzJqTKww4?feature=share" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 ### Eletroimã (na Ponte H)
 
@@ -265,9 +262,7 @@ A partir da arquitetura da solução, estudamos o método de PWM para o funciona
 
 Assim, abaixo é possível observar o teste do eletroimã sendo acionado: 
 
-#### Vídeo do Eletroimã
-
-<iframe width="560" height="315" src="https://youtube.com/shorts/ryoXvXvyKvg?feature=share" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+[Vídeo do Eletroimã]("https://youtube.com/shorts/ryoXvXvyKvg?feature=share")
 
 
 ### Shaker (na Ponte H)
@@ -276,11 +271,7 @@ Assim como o eletroimã, e a partir da arquitetura da solução, para o funciona
 
 Posto isso, é possível observar o teste do shaker sendo acionado: 
 
-#### Vídeo do Shaker
-
-<video width="560" height="315" autoplay>
-  <source src="video/video1.mp4" type="video/mp4">
-</video>
+[Vídeo do Shaker]("https://youtube.com/shorts/p4DXiTl25Kk?feature=share")
 
 
 ### Requisitos de software
