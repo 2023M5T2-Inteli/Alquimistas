@@ -250,9 +250,9 @@ O braço mecânico foi testado nas seguintes etapas.
 2. Com o conhecimento dos limites da movimentação do braço e seu alcance em relação as três bandejasjá posicionadas para a realização da separação magnética, foi instalada a biblioteca pronta, PyDobot, que realiza a comunicação com o robô e códigos em Python, onde testamos os movimentos do Dobot. Posteriormente, criamos uma classe para o desenvolvimento do script da movimentação do robô.
 3. Após um feedback do cliente, criamos um movimento da garra em uma das bandejas, que poderá funcionar como um "shaker".
 
-[Vídeo do Teste do Braço Robótico](https://www.youtube.com/embed/9Ak5891op9U)
+[Vídeo do Braço Robótico](https://www.youtube.com/embed/9Ak5891op9U)
 
-[Vídeo do Braço Robótico funcionando com o Eletroimã](https://youtube.com/shorts/RmgzJqTKww4?feature=share)
+[Vídeo do Braço Robótico funcionando com o Eletroimã](https://youtube.com/shorts/RmgzJqTKww4)
 
 
 ### Eletroimã (na Ponte H)
@@ -263,7 +263,6 @@ Assim, abaixo é possível observar o teste do eletroimã sendo acionado:
 
 [Vídeo do Eletroimã](https://youtube.com/shorts/ryoXvXvyKvg?feature=share)
 
-
 ### Shaker (na Ponte H)
 
 Assim como o eletroimã, e a partir da arquitetura da solução, para o funcionamento do shaker (atuador) foi testado na ponte H, por ser um método mais simples. 
@@ -271,7 +270,6 @@ Assim como o eletroimã, e a partir da arquitetura da solução, para o funciona
 Posto isso, é possível observar o teste do shaker sendo acionado: 
 
 [Vídeo do Shaker](https://youtube.com/shorts/p4DXiTl25Kk?feature=share)
-
 
 ### Requisitos de software
 
@@ -322,35 +320,6 @@ Desse modo, foi desenvolvida uma interface gráfica no Figma que tem como objeti
 ## Modelo Conceitual
 
 ## Modelo Lógico
-
-# Teste de Hardware - Versão 1 
-
-## Braço robótico (Dobot Magician)
-Inicialmente, foi realizada a conexão do braço via USB. Posto isso, ao conectar a um notebook com o código desenvolvido em python foi possível testar os primeiros movimentos do Dobot. 
-
-Dessa maneira, durante o desenvolvimento do código testamos os limites do braço, além de seu alcance com as três bandejas já posicionadas para a realização da separação magnética. 
-
-Ademais, para a distribuição da movimentação entre as três bandejas desenvolvemos um teste de movimento, além de que em um das bandejas testamos a garra girando para atuar como "shaker".
-
-Assim, o teste foi bem sucedido e ao observar o código estão presentes as melhores coordenadas.
-
-### Vídeo do Braço Robótico
-<iframe width="560" height="315" src="https://www.youtube.com/embed/9Ak5891op9U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-
-### Vídeo do Braço Robótico funcionando com o Eletroimã
-<iframe width="560" height="315" src="https://youtube.com/shorts/RmgzJqTKww4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-
-## Eletroimã
-A partir da arquitetura da solução, para o funcionamento do eletroimã foi utilizada a ponte H que aciona o imã, sem o uso do PWM, com um botão on/off básico. Assim, abaixo é possível observar o teste do eletroimã sendo acionado:
-
-### Vídeo do Eletroimã
-<iframe width="560" height="315" src="https://youtube.com/shorts/ryoXvXvyKvg?feature=share" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-
-## Shaker
-Assim como o eletroimã, e a partir da arquitetura da solução, para o shaker (atuador) foi utilizada a ponte H que o aciona. Posto isso, é possível observar o teste do shaker sendo acionado: 
-
-### Vídeo do Shaker
-<iframe width="560" height="315" src="https://youtube.com/shorts/p4DXiTl25Kk?feature=share" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 # Teste de Software
 
