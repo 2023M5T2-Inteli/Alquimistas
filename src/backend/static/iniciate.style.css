@@ -1,0 +1,93 @@
+body{
+    background: black;
+}
+
+.flex{
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo{
+    width: 95%%;
+    height: 70px;
+    margin-left: 1%;
+}
+
+.arm{
+    width: 45%;
+    height: 600px;    
+    position: absolute;
+}
+
+.form {
+    width: 500px;
+    height: 500px;
+    border-radius: 25px;
+    padding: 1.5rem;
+    background: #161616;
+    margin-top: 4%;
+    margin-right: 5%;
+}
+
+.title{
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    display: grid;
+    place-items: left;
+    color: #FFFFFF;
+    margin-bottom: 4%;
+    font-size: 24px;
+}
+
+.sub-title{
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    display: grid;
+    place-items: left;
+    color: #ffffff79;
+    margin-bottom: 10%;
+}
+
+.seletion-group{
+    display: grid;
+    align-items: center;
+    grid-template-columns: repeat(2,1fr);
+    gap: 0.5rem;
+}
+
+.seletion-group2{
+    display: grid;
+    align-items: center;
+    grid-template-columns: repeat(2,1fr);
+    gap: 0.5rem;
+    margin: 5%;
+}
+
+.btn{
+    font-family: 'Montserrat', sans-serif;
+    display: grid;
+    padding: 0.35rem;
+    display: block;
+    text-decoration: none;
+    background-color: #FFFFFF29;
+    color: #FFFFFF;
+    text-align: center;
+    border-radius: 25px;
+    border: none;
+    width: 70%;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-bottom: 6%;
+}
+
+.btn:hover{
+    box-shadow: 0 0 0 2px #fff;
+}
+
+.card{
+    background-color: rgba(255, 255, 255, 0.15);
+    width: 30vw;
+    border-radius: 20pt;
+    height: 80px;
+    padding: 20px
+}
