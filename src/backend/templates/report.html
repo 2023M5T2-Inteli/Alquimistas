@@ -14,7 +14,7 @@
     <!-- Custom CSS -->
     <link rel="icon" href="{{ url_for('static', filename = 'images/icon-ipt.png') }}">
     <!-- <link rel="stylesheet" href="{{ url_for('static', filename = 'iniciate.style.css') }}"> -->
-    <link rel="stylesheet" href="/src/backend/static/iniciate.style.css">
+    <link rel="stylesheet" href="../static/report.style.css">
 </head>
 
 <body>
@@ -24,26 +24,18 @@
             <img class="arm" src="../static/images/braco_mecanico.png" alt="Braço robótico">
         </div>
         <div class="form">
-            <div class="container-btn">
-                <button class="btn">Iniciar rotina</button>
+            <p class="title" style="text-align: center;">Relatório</p>
+            <p class="sub-title" style="text-align: center;">Preencha as informações relacionadas a amostra em análise</p>
+            <div class="input-group">
+                <label for="projeto">Projeto</label>
+                <input type="text" name="projeto" id="projeto">
             </div>
-            <div class="dobot">
-                <div class="seletion-group">
-                    <div class="">
-                        <p class="title">Dobot Magician Lite</p>
-                        <p class="sub-title">Flask app v1.4</p>
-                    </div>
-                </div>
+            <div class="input-group">
+                <label for="amostra">Amostra</label>
+                <input type="text" name="amostra" id="amostra">
             </div>
-            <div class="report">
-                <button class="report-btn">
-                    <div class="report-text">
-                        Inserir relatório
-                    </div>
-                    <div class="report-img">
-                        <img class="next" src="../static/images/right-arrow.png">
-                    </div>
-                </button>
+            <div>
+                <a href="#" class="btn">Adicionar</a>
             </div>
         </div>
     </div>

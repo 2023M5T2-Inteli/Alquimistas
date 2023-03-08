@@ -21,10 +21,6 @@ body{
     right: 60%;
 }
 
-.next{
-    width: 30%;
-}
-
 .form {
     width: 500px;
     height: 500px;
@@ -33,6 +29,8 @@ body{
     background: #161616;
     margin-top: 4%;
     margin-right: 5%;
+    display: grid;
+    place-items: center;
 }
 
 .title{
@@ -66,50 +64,19 @@ body{
 .btn{
     font-family: 'Montserrat', sans-serif;
     display: grid;
-    padding: 0.35rem;
+    padding: 0.6rem;
     text-decoration: none;
-    background-color: #FFFFFF29;
-    color: #FFFFFF;
+    background-color: #ffffff;
+    color: #000000;
     align-items: center;
-    border-radius: 50%;
+    border-radius: 25px;
     border: none;
-    height: 140px;
     width: 30%;
     cursor: pointer;
     transition: 0.3s;
     margin-bottom: 6%;
-    margin-top: 15%;
-}
-
-.report-img{
-    width: 15%;
-}
-
-.report-text{
-    margin-left: 5%;
-}
-
-.report-btn{
-    margin-top: 20%;
-    font-family: 'Montserrat', sans-serif;
-    display: flex;
-    padding: 0.75rem;
-    text-decoration: none;
-    background-color: #FFFFFF29;
-    color: #FFFFFF;
-    border-radius: 15px;
-    border: none;
-    cursor: pointer;
-    transition: 0.3s;
-    width: 100%;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.report-btn:hover{
-    box-shadow: 0 0 0 2px #fff;
 }
 
 .btn:hover{
-    box-shadow: 0 0 0 2px #fff;
+    box-shadow: 0 0 0 2px #ffffff;
 }
