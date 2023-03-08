@@ -30,7 +30,7 @@ def routine():
     # arm.pickToggle()
 
     arm.disconnect()
-    return "FODA MUITO FODA!"
+    return render_template('status.html')
 
 
 
