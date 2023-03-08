@@ -29,8 +29,8 @@ def routine():
     arm.moveArmXY(128, -195, 14, 0)
     # arm.pickToggle()
 
-    arm.disconnect()
-    return "FODA MUITO FODA!"
+    # arm.disconnect()
+    return render_template('index.html')
 
 
 

@@ -26,7 +26,10 @@ class Dobot():
     # Disconnects the Dobot
 
     def __del__(self):
-        self.disconnect()
+        try:
+            self.disconnect()
+        except:
+            print("Já está desconectado!")
 
     # Verifies Dobot's connection
 

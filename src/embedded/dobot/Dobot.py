@@ -26,7 +26,10 @@ class Dobot():
     # Disconnects the Dobot
 
     def __del__(self):
-        self.disconnect()
+        try:
+            self.disconnect()
+        except:
+            print("Já está desconectado!")
 
     # Verifies Dobot's connection
 
@@ -70,7 +73,7 @@ class Dobot():
     def commandDelay(self, lastIndex):
         DType.SetQueuedCmdStartExec(self.api)
         while lastIndex > DType.GetQueuedCmdCurrentIndex(self.api)[0]:
-            DType.dSleep(2000)
+            DType.dSleep(200)
         DType.SetQueuedCmdStopExec(self.api)
 
     # Moves the Dobot to the coodinates (x,y,z,r)
