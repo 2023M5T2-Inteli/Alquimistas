@@ -1,7 +1,9 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, redirect
+import requests
 from Dobot import Dobot
 
 app = Flask(__name__)
+port = 'http://10.128.64.164'
 
 @app.route('/')
 def index():
@@ -13,7 +15,6 @@ def conection():
 
 @app.route('/routine')
 def routine():
-
     arm = Dobot(225, 3, 140, 0)
 
     arm.moveHome()
@@ -29,8 +30,28 @@ def routine():
     arm.moveArmXY(128, -195, 14, 0)
     # arm.pickToggle()
 
-    arm.disconnect()
-    return render_template('status.html')
+    return render_template('index.html')
+
+@app.route('/on')
+def control_on():
+    try:
+        requests.get('http://10.128.64.164/ON')
+    except:
+        return 'Gambiarra ON'
+    
+@app.route('/off')
+def control_off():
+    try:
+        requests.get('http://10.128.64.164/OFF')
+    except:
+        return 'Gambiarra OFF'
+    
+@app.route('/stop')
+def control_stop():
+    try:
+        requests.get('http://10.128.64.164/STOP')
+    except:
+        return 'Gambiarra STOP'
 
 
 
