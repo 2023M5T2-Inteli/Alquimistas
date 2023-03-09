@@ -79,6 +79,7 @@ body{
     transition: 0.3s;
     margin-bottom: 6%;
     margin-top: 15%;
+    text-align: center;
 }
 
 .btn-init{
@@ -97,7 +98,6 @@ body{
     transition: 0.3s;
     margin-bottom: 6%;
     margin-top: 15%;
-    text-align: center;
 }
 
 .report-img{

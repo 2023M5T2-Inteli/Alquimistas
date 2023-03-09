@@ -29,8 +29,29 @@ body{
     background: #161616;
     margin-top: 4%;
     margin-right: 5%;
+}
+
+label{
+    font-family: 'Montserrat', light;
+    margin-left: 1%;
     display: grid;
-    place-items: center;
+    color: #ffffff8f;
+    margin-bottom: 1%;
+    font-size: 14px;
+}
+
+input{
+    display: block;
+    width: 90%;
+    padding: 0.75rem;
+    border-radius: 15px;
+    border: none;
+    background-color: #FFFFFF29;
+    color:#ffffff64;
+}
+
+.input-group{
+    margin-top: 3%;
 }
 
 .title{
@@ -47,36 +68,47 @@ body{
     margin: 0;
     display: grid;
     color: #ffffff79;
-    justify-content: center;
+    font-size: 18px;
 }
 
-.seletion-group{
-    display: grid;
-    gap: 0.5rem;
-    justify-content: center;
-}
-
-.container-btn{
-    display: flex;
-    justify-content: center;
-}
-
-.btn{
+.btn-add{
     font-family: 'Montserrat', sans-serif;
     display: grid;
     padding: 0.6rem;
     text-decoration: none;
     background-color: #ffffff;
     color: #000000;
-    align-items: center;
-    border-radius: 25px;
+    border-radius: 15px;
     border: none;
-    width: 30%;
+    width: 25%;
     cursor: pointer;
     transition: 0.3s;
-    margin-bottom: 6%;
+    justify-content: center;
+    margin-right: 5%;
+}
+
+.btn-cancel{
+    font-family: 'Montserrat', sans-serif;
+    display: grid;
+    padding: 0.6rem;
+    text-decoration: none;
+    background-color: none;
+    color: #ffffff;
+    border-radius: 25px;
+    border: none;
+    width: 25%;
+    cursor: pointer;
+    transition: 0.3s;
+    justify-content: center;
+    margin-right: 5%;
 }
 
 .btn:hover{
     box-shadow: 0 0 0 2px #ffffff;
+}
+
+.button-group{
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 10%;
 }

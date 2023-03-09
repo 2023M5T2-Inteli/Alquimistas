@@ -13,8 +13,8 @@
 
     <!-- Custom CSS -->
     <link rel="icon" href="{{ url_for('static', filename = 'images/icon-ipt.png') }}">
-    <!-- <link rel="stylesheet" href="{{ url_for('static', filename = 'iniciate.style.css') }}"> -->
-    <link rel="stylesheet" href="../static/report.style.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'report.style.css') }}">
+    <!-- <link rel="stylesheet" href="../static/report.style.css"> -->
 </head>
 
 <body>
@@ -24,8 +24,8 @@
             <img class="arm" src="../static/images/braco_mecanico.png" alt="Braço robótico">
         </div>
         <div class="form">
-            <p class="title" style="text-align: center;">Relatório</p>
-            <p class="sub-title" style="text-align: center;">Preencha as informações relacionadas a amostra em análise</p>
+            <p class="title">Relatório</p>
+            <p class="sub-title">Preencha as informações relacionadas a amostra em análise</p>
             <div class="input-group">
                 <label for="projeto">Projeto</label>
                 <input type="text" name="projeto" id="projeto">
@@ -34,8 +34,23 @@
                 <label for="amostra">Amostra</label>
                 <input type="text" name="amostra" id="amostra">
             </div>
-            <div>
-                <a href="#" class="btn">Adicionar</a>
+            <div class="input-group">
+                <label for="data">Data</label>
+                <input style="width: 30%;" type="date" name="data" id="data">
+            </div>
+            <div style="display: flex;">
+                <div class="input-group" style="margin-right: 10%;">
+                    <label for="material">Material</label>
+                    <input style="width: 100%;" type="text" name="data" id="data">
+                </div>
+                <div class="input-group">
+                    <label for="massa">Massa (gramas)</label>
+                    <input style="width: 100%;" type="text" name="data" id="data">
+                </div>
+            </div>
+            <div class="button-group">
+                <a href="/" class="btn-cancel">Cancelar</a>
+                <a href="/" class="btn-add">Adicionar</a>
             </div>
         </div>
     </div>
