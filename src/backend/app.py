@@ -1,6 +1,23 @@
 from flask import Flask, render_template
+from flask_sqlalchemy import SQLAlchemy
 
+db = SQLAlchemy()
 app = Flask(__name__)
+app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///test.db"
+db.init_app(app)
+
+
+class Products(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    produto = db.Column(db.String(100))
+    amostra = db.Column(db.String(100))
+    data = db.Column(db.Date)
+    material = db.Column(db.String(100))
+    massa = db.Column(db.Float)
+
+@app.cli.command()
+def createdb():
+    db.create_all()
 
 @app.route('/')
 def index():
