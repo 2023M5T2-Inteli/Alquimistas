@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IPT | Instituto de Pesquisas Tecnológicas</title>
+
+    <!-- Custom fonts for this template -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="icon" href="{{ url_for('static', filename = 'images/icon-ipt.png') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'report.style.css') }}">
+    <!-- <link rel="stylesheet" href="../static/report.style.css"> -->
+</head>
+
+<body>
+    <div class="flex">
+        <div>
+            <img class="logo" src="../static/images/Logo_ipt.png" alt="logo ipt">
+            <img class="arm" src="../static/images/braco_mecanico.png" alt="Braço robótico">
+        </div>
+        <div class="form">
+            <p class="title">Relatório</p>
+            <p class="sub-title">Preencha as informações relacionadas a amostra em análise</p>
+            <div class="input-group">
+                <label for="projeto">Projeto</label>
+                <input type="text" name="projeto" id="projeto">
+            </div>
+            <div class="input-group">
+                <label for="amostra">Amostra</label>
+                <input type="text" name="amostra" id="amostra">
+            </div>
+            <div class="input-group">
+                <label for="data">Data</label>
+                <input style="width: 30%;" type="date" name="data" id="data">
+            </div>
+            <div style="display: flex;">
+                <div class="input-group" style="margin-right: 10%;">
+                    <label for="material">Material</label>
+                    <input style="width: 100%;" type="text" name="data" id="data">
+                </div>
+                <div class="input-group">
+                    <label for="massa">Massa (gramas)</label>
+                    <input style="width: 100%;" type="text" name="data" id="data">
+                </div>
+            </div>
+            <div class="button-group">
+                <a href="/" class="btn-cancel">Cancelar</a>
+                <a href="/" class="btn-add">Adicionar</a>
+            </div>
+        </div>
+    </div>
+
+</body>     
+</html>

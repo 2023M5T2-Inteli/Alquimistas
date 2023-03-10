@@ -7,7 +7,7 @@ port = 'http://10.128.64.164'
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    return render_template('iniciate.html')
 
 @app.route('/status')
 def conection():
@@ -37,14 +37,14 @@ def control_on():
     try:
         requests.get('http://10.128.64.164/ON')
     except:
-        return 'Gambiarra ON'
+        return render_template('end.html')
     
 @app.route('/off')
 def control_off():
     try:
         requests.get('http://10.128.64.164/OFF')
     except:
-        return 'Gambiarra OFF'
+        return render_template('iniciate.html')
     
 @app.route('/stop')
 def control_stop():
@@ -53,6 +53,9 @@ def control_stop():
     except:
         return 'Gambiarra STOP'
 
+@app.route('/report')
+def report():
+    return render_template('report.html')
 
 
 app.run(host = '0.0.0.0', port=3000, debug=True)
