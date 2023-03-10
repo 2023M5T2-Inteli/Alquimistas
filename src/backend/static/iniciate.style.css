@@ -93,6 +93,7 @@ body{
     border: none;
     height: 140px;
     width: 30%;
+    margin-left: 2%;
     cursor: pointer;
     transition: 0.3s;
     margin-bottom: 6%;

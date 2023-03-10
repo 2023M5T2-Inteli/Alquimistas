@@ -1,6 +1,7 @@
 from flask import Flask, render_template, redirect
 import requests
 from Dobot import Dobot
+import asyncio
 
 app = Flask(__name__)
 port = 'http://10.128.64.164'
@@ -33,25 +34,42 @@ def routine():
     return render_template('index.html')
 
 @app.route('/on')
-def control_on():
+async def control_on():
     try:
-        requests.get('http://10.128.64.164/ON')
+        #response = await requests.get('http://10.128.64.164/ON')
+        arm = Dobot(225, 3, 140, 0)
+
+        arm.moveHome()
+
+        arm.pickToggle()
+        arm.moveArmXY(189, 183, 151, 41)
+        arm.drawLine(200, 183, -10, 41, -150)
+        arm.moveArmXY(189, 183, 151, 41)
+        arm.moveHome()
+        arm.drawLine(302, 0, -10, 0, -100)
+        arm.rotateTool(90)
+        arm.moveHome()
+        arm.moveArmXY(128, -195, 14, 0)
+        return render_template('end.html')
+    
     except:
         return render_template('end.html')
     
 @app.route('/off')
-def control_off():
+async def control_off():
     try:
-        requests.get('http://10.128.64.164/OFF')
+        response = await requests.get('http://10.128.64.164/OFF')
+        return render_template('iniciate.html')
     except:
         return render_template('iniciate.html')
     
 @app.route('/stop')
-def control_stop():
+async def control_stop():
     try:
-        requests.get('http://10.128.64.164/STOP')
+        response = await requests.get('http://10.128.64.164/STOP')
+        return render_template('iniciate.html')
     except:
-        return 'Gambiarra STOP'
+        return render_template('iniciate.html')
 
 @app.route('/report')
 def report():

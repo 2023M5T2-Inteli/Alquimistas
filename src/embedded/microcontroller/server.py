@@ -5,8 +5,17 @@ import time
 import math
 
 
-in1 = machine.Pin(0, machine.Pin.OUT)
+in1 = machine.Pin(2, machine.Pin.OUT)
 in2 = machine.Pin(1, machine.Pin.OUT)
+
+# magnetic sensor sensitivity (mV/Gauss)
+sensitivity = 1.6
+
+# ADC0 pin for analog voltage reading
+adc = machine.ADC(0)
+
+# GPIO5 pin for digital signal reading
+hall_sensor = machine.Pin(5, machine.Pin.IN)
 
 wlan = network.WLAN(network.STA_IF)
 wlan.active(True)
@@ -41,6 +50,7 @@ def server(connection):
             pass
 
         print(request)
+        hall()
         
         if(request == '/ON'):
             in1.low()
@@ -66,6 +76,16 @@ def open_socket(ip):
     connection.listen(1)
     print(connection)
     return connection
+
+def hall():
+    analog_value = adc.read_u16()
+    print("Tensão analógica: ", analog_value)
+
+    # calculate the magnetic field in Gauss
+    campo_magnetico = analog_value / sensitivity
+    
+    print("Campo magnético: ", campo_magnetico, "Gauss")
+    return campo_magnetico
 
 try:
     if ip is not None:
