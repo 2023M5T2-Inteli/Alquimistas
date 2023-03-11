@@ -15,7 +15,7 @@ def conection():
     return render_template('status.html')
 
 @app.route('/routine')
-def routine():
+async def routine():
     arm = Dobot(225, 3, 140, 0)
 
     arm.moveHome()
@@ -36,23 +36,11 @@ def routine():
 @app.route('/on')
 async def control_on():
     try:
-        #response = await requests.get('http://10.128.64.164/ON')
-        arm = Dobot(225, 3, 140, 0)
-
-        arm.moveHome()
-
-        arm.pickToggle()
-        arm.moveArmXY(189, 183, 151, 41)
-        arm.drawLine(200, 183, -10, 41, -150)
-        arm.moveArmXY(189, 183, 151, 41)
-        arm.moveHome()
-        arm.drawLine(302, 0, -10, 0, -100)
-        arm.rotateTool(90)
-        arm.moveHome()
-        arm.moveArmXY(128, -195, 14, 0)
+        response = await requests.get('http://10.128.64.164/ON')
         return render_template('end.html')
-    
-    except:
+    except Exception as e:
+        print(e)
+        await routine()
         return render_template('end.html')
     
 @app.route('/off')
