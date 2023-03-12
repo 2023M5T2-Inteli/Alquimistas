@@ -322,10 +322,57 @@ Desse modo, foi desenvolvida uma interface gráfica no Figma que tem como objeti
 ## Modelo Lógico
 
 # Teste de Software
+### Implementação de Servidor 
+### Servidor com Acionamento de Hardware 
 
-## Testes Unitários
+# Prototipação de Hardware
+## Projeto dos dispositivos mecânicos
+Inicialmente o projeto consiste na utilização dos dispositivos disponibilizados pelo laboratório de eletrônica. E os sistêmas mecânicos se baseiam em uma integração entre componentes eletrônicos e as estruturas disponíveis do Dobot Magician Lite. 
 
-## Teste de Usabilidade
+## Projeto dos dispositivos eletrônicos
+### Listagem de Placa: 
+1) Placa Central: Foi elaborada a proposta de uma única placa de acionamento dos dispositivos eletrônicos. A placa consiste nos sistemas principais a serem acionados como Ponte H, Elétroimã, Módulo de Transistor de Efeito Hall e o Raspberry Pi Pico que é responsável por criar a conexão com o servidor em Flask descrito no item de "Teste de Software". 
+
+### Esquemático da Placa:
+A seguir temos o esquemático da estrutura eletrônica da placa, de modo que, seguindo as descrições acima referentes a placa principal, foi desenvolvido o seguinte esquemático: 
+
+- Imagem do Esquematico 
+
+### Layout da Placa:
+Com base no esquematico desenvolvido por meio do software easyEDA, foi possível estruturar o layout de base da placa, assim como uma visualização do modelo 3D da placa. 
+
+- Imagem do Layout
+- Imagem Base 3D 
+
+### Lista de Materiais:
+1) Placa de Trilhas com Fenolite 
+2) Raspberry Pi Pico W 
+3) Soquete para Raspberry Pi Pico W 
+4) Conjunto de Jumpers 
+5) Ponte H - L298N
+6) Amplificador 
+7) Módulo de Transistor de Efeito Hall 
+8) 2 Eletroimãs 
+9) Fonte de 5V - Alimentação 
+
+### Método de fabricação:
+1) Inicialmente foi desenvolvido o esquemático de base para o circuito. 
+2) Posicionamento de Componentes 
+3) Soldagem de Componentes 
+4) Testes de Funcionamento 
+
+## Fabricação dos Dispositivos Eletrônicos
+1) Em seguida foi realizado o teste com o circuito em protoboard para garantir o funcionamento do circuito. 
+2) Posicionamento dos componentes na placa 
+3) Soldagem do Soquete - Principal 
+4) Soldagem de Jumpers 
+5) Posicionamento do Amplificador e Soldagem 
+6) Posicionamento do Módulo do Transistor de Efeito Hall e Soldagem 
+7) Conexão de Jumpers 
+
+
+## Validação dos Dipositivos Eletrônicos
+### Métodos de Validação e Testes 
 
 
 # Análise de Dados

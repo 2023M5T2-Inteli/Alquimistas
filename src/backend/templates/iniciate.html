@@ -47,6 +47,44 @@
             <div class="">
               <p class="title">Dobot Magician Lite</p>
               <p class="sub-title">Flask app v1.4</p>
+        <div class="form">
+            <div class="container-btn">
+                    <a href="/end" onclick="changeClass()" class="btn-init" id="btn">Iniciar rotina</a>
+                <!-- <script>
+                    function changeClass() {
+                        var button = document.getElementById("btn");
+                        console.log(button);
+                        // if (button.first().hasClass('btn-init')){
+                        //     button.removeClass("btn-init").addClass("btn-end");
+                        // }
+                        // else{
+                        //     button.removeClass("btn-end").addClass("btn-init");
+                        // }
+                    }
+                </script> -->
+            </div>
+            <div class="dobot">
+                <div class="seletion-group">
+                    <div class="">
+                        <p class="title">Dobot Magician Lite</p>
+                        <p class="sub-title">Flask app v1.4</p>
+                        <div class="slider">
+                            <label for="fader">Ímã</label>
+                            <input type="range" min="0" max="3" value="0" id="fader"oninput="rangeValue.innerText = this.value">
+                            <p id="rangeValue">0</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="report">
+                <a href="/report" class="report-btn">
+                    <div class="report-text">
+                        Inserir relatório
+                    </div>
+                    <div class="report-img">
+                        <img class="next" src="../static/images/right-arrow.png">
+                    </div>
+                </a>
             </div>
           </div>
         </div>
