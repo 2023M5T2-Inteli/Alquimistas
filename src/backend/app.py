@@ -1,5 +1,5 @@
 from flask import Flask, render_template, redirect
-import requests
+#import requests
 from Dobot import Dobot
 import asyncio
 
@@ -62,6 +62,5 @@ async def control_stop():
 @app.route('/report')
 def report():
     return render_template('report.html')
-
-
+    
 app.run(host = '0.0.0.0', port=3000, debug=True)
