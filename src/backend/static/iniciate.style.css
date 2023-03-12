@@ -51,7 +51,10 @@ body{
     color: #ffffff79;
     justify-content: center;
 }
-
+#error{
+    color: #ff0000;text-align: center;
+display: none;
+}
 .seletion-group{
     display: grid;
     gap: 0.5rem;
@@ -63,7 +66,7 @@ body{
     justify-content: center;
 }
 
-.btn-end{
+.btn-on{
     font-family: 'Montserrat', sans-serif;
     display: grid;
     padding: 0.35rem;
@@ -81,7 +84,7 @@ body{
     margin-top: 15%;
 }
 
-.btn-init{
+.btn-off{
     font-family: 'Montserrat', sans-serif;
     display: grid;
     padding: 0.35rem;
