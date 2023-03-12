@@ -14,7 +14,7 @@
     <!-- Custom CSS -->
     <link rel="icon" href="{{ url_for('static', filename = 'images/icon-ipt.png') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename = 'iniciate.style.css') }}">
-    <!-- <link rel="stylesheet" href="/src/backend/static/iniciate.style.css"> -->
+    <link rel="stylesheet" href="/src/backend/static/iniciate.style.css">
 </head>
 
 <body>
@@ -44,6 +44,11 @@
                     <div class="">
                         <p class="title">Dobot Magician Lite</p>
                         <p class="sub-title">Flask app v1.4</p>
+                        <div class="slider">
+                            <label for="fader">Ímã</label>
+                            <input type="range" min="0" max="3" value="0" id="fader"oninput="rangeValue.innerText = this.value">
+                            <p id="rangeValue">0</p>
+                        </div>
                     </div>
                 </div>
             </div>
