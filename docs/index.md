@@ -396,6 +396,11 @@ Com base no diagrama desenvolvido por meio do software EasyEDA, tornou-se possí
 6) Posicionamento do Módulo do Transistor de Efeito Hall e Soldagem 
 7) Conexão de Jumpers 
 
+Estruturadas todas as etapas, foi desenvolvido o circuito demonstrado nas imagens abaixo: 
+<img src="https://github.com/2023M5T2-Inteli/alquimistas/blob/main/docs/img/sprint2/circuito1.png" style="width: 30%"/>
+<img src="https://github.com/2023M5T2-Inteli/alquimistas/blob/main/docs/img/sprint2/circuito2.png" style="width: 30%"/>
+<img src="https://github.com/2023M5T2-Inteli/alquimistas/blob/main/docs/img/sprint2/circuito3.png" style="width: 30%"/>
+<img src="https://github.com/2023M5T2-Inteli/alquimistas/blob/main/docs/img/sprint2/circuito4.png" style="width: 30%"/>
 
 ## Validação dos Dipositivos Eletrônicos
 ### Métodos de Validação e Testes 
