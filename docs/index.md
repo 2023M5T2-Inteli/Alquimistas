@@ -323,6 +323,17 @@ Desse modo, foi desenvolvida uma interface gráfica no Figma que tem como objeti
 
 # Teste de Software
 ### Implementação de Servidor 
+Para podermos estruturar a renderização das páginas construídas para o software, foi necessário realizar o desenvolvimento de um servidor utilizando a biblioteca Flask para Python. O Flask é um framework web leve e flexível que permite a construção de aplicativos web de forma fácil e eficiente. Com o Flask, é possível criar rotas de acesso às páginas do aplicativo, além de realizar o gerenciamento das solicitações e respostas HTTP.
+
+Desse modo, as páginas do software são acionadas por meio das rotas desenvolvidas no servidor. Inicialmente, o servidor foi composto pelas páginas de acionamento, parada e envio de relatório. Cada uma dessas páginas é responsável por uma funcionalidade específica do software, como a ativação dos dispositivos eletrônicos, a parada do sistema e o envio de relatórios de funcionamento.
+
+O funcionamento do servidor está ocorrendo de forma local, de modo que é necessário realizar o seguinte processo para acessar a interface do software:
+
+1) Acessar a pasta src/backend: A pasta onde está localizado o código do servidor Flask.
+2) Rodar o seguinte comando: `python app.py` 
+Este comando irá iniciar o servidor Flask e disponibilizar as rotas de acesso às páginas do software.
+3) Assim, irá iniciar o servidor e você precisará acessar o IP fornecido pelo servidor para acessar localmente
+
 ### Servidor com Acionamento de Hardware 
 
 # Prototipação de Hardware
@@ -331,15 +342,27 @@ Inicialmente o projeto consiste na utilização dos dispositivos disponibilizado
 
 ## Projeto dos dispositivos eletrônicos
 ### Listagem de Placa: 
-1) Placa Central: Foi elaborada a proposta de uma única placa de acionamento dos dispositivos eletrônicos. A placa consiste nos sistemas principais a serem acionados como Ponte H, Elétroimã, Módulo de Transistor de Efeito Hall e o Raspberry Pi Pico que é responsável por criar a conexão com o servidor em Flask descrito no item de "Teste de Software". 
+1) Placa Central: Foi desenvolvida a proposta de uma placa central única para o acionamento dos dispositivos eletrônicos do sistema em questão. A placa em questão engloba os sistemas principais que serão acionados, como a Ponte H, o Elétroimã, o Módulo de Transistor de Efeito Hall e o Raspberry Pi Pico.
+
+A escolha por uma única placa de acionamento se justifica pela necessidade de uma integração eficiente dos sistemas, visando maximizar a eficiência e a segurança do sistema como um todo. A placa central permite que os diversos sistemas sejam conectados e acionados de maneira mais organizada e simplificada, minimizando a ocorrência de erros e falhas de comunicação.
+
+Dentre os sistemas presentes na placa central, destaca-se a presença do Raspberry Pi Pico, responsável pela conexão com o servidor em Flask descrito no item "Teste de Software". Este dispositivo é capaz de realizar diversas funções, como o processamento de dados, a execução de códigos e a comunicação com outros dispositivos, tornando-se peça fundamental do sistema como um todo.
+
+Em resumo, a placa central desenvolvida para o acionamento dos dispositivos eletrônicos do sistema foi projetada de forma cuidadosa e criteriosa, visando a integração eficiente dos diversos sistemas e a maximização da eficiência e segurança do sistema. A presença do Raspberry Pi Pico, por sua vez, permite uma conexão eficiente com o servidor em Flask e a execução de diversas funções essenciais para o funcionamento do sistema.
 
 ### Esquemático da Placa:
-A seguir temos o esquemático da estrutura eletrônica da placa, de modo que, seguindo as descrições acima referentes a placa principal, foi desenvolvido o seguinte esquemático: 
+A seguir, apresentamos o diagrama esquemático da estrutura eletrônica da placa em questão. Este diagrama foi elaborado com base nas informações e descrições previamente mencionadas referentes à placa principal.
+
+O processo de desenvolvimento do esquemático envolveu uma análise minuciosa das especificações técnicas da placa e das funcionalidades desejadas. Foram considerados aspectos como a configuração dos componentes eletrônicos, a disposição física dos mesmos na placa, bem como as conexões elétricas necessárias entre eles.
+
+O resultado desse processo foi o esquemático completo da estrutura eletrônica da placa, que serve como guia para o desenvolvimento do layout da placa propriamente dita. A partir desse esquemático, é possível obter informações precisas sobre os componentes eletrônicos e suas respectivas conexões, permitindo uma construção precisa e eficiente da placa.
+
+Em resumo, o esquemático da estrutura eletrônica da placa foi desenvolvido de forma cuidadosa e detalhada, levando em consideração todas as informações e especificações técnicas pertinentes. Este documento é essencial para o sucesso do projeto e garantirá a qualidade e eficiência da placa final.
 
 - Imagem do Esquematico 
 
 ### Layout da Placa:
-Com base no esquematico desenvolvido por meio do software easyEDA, foi possível estruturar o layout de base da placa, assim como uma visualização do modelo 3D da placa. 
+Com base no diagrama desenvolvido por meio do software EasyEDA, tornou-se possível estruturar o layout fundamental da placa, assim como obter uma visualização do modelo tridimensional correspondente.
 
 - Imagem do Layout
 - Imagem Base 3D 
@@ -356,13 +379,16 @@ Com base no esquematico desenvolvido por meio do software easyEDA, foi possível
 9) Fonte de 5V - Alimentação 
 
 ### Método de fabricação:
-1) Inicialmente foi desenvolvido o esquemático de base para o circuito. 
-2) Posicionamento de Componentes 
-3) Soldagem de Componentes 
-4) Testes de Funcionamento 
+1) Inicialmente foi desenvolvido o esquemático de base para o circuito por meio do software EasyEDA: O processo de desenvolvimento do esquemático envolve a elaboração de um diagrama que representa as conexões elétricas entre os componentes eletrônicos que compõem o circuito. Nesta etapa, é considerado aspectos como a disposição dos componentes e as conexões elétricas necessárias. O software EasyEDA é uma ferramenta de design eletrônico que permite a criação de esquemas e layouts de placas de circuito impresso.
+
+2) Em seguida foi realizado o posicionamento de componentes: Com base no esquemático desenvolvido na etapa anterior, os componentes eletrônicos são posicionados fisicamente na placa de circuito impresso. Nesta etapa, é importante considerar aspectos como a disposição física dos componentes, o espaço disponível na placa e as conexões elétricas necessárias.
+
+3) A próxima etapa foi a soldagem de componentes: Após o posicionamento dos componentes na placa, é necessário realizar a soldagem dos mesmos. Este processo consiste na aplicação de calor em pontos específicos da placa, de modo a fixar os componentes eletrônicos na placa. A soldagem deve ser realizada com cuidado e precisão, visando garantir a qualidade e a segurança do circuito.
+
+4) Por fim, foram realizados os testes de funcionamento do circuito: Após a conclusão da soldagem dos componentes, é necessário realizar testes para verificar o funcionamento do circuito. Os testes podem envolver o uso de instrumentos como multímetros e osciloscópios, que permitem medir e analisar os sinais elétricos presentes no circuito. Os resultados dos testes são utilizados para verificar se o circuito está operando de acordo com as especificações previamente definidas e, caso necessário, realizar ajustes ou correções.
 
 ## Fabricação dos Dispositivos Eletrônicos
-1) Em seguida foi realizado o teste com o circuito em protoboard para garantir o funcionamento do circuito. 
+1) Inicialmente foi realizado o teste com o circuito em protoboard para garantir o funcionamento do circuito. 
 2) Posicionamento dos componentes na placa 
 3) Soldagem do Soquete - Principal 
 4) Soldagem de Jumpers 
@@ -376,7 +402,6 @@ Com base no esquematico desenvolvido por meio do software easyEDA, foi possível
 
 
 # Análise de Dados
-
 
 # Manuais
 
