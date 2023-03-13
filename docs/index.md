@@ -363,7 +363,7 @@ O resultado desse processo foi o esquemático completo da estrutura eletrônica 
 
 Em resumo, o esquemático da estrutura eletrônica da placa foi desenvolvido de forma cuidadosa e detalhada, levando em consideração todas as informações e especificações técnicas pertinentes. Este documento é essencial para o sucesso do projeto e garantirá a qualidade e eficiência da placa final.
 
-<img src="https://github.com/2023M5T2-Inteli/alquimistas/blob/main/docs/img/sprint3/Esquemático_v1.png" width="30%">
+<img src="https://github.com/2023M5T2-Inteli/alquimistas/blob/dev/docs/img/sprint3/Esquemático_v1.png" width="30%">
 
 ### Layout da Placa:
 Com base no diagrama desenvolvido por meio do software EasyEDA, tornou-se possível estruturar o layout fundamental da placa, assim como obter uma visualização do modelo tridimensional correspondente.
