@@ -65,20 +65,16 @@ async def control_on():
 async def control_off():
     try:
         response = await requests.get('http://10.128.64.164/OFF')
-        return render_template('iniciate.html')
+        return render_template('index.html')
     except:
-        return render_template('iniciate.html')
+        return render_template('index.html')
     
 @app.route('/stop')
 async def control_stop():
     try:
         response = await requests.get('http://10.128.64.164/STOP')
-        return render_template('iniciate.html')
+        return render_template('index.html')
     except:
-        return render_template('iniciate.html')
-
-@app.route('/end')
-def end():
-    return render_template('end.html')
+        return render_template('index.html')
 
 app.run(host = '0.0.0.0', port=3000, debug=True)
