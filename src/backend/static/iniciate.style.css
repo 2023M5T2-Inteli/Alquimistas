@@ -14,11 +14,11 @@ body{
 }
 
 .arm{
-    width: 45%;
-    height: 600px;    
+    width: 35%;
+    height: 500px;    
     position: absolute;
     bottom: 0;
-    right: 60%;
+    right: 65%;
 }
 
 .next{
@@ -112,7 +112,7 @@ display: none;
 }
 
 .report-btn{
-    margin-top: 15%;
+    margin-top: 8%;
     font-family: 'Montserrat', sans-serif;
     display: flex;
     padding: 0.75rem;

@@ -79,16 +79,16 @@ async def control_stop():
 @app.route('/report')
 def report():
     return render_template('report.html')
-<<<<<<< HEAD
+# <<<<<<< HEAD
     
-=======
+# =======
 
-<<<<<<< HEAD
+# <<<<<<< HEAD
 @app.route('/end')
 def end():
     return render_template('end.html')
-=======
->>>>>>> dev
+# =======
+# >>>>>>> dev
 
->>>>>>> dev
+# >>>>>>> dev
 app.run(host = '0.0.0.0', port=3000, debug=True)

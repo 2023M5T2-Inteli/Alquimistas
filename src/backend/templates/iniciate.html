@@ -22,17 +22,17 @@
       rel="stylesheet"
       href="{{ url_for('static', filename = 'iniciate.style.css') }}"
     />
-    <!-- <link rel="stylesheet" href="/src/backend/static/iniciate.style.css"> -->
+    <link rel="stylesheet" href="/src/backend/static/iniciate.style.css">
   </head>
 
   <body>
     <div class="flex">
       <div>
-        <img class="logo" src="../static/images/Logo_ipt.png" alt="logo ipt" />
+        <img class="logo" src="../static/images/logo_ipt.png" alt="logo ipt" />
         <img
           class="arm"
-          src="../static/images/braco_mecanico.png"
-          alt="Braço robótico"
+          src="../static/images/braco_mecanico_2.png"
+          alt="braço robótico"
         />
       </div>
       <div class="form">
@@ -43,39 +43,18 @@
         </div>
         <p id="error">Error</p>
         <div class="dobot">
-          <div class="seletion-group">
-            <div class="">
-              <p class="title">Dobot Magician Lite</p>
-              <p class="sub-title">Flask app v1.4</p>
-        <div class="form">
-            <div class="container-btn">
-                    <a href="/end" onclick="changeClass()" class="btn-init" id="btn">Iniciar rotina</a>
-                <!-- <script>
-                    function changeClass() {
-                        var button = document.getElementById("btn");
-                        console.log(button);
-                        // if (button.first().hasClass('btn-init')){
-                        //     button.removeClass("btn-init").addClass("btn-end");
-                        // }
-                        // else{
-                        //     button.removeClass("btn-end").addClass("btn-init");
-                        // }
-                    }
-                </script> -->
-            </div>
-            <div class="dobot">
-                <div class="seletion-group">
-                    <div class="">
-                        <p class="title">Dobot Magician Lite</p>
-                        <p class="sub-title">Flask app v1.4</p>
-                        <div class="slider">
-                            <label for="fader">Ímã</label>
-                            <input type="range" min="0" max="3" value="0" id="fader"oninput="rangeValue.innerText = this.value">
-                            <p id="rangeValue">0</p>
-                        </div>
+            <div class="seletion-group">
+                <div class="">
+                <p class="title">Dobot Magician Lite</p>
+                <p class="sub-title">Flask app v1.4</p>
+                    <div class="slider">
+                        <label for="fader">Ímã</label>
+                        <input type="range" min="0" max="3" value="0" id="fader"oninput="rangeValue.innerText = this.value">
+                        <p id="rangeValue">0</p>
                     </div>
                 </div>
             </div>
+        </div>
             <div class="report">
                 <a href="/report" class="report-btn">
                     <div class="report-text">
@@ -86,18 +65,8 @@
                     </div>
                 </a>
             </div>
-          </div>
         </div>
-        <div class="report">
-          <a href="/report" class="report-btn">
-            <div class="report-text">Inserir relatório</div>
-            <div class="report-img">
-              <img class="next" src="../static/images/right-arrow.png" />
-            </div>
-          </a>
-        </div>
-      </div>
-    </div>
+
     <script>
       const URL = "http://127.0.0.1:3000/";
       function changeDobotStatus(button) {
@@ -110,9 +79,9 @@
               button.innerHTML = "Parar";
             })
             .catch(function (err) {
+                document.getElementById("error").innerHTML = "";
                 document.getElementById("error").style.display = "block";
                 document.getElementById("error").innerHTML +=" - "+ err;
-
               console.log("Fetch Error :-S", err);
             });
         } else {
