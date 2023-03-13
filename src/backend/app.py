@@ -27,9 +27,11 @@ def createdb():
 def index():
     return render_template('iniciate.html')
 
+
 @app.route('/status')
 def conection():
     return render_template('status.html')
+
 
 @app.route('/routine')
 async def routine():
@@ -79,16 +81,9 @@ async def control_stop():
 @app.route('/report')
 def report():
     return render_template('report.html')
-# <<<<<<< HEAD
-    
-# =======
 
-# <<<<<<< HEAD
 @app.route('/end')
 def end():
     return render_template('end.html')
-# =======
-# >>>>>>> dev
 
-# >>>>>>> dev
 app.run(host = '0.0.0.0', port=3000, debug=True)

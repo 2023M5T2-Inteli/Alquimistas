@@ -259,6 +259,7 @@ Com base na estrutura de Arquitetura desenvolvida para a solução proposta, ava
 |6	   |Sistemas Embarcados|Ponte H	             |Sinal de Inicio - Acionamento   |Eletroimã	       |Criação de Campo Magnético	        |Ao iniciar a alimentação do eletroimã haverá um botão de acionamento na interface que irá permitir o acionamento do mesmo.      |
 |7	   |Interface	       |Computador 	         |Acionamento do Shaker           |Shaker 	           |Vibração do Shaker 	                |Ao acionar o shaker via interface, ele inicia sua atuação.                                                                      |
 |8	   |Interface	       |Computador 	         |Acionamento do Eletroimã	      |Eletroimã	       |Criação de Campo Magnético	        |Ao acionar o eletroimã via interface, ele inicia sua atuação.                                                                   |
+
 ## Testes de Componentes - Versão 1 
 
 ### Braço robótico (Dobot Magician)
@@ -332,6 +333,11 @@ Dessa maneira, a primeira versão consiste em uma página com um modal para real
 
 Desse modo, foi desenvolvida uma interface gráfica no Figma que tem como objetivo o acionamento de componentes do sistema: 
 
+## Detalhamento da interface de usuário
+
+	Com objetivo de ter um controle visual da sistemática do processo de limpeza da amostra realizada pelo dobo, a interface foi pensada de uma minimalista para que em poucas ações o usuário atinja o objetivo. Iniciando pela tela de Home, a primeira tela apresentada tem como intuito de iniciar o processo de limpeza por meio um botão circular e de parar de forma instantânea o processo caso necessário pelo mesmo botão com um estado alterado para o texto parar. Logo em baixo a uma legenda orientando o que esta ocorrendo no processo, junto com informações sobre o app e versão.
+	Logo na parte inferior a opção de adicionar um relatório a analise, ao qual é redirecionado para um formulário ao qual necessita de informações como o projeto, a massa, qual amostra… Para compor os dados referentes ao relatório do processo.
+  
 # Projeto de Banco de Dados
 
 ## Modelo Conceitual
