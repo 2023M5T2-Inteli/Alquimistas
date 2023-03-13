@@ -335,6 +335,11 @@ Este comando irá iniciar o servidor Flask e disponibilizar as rotas de acesso �
 3) Assim, irá iniciar o servidor e você precisará acessar o IP fornecido pelo servidor para acessar localmente
 
 ### Servidor com Acionamento de Hardware 
+Para que se estabeleça a conexão entre as APIs que acionam o servidor em Flask e o Raspberry Pi Pico W, o microcontrolador responsável por controlar a Ponte H e, consequentemente, acionar o Eletroímã, é necessário um processo de transmissão de um código específico que conecte o Raspberry a um provedor de rede. Isso é fundamental para garantir que tanto o servidor quanto o microcontrolador estejam vinculados à mesma rede, viabilizando assim a comunicação entre eles.
+
+O Módulo Sensor de Campo Magnético - Efeito Hall também desempenha um papel importante nesse processo, já que ele é responsável por captar as informações de campo magnético geradas pelo Eletroímã e enviá-las para o Raspberry, que as utiliza para controlar a Ponte H.
+
+Dessa forma, com a conexão estabelecida e o Módulo Sensor devidamente configurado, o servidor pode iniciar o funcionamento do Eletroímã por meio de um endpoint específico, que aponta diretamente para o endpoint do microcontrolador responsável pela Ponte H. Ao ser acionado, o microcontrolador ativa o funcionamento da Ponte H, permitindo que o Eletroímã seja controlado e operado de acordo com as instruções recebidas do servidor.
 
 # Prototipação de Hardware
 ## Projeto dos dispositivos mecânicos
