@@ -25,12 +25,11 @@ def createdb():
 
 @app.route('/')
 def index():
-    return render_template('iniciate.html')
+    return render_template('index.html')
 
-
-@app.route('/status')
-def conection():
-    return render_template('status.html')
+@app.route('/report')
+def report():
+    return render_template('report.html')
 
 
 @app.route('/routine')
@@ -77,10 +76,6 @@ async def control_stop():
         return render_template('iniciate.html')
     except:
         return render_template('iniciate.html')
-
-@app.route('/report')
-def report():
-    return render_template('report.html')
 
 @app.route('/end')
 def end():
