@@ -2,7 +2,7 @@ from machine import Pin
 from time import sleep
 
 class Componentes:
-    def _init_(self, in1_pin, in2_pin, in3_pin, in4_pin, button1_pin, button2_pin):
+    def __init__(self, in1_pin, in2_pin, in3_pin, in4_pin, button1_pin, button2_pin):
         self.IN1 = Pin(in1_pin, Pin.OUT)
         self.IN2 = Pin(in2_pin, Pin.OUT)
         self.IN3 = Pin(in3_pin, Pin.OUT)
@@ -10,22 +10,30 @@ class Componentes:
         self.Button1 = Pin(button1_pin, Pin.IN)
         self.Button2 = Pin(button2_pin, Pin.IN)
 
-    def ligar_componentes(self):
-        if self.Button1.value() == 1:
-            self.IN1.high()
-            self.IN2.low()
-            print("Componentes ligados")
-        elif self.Button2.value() == 1:
-            self.IN1.low()
-            self.IN2.high()
-            print("Componentes ligados")
-        else:
-            self.IN1.low()
-            self.IN2.low()
-            print("Componentes desligados")
+    def enable_eletromagnet(self):
+        self.IN1.high()
+        self.IN2.low()
+        return("Eletromagnet is on")
+    
+    def enable_eletromagnet(self):
+        self.IN1.low()
+        self.IN2.low()
+        return("Eletromagnet is off")
+    
 
-componentes = Componentes(0, 1, 2, 3, 16, 17)
+    # def ligar_componentes(self):
+    #     if self.Button1.value() == 1:
+    #         self.IN1.high()
+    #         self.IN2.low()
+    #         print("Componentes ligados")
+    #     else:
+    #         self.IN1.low()
+    #         self.IN2.low()
+    #         print("Componentes desligados")
 
-while True:
-    sleep(2)
-    componentes.ligar_componentes()
+componentes = Componentes(0, 1, 4, 5, 15, 17)
+
+# while True:
+#     sleep(2)
+#     componentes.ligar_componentes()
+#     print(Pin(15).value())
