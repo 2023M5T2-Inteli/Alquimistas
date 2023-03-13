@@ -45,6 +45,11 @@ Concepção de sistema de automação industrial
     - [Braço Robótico](#braço-robótico)
     - [Backend - Computador](#backend---computador)
     - [Embarcados](#embarcados)
+  - [Relatório de entrada e saídas](#relatório-de-entrada-e-saídas)
+  - [Testes de Componentes - Versão 1](#testes-de-componentes---versão-1)
+    - [Braço robótico (Dobot Magician)](#braço-robótico-dobot-magician)
+    - [Eletroimã (na Ponte H)](#eletroimã-na-ponte-h)
+    - [Shaker (na Ponte H)](#shaker-na-ponte-h)
     - [Requisitos de software](#requisitos-de-software)
   - [Tecnologias Utilizadas](#tecnologias-utilizadas)
     - [Bloco de Interface](#bloco-de-interface-1)
@@ -52,18 +57,25 @@ Concepção de sistema de automação industrial
     - [Backend - Computador](#backend---computador-1)
     - [Embarcados](#embarcados-1)
 - [UX e UI Design](#ux-e-ui-design)
-  - [Wireframe + Storyboard - Versão 1](#wireframe--storyboard---versão-1)
+  - [Wireframe + Storyboard](#wireframe--storyboard)
   - [Design de Interface - Guia de Estilos](#design-de-interface---guia-de-estilos)
 - [Projeto de Banco de Dados](#projeto-de-banco-de-dados)
   - [Modelo Conceitual](#modelo-conceitual)
   - [Modelo Lógico](#modelo-lógico)
-- [Teste de Hardware - Versão 1](#teste-de-hardware---versão-1)
-  - [Braço robótico (Dobot Magician)](#braço-robótico-dobot-magician)
-  - [Eletroimã](#eletroimã)
-  - [Shaker](#shaker)
 - [Teste de Software](#teste-de-software)
-  - [Testes Unitários](#testes-unitários)
-  - [Teste de Usabilidade](#teste-de-usabilidade)
+    - [Implementação de Servidor](#implementação-de-servidor)
+    - [Servidor com Acionamento de Hardware](#servidor-com-acionamento-de-hardware)
+- [Prototipação de Hardware](#prototipação-de-hardware)
+  - [Projeto dos dispositivos mecânicos](#projeto-dos-dispositivos-mecânicos)
+  - [Projeto dos dispositivos eletrônicos](#projeto-dos-dispositivos-eletrônicos)
+    - [Listagem de Placa:](#listagem-de-placa)
+    - [Esquemático da Placa:](#esquemático-da-placa)
+    - [Layout da Placa:](#layout-da-placa)
+    - [Lista de Materiais:](#lista-de-materiais)
+    - [Método de fabricação:](#método-de-fabricação)
+  - [Fabricação dos Dispositivos Eletrônicos](#fabricação-dos-dispositivos-eletrônicos)
+  - [Validação dos Dipositivos Eletrônicos](#validação-dos-dipositivos-eletrônicos)
+    - [Métodos de Validação e Testes](#métodos-de-validação-e-testes)
 - [Análise de Dados](#análise-de-dados)
 - [Manuais](#manuais)
   - [Manual de Implantação](#manual-de-implantação)
@@ -86,21 +98,29 @@ Concepção de sistema de automação industrial
 # Visão Geral do Projeto
 
 ## Empresa
-<br>	O Instituto de Pesquisas Tecnológicas (IPT), vinculado à Secretaria de Desenvolvimento Econômico do Estado de São Paulo,  há 123 anos colabora para o processo de desenvolvimento do País, provê soluções tecnológicas para a indústria, governos e sociedade, habilitando-os a superar os desafios da nossa época. </br>
-<br>	Desse modo, como um dos maiores institutos de pesquisas do Brasil, o IPT conta com laboratórios capacitados e equipe de pesquisadores e técnicos altamente qualificados, atuando basicamente em quatro grandes áreas - inovação, pesquisa e desenvolvimento; serviços tecnológicos; desenvolvimento & apoio metrológico, e informação & educação em tecnologia. </br>
+
+O Instituto de Pesquisas Tecnológicas (IPT), vinculado à Secretaria de Desenvolvimento Econômico do Estado de São Paulo,  há 123 anos colabora para o processo de desenvolvimento do País, provê soluções tecnológicas para a indústria, governos e sociedade, habilitando-os a superar os desafios da nossa época. 
+
+Desse modo, como um dos maiores institutos de pesquisas do Brasil, o IPT conta com laboratórios capacitados e equipe de pesquisadores e técnicos altamente qualificados, atuando basicamente em quatro grandes áreas - inovação, pesquisa e desenvolvimento; serviços tecnológicos; desenvolvimento & apoio metrológico, e informação & educação em tecnologia.
 
 ## O Problema
-<br>	Considerando que a separação magnética pode ser uma excelente técnica para avaliação da liberação de minerais/materiais com propriedades magnéticas e que, em uma etapa preliminar exploratória, não estão disponíveis grandes quantidades de amostras para serem submetidas a ensaios em equipamentos de separação magnética com operação contínua, a automação deste procedimento é benéfica do ponto de vista de agilidade e precisão. </br>
-<br>	Posto isso, o processo atual é manual, ou seja, o operador aproxima um ímã de ferrite ou de terras raras, envolto em um saco plástico, do material submerso em água, espalhado em uma bandeja plástica, tentando manter uma distância constante e, consequentemente, o campo eletromagnético aplicado sobre as partículas. O material ferromagnético gruda no ímã e é posteriormente depositado em outro recipiente. </br>
-<br>	Assim, por ser um processo manual, a constância da distância é imprecisa e, considerando que o campo eletromagnético é inversamente proporcional à distância, o campo aplicado sobre as partículas também é impreciso, dificultando a determinação do campo necessário para a separação dos minerais. Além disso, para testar diferentes campos é necessário a troca dos ímãs utilizados, resultando na necessidade de se ter diversos ímãs disponíveis. </br>
+
+Considerando que a separação magnética pode ser uma excelente técnica para avaliação da liberação de minerais/materiais com propriedades magnéticas e que, em uma etapa preliminar exploratória, não estão disponíveis grandes quantidades de amostras para serem submetidas a ensaios em equipamentos de separação magnética com operação contínua, a automação deste procedimento é benéfica do ponto de vista de agilidade e precisão.
+
+Posto isso, o processo atual é manual, ou seja, o operador aproxima um ímã de ferrite ou de terras raras, envolto em um saco plástico, do material submerso em água, espalhado em uma bandeja plástica, tentando manter uma distância constante e, consequentemente, o campo eletromagnético aplicado sobre as partículas. O material ferromagnético gruda no ímã e é posteriormente depositado em outro recipiente.
+
+Assim, por ser um processo manual, a constância da distância é imprecisa e, considerando que o campo eletromagnético é inversamente proporcional à distância, o campo aplicado sobre as partículas também é impreciso, dificultando a determinação do campo necessário para a separação dos minerais. Além disso, para testar diferentes campos é necessário a troca dos ímãs utilizados, resultando na necessidade de se ter diversos ímãs disponíveis.
 
 ## Objetivos
 
 ### Objetivos gerais
-<br>	Desenvolver um equipamento automatizado que tenha capacidade de aplicar um campo magnético constante, com intensidade e distância ajustáveis, ao longo de todo a amostra promovendo assim uma separação dos minerais magnéticos, que serão depositados em um recipiente diferente dos minerais não magnéticos que permanecerão depositados na bandeja original.</br>
+
+Desenvolver um equipamento automatizado que tenha capacidade de aplicar um campo magnético constante, com intensidade e distância ajustáveis, ao longo de todo a amostra promovendo assim uma separação dos minerais magnéticos, que serão depositados em um recipiente diferente dos minerais não magnéticos que permanecerão depositados na bandeja original.
 
 ### Objetivos específicos
-<br> A seguir estão os objetivos/benefícios esperados com o desenvolvimento do projeto: </br>
+
+A seguir estão os objetivos/benefícios esperados com o desenvolvimento do projeto:
+
 * Manutenção de uma campo magnético constante sobre toda a amostra, reduzindo os erros de ensaio decorrentes da ação humana;
 * Maior qualidade na execução do ensaio, principalmente no que tange a repetibilidade e reprodutibilidade;  
 * Maior flexibilidade de ensaios, pois o uso de eletroímãs ajustáveis dispensa a necessidade de se ter ímãs com o campo desejado; 
@@ -182,9 +202,7 @@ João Silva, 35 anos
 
 Formação: Engenheiro Químico
 
-Empresa: Instituto de Pesquisa e Tecnologia (IPT) - Setor: 
-
-Materiais Avançados - Salário: R$3000,00 por mês
+Empresa: Instituto de Pesquisa e Tecnologia (IPT) - Setor: Materiais Avançados - Salário: R$3000,00 por mês
 
 Projeto de trabalho: Separação Magnética em Projetos de Mineração
 
@@ -280,12 +298,12 @@ Posto isso, é possível observar o teste do shaker sendo acionado:
 - CSS 
 - JavaScript 
 - Bootstrap
-- Python
+- Python (DType)
 
 ### Braço Robótico
 - Dobot Magician Lite 
 - Software - Dobot 
-- Python 
+- Python (DType)
 
 ### Backend - Computador
 - IDE: Thonny 
@@ -299,7 +317,7 @@ Posto isso, é possível observar o teste do shaker sendo acionado:
 
 # UX e UI Design
 
-## Wireframe + Storyboard - Versão 1
+## Wireframe + Storyboard
 
 Para o desenvolvimento da interface do usuário optamos por uma aplicação web, com uma estrutura desenvolvida com base nas necessidades de entradas e saídas vinculadas ao bloco de Interface na Arquitetura da Solução.
 
@@ -409,7 +427,16 @@ Estruturadas todas as etapas, foi desenvolvido o circuito demonstrado nas imagen
 
 ## Validação dos Dipositivos Eletrônicos
 ### Métodos de Validação e Testes 
+A validação do dispositivo eletrônico foi realizada por meio da execução do código-fonte ("src"), juntamente com a aplicação da interface da aplicação web ("src/frontend"). A tabela abaixo apresenta os testes realizados, incluindo as entradas e saídas esperadas, bem como os resultados obtidos:
 
+|Resultado do teste                                                                  |
+|Sucesso. Ao pressionar o botão na aplicação web os imãs atraem os objetos magnéticos|
+|------------------------------------------------------------------------------------|
+
+|Componente       |Entrada                                                     |Saída Esperada                                              |Resultado do teste                                                                  |
+|-----------------|------------------------------------------------------------|------------------------------------------------------------|------------------------------------------------------------------------------------|
+|Circuito completo|Pressionar o botão 'start' na interface para acionar os imãs|Os imãs emitirem campo magnético e atrair objetos magnéticos|Sucesso. Ao pressionar o botão na aplicação web os imãs atraem os objetos magnéticos|
+|Eletroimãs       |Acionar o botão de on/off                                   |Os imãs emitirem campo magnético e atrair objetos magnéticos|Sucesso. O imã atrai objetos magnéticos ao pressionarmos o botão                    |
 
 # Análise de Dados
 
