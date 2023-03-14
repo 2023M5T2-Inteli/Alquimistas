@@ -394,10 +394,11 @@ Em resumo, o esquemático da estrutura eletrônica da placa foi desenvolvido de 
 <img src="https://github.com/2023M5T2-Inteli/alquimistas/blob/dev/docs/img/sprint3/Esquemático_v1.png" width="30%">
 
 ### Layout da Placa:
-Com base no diagrama desenvolvido por meio do software EasyEDA, tornou-se possível estruturar o layout fundamental da placa, assim como obter uma visualização do modelo tridimensional correspondente.
+Com base no diagrama desenvolvido por meio do software EasyEDA, tornou-se possível estruturar o layout fundamental da placa.
 
-- Imagem do Layout
-- Imagem Base 3D 
+<img src="https://github.com/2023M5T2-Inteli/alquimistas/blob/dev/docs/img/sprint3/Layout_v1.png" style="width: 20%"/>
+<img src="https://github.com/2023M5T2-Inteli/alquimistas/blob/dev/docs/img/sprint3/PCB_v1.png" style="width: 20%"/>
+
 
 ### Lista de Materiais:
 1) Placa de Trilhas com Fenolite 
