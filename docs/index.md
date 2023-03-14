@@ -346,27 +346,28 @@ Desse modo, foi desenvolvida uma interface gráfica no Figma que tem como objeti
 
 # Teste de Software
 ### Implementação de Servidor 
-Para podermos estruturar a renderização das páginas construídas para o software, foi necessário realizar o desenvolvimento de um servidor utilizando a biblioteca Flask para Python. O Flask é um framework web leve e flexível que permite a construção de aplicativos web de forma fácil e eficiente. Com o Flask, é possível criar rotas de acesso às páginas do aplicativo, além de realizar o gerenciamento das solicitações e respostas HTTP.
+Para estruturar a renderização das páginas construídas para o software, desenvolvemos um servidor utilizando a biblioteca Flask para Python. O Flask é um framework web leve e flexível para a construção de aplicativos web de maneira fácil e eficiente, permitindo a criação de rotas de acesso às páginas do aplicativo e o gerenciamento das solicitações e respostas HTTP.
 
-Desse modo, as páginas do software são acionadas por meio das rotas desenvolvidas no servidor. Inicialmente, o servidor foi composto pelas páginas de acionamento, parada e envio de relatório. Cada uma dessas páginas é responsável por uma funcionalidade específica do software, como a ativação dos dispositivos eletrônicos, a parada do sistema e o envio de relatórios de funcionamento.
+Desse modo, as páginas do software são acionadas por meio das rotas desenvolvidas no servidor. Inicialmente, o servidor foi composto pelas páginas de acionamento, parada e envio de relatório, cada uma dessas páginas é responsável por uma funcionalidade específica, como ativar dispositivos eletrônicos, parar o sistema e enviar relatórios de funcionamento.
 
 O funcionamento do servidor está ocorrendo de forma local, de modo que é necessário realizar o seguinte processo para acessar a interface do software:
 
-1) Acessar a pasta src/backend: A pasta onde está localizado o código do servidor Flask.
-2) Rodar o seguinte comando: `python app.py` 
-Este comando irá iniciar o servidor Flask e disponibilizar as rotas de acesso às páginas do software.
-3) Assim, irá iniciar o servidor e você precisará acessar o IP fornecido pelo servidor para acessar localmente
+1) Acessar a pasta `src/backend`, onde está localizado o código do servidor Flask.
+2) Executar o comando `python app.py`. Esse comando iniciará o servidor Flask e disponibilizará as rotas de acesso às páginas do software.
+3) Acessar o IP fornecido pelo servidor para acessar localmente.
 
 ### Servidor com Acionamento de Hardware 
-Para que se estabeleça a conexão entre as APIs que acionam o servidor em Flask e o Raspberry Pi Pico W, o microcontrolador responsável por controlar a Ponte H e, consequentemente, acionar o Eletroímã, é necessário um processo de transmissão de um código específico que conecte o Raspberry a um provedor de rede. Isso é fundamental para garantir que tanto o servidor quanto o microcontrolador estejam vinculados à mesma rede, viabilizando assim a comunicação entre eles.
+Para estabelecer a conexão entre as APIs que acionam o servidor em Flask e o microcontrolador Raspberry Pi Pico W, responsável por controlar a Ponte H e acionar o Eletroímã, é necessário um processo de transmissão de um código específico que conecte o Raspberry a um provedor de rede. Isso é fundamental para garantir que tanto o servidor quanto o microcontrolador estejam vinculados à mesma rede, viabilizando a comunicação entre eles.
 
-O Módulo Sensor de Campo Magnético - Efeito Hall também desempenha um papel importante nesse processo, já que ele é responsável por captar as informações de campo magnético geradas pelo Eletroímã e enviá-las para o Raspberry, que as utiliza para controlar a Ponte H.
+O Módulo Sensor Magnético - Efeito Hall desempenha um papel importante nesse processo, pois é responsável por captar as informações de campo magnético geradas pelo Eletroímã e enviá-las para o Raspberry, que as utiliza para controlar a Ponte H.
 
-Dessa forma, com a conexão estabelecida e o Módulo Sensor devidamente configurado, o servidor pode iniciar o funcionamento do Eletroímã por meio de um endpoint específico, que aponta diretamente para o endpoint do microcontrolador responsável pela Ponte H. Ao ser acionado, o microcontrolador ativa o funcionamento da Ponte H, permitindo que o Eletroímã seja controlado e operado de acordo com as instruções recebidas do servidor.
+Dessa forma, com a conexão estabelecida e o Módulo Sensor devidamente configurado, o servidor pode iniciar o funcionamento do Eletroímã por meio de um endpoint específico que aponta diretamente para o endpoint do microcontrolador responsável pela Ponte H. Quando acionado, o microcontrolador ativa o funcionamento da Ponte H, permitindo que o Eletroímã seja controlado e operado de acordo com as instruções recebidas do servidor.
 
 # Prototipação de Hardware
 ## Projeto dos dispositivos mecânicos
 Inicialmente o projeto consiste na utilização dos dispositivos disponibilizados pelo laboratório de eletrônica. E os sistêmas mecânicos se baseiam em uma integração entre componentes eletrônicos e as estruturas disponíveis do Dobot Magician Lite. 
+
+Na Sprint 4, estaremos explorando opções para aprimorar o suporte das bandejas.
 
 ## Projeto dos dispositivos eletrônicos
 ### Listagem de Placa: 
@@ -407,13 +408,13 @@ Com base no diagrama desenvolvido por meio do software EasyEDA, tornou-se possí
 9) Fonte de 5V - Alimentação 
 
 ### Método de fabricação:
-1) Inicialmente foi desenvolvido o esquemático de base para o circuito por meio do software EasyEDA: O processo de desenvolvimento do esquemático envolve a elaboração de um diagrama que representa as conexões elétricas entre os componentes eletrônicos que compõem o circuito. Nesta etapa, é considerado aspectos como a disposição dos componentes e as conexões elétricas necessárias. O software EasyEDA é uma ferramenta de design eletrônico que permite a criação de esquemas e layouts de placas de circuito impresso.
+1) Inicialmente foi desenvolvido o esquemático de base para o circuito por meio do software EasyEDA: O processo de desenvolvimento do esquemático envolve a elaboração de um diagrama que representa as conexões elétricas entre os componentes eletrônicos que compõem o circuito. Nesta etapa, é considerado aspectos como a disposição dos componentes e as conexões elétricas necessárias. Contudo, encontramos limitações na nossa primeira versão desenvolvida com o EasyEDA (ferramenta de design eletrônico que permite a criação de esquemas e layouts de placas de circuito impresso), com isso desenvolvemos uma segunda versão com o software Fritzing (ambos os esquemáticos estão na pasta 'docs/img/sprint3').
 
 2) Em seguida foi realizado o posicionamento de componentes: Com base no esquemático desenvolvido na etapa anterior, os componentes eletrônicos são posicionados fisicamente na placa de circuito impresso. Nesta etapa, é importante considerar aspectos como a disposição física dos componentes, o espaço disponível na placa e as conexões elétricas necessárias.
 
 3) A próxima etapa foi a soldagem de componentes: Após o posicionamento dos componentes na placa, é necessário realizar a soldagem dos mesmos. Este processo consiste na aplicação de calor em pontos específicos da placa, de modo a fixar os componentes eletrônicos na placa. A soldagem deve ser realizada com cuidado e precisão, visando garantir a qualidade e a segurança do circuito.
 
-4) Por fim, foram realizados os testes de funcionamento do circuito: Após a conclusão da soldagem dos componentes, é necessário realizar testes para verificar o funcionamento do circuito. Os testes podem envolver o uso de instrumentos como multímetros e osciloscópios, que permitem medir e analisar os sinais elétricos presentes no circuito. Os resultados dos testes são utilizados para verificar se o circuito está operando de acordo com as especificações previamente definidas e, caso necessário, realizar ajustes ou correções.
+4) Por fim, foram realizados testes de funcionamento do circuito utilizando instrumentos como multímetros e osciloscópios para medir e analisar os sinais elétricos do circuito. Os resultados dos testes foram utilizados para verificar se o circuito está operando de acordo com as especificações previamente definidas e para realizar ajustes ou correções, se necessário.
 
 ## Fabricação dos Dispositivos Eletrônicos
 1) Inicialmente foi realizado o teste com o circuito em protoboard para garantir o funcionamento do circuito. 
@@ -435,14 +436,12 @@ Estruturadas todas as etapas, foi desenvolvido o circuito demonstrado nas imagen
 ### Métodos de Validação e Testes 
 A validação do dispositivo eletrônico foi realizada por meio da execução do código-fonte ("src"), juntamente com a aplicação da interface da aplicação web ("src/frontend"). A tabela abaixo apresenta os testes realizados, incluindo as entradas e saídas esperadas, bem como os resultados obtidos:
 
-|Resultado do teste                                                                  |
-|Sucesso. Ao pressionar o botão na aplicação web os imãs atraem os objetos magnéticos|
-|------------------------------------------------------------------------------------|
-
-|Componente       |Entrada                                                     |Saída Esperada                                              |Resultado do teste                                                                  |
-|-----------------|------------------------------------------------------------|------------------------------------------------------------|------------------------------------------------------------------------------------|
-|Circuito completo|Pressionar o botão 'start' na interface para acionar os imãs|Os imãs emitirem campo magnético e atrair objetos magnéticos|Sucesso. Ao pressionar o botão na aplicação web os imãs atraem os objetos magnéticos|
-|Eletroimãs       |Acionar o botão de on/off                                   |Os imãs emitirem campo magnético e atrair objetos magnéticos|Sucesso. O imã atrai objetos magnéticos ao pressionarmos o botão                    |
+|Componente                                 |Entrada                                                                                                |Saída Esperada                                                                                                                 |Resultado do teste                                                                                                                                                                                    |
+|-------------------------------------------|-------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|Eletroimãs                                 |Acionar o botão de on/off                                                                              |Os imãs emitirem campo magnético e atrair objetos magnéticos                                                                   |Sucesso. O imã atrai objetos magnéticos ao pressionarmos o botão                                                                                                                                      |
+|Circuito (imãs+interface)                  |Pressionar o botão 'start' na interface para acionar os imãs                                           |Os imãs emitirem campo magnético e atrair objetos magnéticos                                                                   |Sucesso. Ao pressionar o botão na aplicação web os imãs atraem os objetos magnéticos                                                                                                                  |
+|Módulo Sensor Magnético de Efeito Hall     |Acionar o botão de on/off                                                                              |O sensor identifica o campo magnético em mv/Gauss                                                                              |Sucesso. O módulo sensor responde o valor do campo magnético                                                                                                                                          |
+|Circuito (imãs + interface + módulo sensor)|Pressionar o botão 'start' na interface para acionar os imãs e o módulo sensor magnético de efeito hall|Os imãs emitirem campo magnético e atrair objetos magnéticos e o módulo sensor magnético identificar o valor do campo magnético|Sucesso. Ao pressionar o botão na aplicação web os imãs atraem os objetos magnéticos e o módulo sensor de efeito hall faz a leitura do campo magnético (contudo não tem uma granularidade dos valores)|
 
 # Análise de Dados
 
