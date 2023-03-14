@@ -335,8 +335,11 @@ Desse modo, foi desenvolvida uma interface gráfica no Figma que tem como objeti
 
 ## Detalhamento da interface de usuário
 
-	Com objetivo de ter um controle visual da sistemática do processo de limpeza da amostra realizada pelo dobo, a interface foi pensada de uma minimalista para que em poucas ações o usuário atinja o objetivo. Iniciando pela tela de Home, a primeira tela apresentada tem como intuito de iniciar o processo de limpeza por meio um botão circular e de parar de forma instantânea o processo caso necessário pelo mesmo botão com um estado alterado para o texto parar. Logo em baixo a uma legenda orientando o que esta ocorrendo no processo, junto com informações sobre o app e versão.
-	Logo na parte inferior a opção de adicionar um relatório a analise, ao qual é redirecionado para um formulário ao qual necessita de informações como o projeto, a massa, qual amostra… Para compor os dados referentes ao relatório do processo.
+Com o objetivo de proporcionar um controle visual da sistemática do processo de limpeza da amostra realizada pelo Dobot, a interface foi pensada de forma minimalista, para que o usuário possa atingir o objetivo em poucas ações. 
+
+Ao iniciar a navegação na aplicação, o usuário é apresentado à tela Home, onde é possível iniciar o processo de limpeza com apenas um clique em um botão circular. Caso necessário, o processo pode ser interrompido instantaneamente pelo mesmo botão, que terá seu estado alterado para exibir o texto "Parar". Logo abaixo, uma legenda orienta o usuário sobre o que está acontecendo no processo, além de informações sobre o aplicativo e sua versão.
+
+Na parte inferior da tela, há a opção de adicionar um relatório à análise. Ao clicar nesta opção, o usuário é redirecionado para um formulário onde serão solicitadas informações importantes, tais como o projeto, a massa e a amostra, para compor os dados referentes ao relatório do processo. 
   
 # Projeto de Banco de Dados
 
