@@ -15,7 +15,7 @@ class Componentes:
         self.IN2.low()
         return("Eletromagnet is on")
     
-    def enable_eletromagnet(self):
+    def disable_eletromagnet(self):
         self.IN1.low()
         self.IN2.low()
         return("Eletromagnet is off")
