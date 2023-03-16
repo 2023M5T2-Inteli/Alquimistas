@@ -22,7 +22,6 @@
       rel="stylesheet"
       href="{{ url_for('static', filename = 'iniciate.style.css') }}"
     />
-    <link rel="stylesheet" href="/src/backend/static/iniciate.style.css">
   </head>
 
   <body>
@@ -37,7 +36,7 @@
       </div>
       <div class="form">
         <div class="container-btn">
-          <button onclick="changeDobotStatus(this)" class="btn-off">
+          <button type="button" onclick="changeDobotStatus(this)" class="btn-off">
             Iniciar rotina
           </button>
         </div>
@@ -61,14 +60,14 @@
                         Inserir relatório
                     </div>
                     <div class="report-img">
-                        <img class="next" src="../static/images/right-arrow.png">
+                        <img class="next" src="../static/images/right-arrow.png" alt="seta para direita">
                     </div>
                 </a>
             </div>
         </div>
 
     <script>
-      const URL = "http://127.0.0.1:3000/";
+      const URL = "http://10.128.64.247:3000/";
       function changeDobotStatus(button) {
         if (button.className == "btn-off") {
           fetch(URL + "on")
