@@ -53,34 +53,37 @@ async def routine():
 @app.route('/on')
 async def control_on():
     try:
-        response = await request.get('http://10.128.64.164/on')
-        print(response)
+        print("Aqui")
+        request.args.get('http://10.128.65.57/on')
+        print("Passei")
         await routine()
+        print("Odeio minha vida")
         return render_template('index.html')
     except Exception as e:
         print("error")
-        return e
-    
-@app.route('/off')
-async def control_off():
-    try:
-        response = await request.get('http://10.128.64.164/off')
-        return render_template('index.html')
-    except Exception as e:
-        print("error")
+        print(e)
         return e
     
 @app.route('/stop')
 async def control_stop():
     try:
-        response = await request.get('http://10.128.64.164/stop')
+        print("Opa 1")
+        request.args.get('http://10.128.65.57/stop')
+        print("Opa 2")
         return render_template('index.html')
     except  Exception as e:
         print("error")
         print(e)
 
-@app.route('/end')
-def end():
-    return render_template('index.html')
+
+@app.route('/off')
+async def control_off():
+    try:
+        await request.args.get('http://10.128.65.57/off')
+        return render_template('index.html')
+    except Exception as e:
+        print("error")
+        return e
+
 
 app.run(host = '0.0.0.0', port=3000, debug=True)
