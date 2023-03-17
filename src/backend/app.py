@@ -53,11 +53,8 @@ async def routine():
 @app.route('/on')
 async def control_on():
     try:
-        print("Aqui")
         request.args.get('http://10.128.65.57/on')
-        print("Passei")
         await routine()
-        print("Odeio minha vida")
         return render_template('index.html')
     except Exception as e:
         print("error")
@@ -67,9 +64,7 @@ async def control_on():
 @app.route('/stop')
 async def control_stop():
     try:
-        print("Opa 1")
         request.args.get('http://10.128.65.57/stop')
-        print("Opa 2")
         return render_template('index.html')
     except  Exception as e:
         print("error")
