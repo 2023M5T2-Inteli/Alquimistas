@@ -70,12 +70,11 @@
       const URL = "http://10.128.64.247:3000/";
       function changeDobotStatus(button) {
         if (button.className == "btn-off") {
+          button.className = "btn-on";
+          button.innerHTML = "Parar";
           fetch(URL + "on")
             .then(function (data) {
               document.getElementById("error").style.display = "none";
-              
-              button.className = "btn-on";
-              button.innerHTML = "Parar";
             })
             .catch(function (err) {
                 document.getElementById("error").innerHTML = "";
