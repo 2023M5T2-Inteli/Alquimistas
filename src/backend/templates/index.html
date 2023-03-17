@@ -34,69 +34,7 @@
           alt="braço robótico"
         />
       </div>
-      <div class="form">
-        <div class="container-btn">
-          <button type="button" onclick="changeDobotStatus(this)" class="btn-off">
-            Iniciar rotina
-          </button>
-        </div>
-        <p id="error">Error</p>
-        <div class="dobot">
-            <div class="seletion-group">
-                <div class="">
-                <p class="title">Dobot Magician Lite</p>
-                <p class="sub-title">Flask app v1.4</p>
-                    <div class="slider">
-                        <label for="fader">Ímã</label>
-                        <input type="range" min="0" max="3" value="0" id="fader"oninput="rangeValue.innerText = this.value">
-                        <p id="rangeValue">0</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-            <div class="report">
-                <a href="/report" class="report-btn">
-                    <div class="report-text">
-                        Inserir relatório
-                    </div>
-                    <div class="report-img">
-                        <img class="next" src="../static/images/right-arrow.png" alt="seta para direita">
-                    </div>
-                </a>
-            </div>
-        </div>
-
-    <script>
-      const URL = "http://10.128.0.171:3000/";
-      function changeDobotStatus(button) {
-        if (button.className == "btn-off") {
-          button.className = "btn-on";
-          button.innerHTML = "Parar";
-          fetch(URL + "on")
-            .then(function (data) {
-              document.getElementById("error").style.display = "none";
-            })
-            .catch(function (err) {
-                document.getElementById("error").innerHTML = "";
-                document.getElementById("error").style.display = "block";
-                document.getElementById("error").innerHTML +=" - "+ err;
-              console.log("Fetch Error :-S", err);
-            });
-        } else {
-          fetch(URL + "stop")
-            .then(function (data) {
-              document.getElementById("error").style.display = "none";
-
-              button.className = "btn-off";
-              button.innerHTML = "Iniciar Rotina";
-            })
-            .catch(function (err) {
-                document.getElementById("error").innerHTML +=" - "+ err;
-
-              console.log("Fetch Error :-S", err);
-            });
-        }
-      }
-    </script>
+      
+    <script src="{{url_for('static', filename='script.js')}}"></script>
   </body>
 </html>
