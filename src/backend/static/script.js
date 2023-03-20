@@ -3,17 +3,29 @@ const URL = "http://127.0.0.1:3000/";
 const informations = `
     <p class="title">Relatório</p>
     <p class="sub-title">Preencha as informações relacionadas a amostra em análise</p>
-    <div class="input-group">
-        <label for="projeto">Projeto</label>
-        <input type="text" name="projeto" id="projeto">
+    <div style="display: flex; width:100%;">
+        <div class="input-group" style="margin-right: 10%; width=100%;">
+            <label for="projeto">Projeto</label>
+            <input style="width: 100%;" type="text" name="projeto" id="projeto">
+        </div>
+        <div class="input-group">
+            <label for="client">Cliente</label>
+            <input style="width: 100%;" type="text" name="client" id="client">
+        </div>
     </div>
     <div class="input-group">
-        <label for="amostra">Amostra</label>
+        <label for="amostra">Nome da amostra</label>
         <input type="text" name="amostra" id="amostra">
     </div>
-    <div class="input-group">
-        <label for="data">Data</label>
-        <input style="width: 30%;" type="date" name="data" id="data">
+    <div style="display: flex; width:100%;">
+        <div class="input-group" style="margin-right: 10%; width=100%;">
+            <label for="date">Data</label>
+            <input style="width: 100%;" type="text" name="date" id="date">
+        </div>
+        <div class="input-group">
+            <label for="time">Horário</label>
+            <input style="width: 100%;" type="text" name="time" id="time">
+        </div>
     </div>
     <div style="display: flex;">
         <div class="input-group" style="margin-right: 10%;">
@@ -33,9 +45,9 @@ const informations = `
 
 const routine = `
     <div class="info-label">
-        <p>Projeto: <span class="info-span-label">IPT Inteli Colab</span></p>
-        <p>Amostra: <span class="info-span-label">Ferro-Cromo</span></p>
-        <p>Data: <span class="info-span-label">16/03/2023</span> </p>
+        <p>Projeto: <span class="info-span-label" id="span_project">IPT Inteli Colab</span></p>
+        <p>Amostra: <span class="info-span-label" id="span_sample">Ferro-Cromo</span></p>
+        <p>Data: <span class="info-span-label" id="span_date">16/03/2023</span> </p>
     </div>
     <div class="container-btn">
         <button onclick="changeDobotStatus(this)" class="btn-off">
@@ -74,8 +86,14 @@ window.addEventListener('load', function (){
 
 function toggleContent(){
     const form = document.getElementById("form")
-    if(form.innerHTML === informations){
+    if(form.innerHTML === informations) {
+        project = document.getElementById("projeto").value
+        sample = document.getElementById("amostra").value
+        date = document.getElementById("data").value
         form.innerHTML = routine
+        document.getElementById("span_project").innerHTML = project
+        document.getElementById("span_sample").innerHTML = sample
+        document.getElementById("span_date").innerHTML = date
     } else {
         form.innerHTML = informations
     }
