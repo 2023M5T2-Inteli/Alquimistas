@@ -47,23 +47,24 @@ def server(connection):
         try:
             request = request.split()[1]
         except IndexError:
+            print('erro')
             pass
 
         print(request)
         hall()
         
-        if(request == '/ON'):
+        if(request == '/on'):
             in1.low()
             in2.high()
-            client.send('ON')
-        elif (request == '/OFF'):
+            client.send('on')
+        elif (request == '/off'):
             in1.high()
             in2.low()
-            client.send('OFF')
-        elif (request == '/STOP'):
+            client.send('off')
+        elif (request == '/stop'):
             in1.low()
             in2.low()
-            client.send('STOP')
+            client.send('stop')
         else:
             pass
         
