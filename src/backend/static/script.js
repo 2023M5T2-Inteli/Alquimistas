@@ -102,12 +102,11 @@ function toggleContent(){
 function changeDobotStatus(button) {
 
     if (button.className == "btn-off") {
+    button.className = "btn-on";
+    button.innerHTML = "Parar";
     fetch(URL + "on")
     .then(function (data) {
         document.getElementById("error").style.display = "none";
-        
-        button.className = "btn-on";
-        button.innerHTML = "Parar";
     })
     .catch(function (err) {
         document.getElementById("error").innerHTML = "";
@@ -124,6 +123,7 @@ function changeDobotStatus(button) {
         button.innerHTML = "Iniciar Rotina";
     })
     .catch(function (err) {
+        document.getElementById("error").innerHTML = "";
         document.getElementById("error").innerHTML +=" - "+ err;
 
         console.log("Fetch Error :-S", err);
