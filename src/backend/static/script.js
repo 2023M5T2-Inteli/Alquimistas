@@ -1,4 +1,4 @@
-const URL = "http://127.0.0.1:3000/";
+const URL = "http://10.128.66.31:3000/";
 
 const informations = `
     <p class="title">Relatório</p>

@@ -3,7 +3,7 @@ from flask import Flask, render_template, redirect, request
 from Dobot import Dobot
 import asyncio
 from flask_sqlalchemy import SQLAlchemy
-
+IP ="10.128.66.31"
 db = SQLAlchemy()
 app = Flask(__name__)
 app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///test.db"
@@ -53,7 +53,7 @@ async def routine():
 @app.route('/on')
 async def control_on():
     try:
-        request.args.get('http://10.128.65.57/on')
+        request.args.get('http://${IP}/on')
         await routine()
         return render_template('index.html')
     except Exception as e:
@@ -64,7 +64,7 @@ async def control_on():
 @app.route('/stop')
 async def control_stop():
     try:
-        request.args.get('http://10.128.65.57/stop')
+        request.args.get('http://${IP}/stop')
         return render_template('index.html')
     except  Exception as e:
         print("error")
@@ -74,7 +74,7 @@ async def control_stop():
 @app.route('/off')
 async def control_off():
     try:
-        await request.args.get('http://10.128.65.57/off')
+        await request.args.get('http://${IP}/off')
         return render_template('index.html')
     except Exception as e:
         print("error")
