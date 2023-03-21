@@ -1,14 +1,8 @@
 import network
-import socket
 from time import sleep
-from machine import Pin, PWM
-import json
 
-pwm = PWM(Pin(0))
-pwm.freq(1000)
-
-ssid = 'Inteli-COLLEGE'
-password = 'QazWsx@123'
+ssid = 'Alquimistas1'
+password = '12345678'
     
 def connect():
     #Connect to WLAN
@@ -20,6 +14,5 @@ def connect():
         sleep(1)
     ip = wlan.ifconfig()[0]
     print(f'Connected on {ip}')
-    return ip
-
+    return (ip)
 connect()
