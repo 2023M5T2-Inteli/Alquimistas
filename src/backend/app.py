@@ -46,9 +46,10 @@ async def routine():
     arm.drawLine(302, 0, -10, 0, -100)
     arm.rotateTool(90)
     arm.moveHome()
+    print("Passei aqui")
     arm.moveArmXY(128, -195, 14, 0)
     # arm.pickToggle()
-
+    print("Passei aqui corretamente")
     return redirect('/')
 
 @app.route('/on')
