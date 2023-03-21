@@ -41,21 +41,20 @@ async def routine():
     arm.pickToggle()
     arm.moveArmXY(189, 183, 151, 41)
     arm.drawLine(200, 183, -10, 41, -150)
-    arm.moveArmXY(189, 183, 151, 41)
+    arm.rotateTool(360)
     arm.moveHome()
     arm.drawLine(302, 0, -10, 0, -100)
-    arm.rotateTool(90)
+    arm.rotateTool(180)
     arm.moveHome()
-    print("Passei aqui")
-    arm.moveArmXY(128, -195, 14, 0)
-    # arm.pickToggle()
-    print("Passei aqui corretamente")
+    arm.moveArmXY(189, -183, 151, 41)
+    arm.drawLine(200, -183, -10, 41, -150)
+    arm.rotateTool(720)
     return redirect('/')
 
 @app.route('/on')
 async def control_on():
     try:
-        request.args.get('http://${IP}/on')
+        # request.args.get('http://${IP}/on')
         await routine()
         return redirect('/')
     except Exception as e:
@@ -65,7 +64,7 @@ async def control_on():
 @app.route('/stop')
 async def control_stop():
     try:
-        request.args.get('http://${IP}/stop')
+        # request.args.get('http://${IP}/stop')
         return redirect('/')
     except  Exception as e:
         print("error")
