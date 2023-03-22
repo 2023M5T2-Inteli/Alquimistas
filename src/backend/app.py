@@ -5,6 +5,7 @@ from pdf import PDF
 import asyncio
 from datetime import datetime
 from flask_sqlalchemy import SQLAlchemy
+IP ="10.128.66.31"
 
 PDF_WIDTH = 210
 PDF_HEIGHT = 297
@@ -47,42 +48,40 @@ async def routine():
     arm.pickToggle()
     arm.moveArmXY(189, 183, 151, 41)
     arm.drawLine(200, 183, -10, 41, -150)
-    arm.moveArmXY(189, 183, 151, 41)
+    arm.rotateTool(360)
     arm.moveHome()
     arm.drawLine(302, 0, -10, 0, -100)
-    arm.rotateTool(90)
+    arm.rotateTool(180)
     arm.moveHome()
-    arm.moveArmXY(128, -195, 14, 0)
-    # arm.pickToggle()
-
-    return render_template('index.html')
+    arm.moveArmXY(189, -183, 151, 41)
+    arm.drawLine(200, -183, -10, 41, -150)
+    arm.rotateTool(720)
+    return redirect('/')
 
 @app.route('/on')
 async def control_on():
     try:
-        request.args.get('http://10.128.65.57/on')
+        # request.args.get('http://${IP}/on')
         await routine()
-        return render_template('index.html')
+        return redirect('/')
     except Exception as e:
         print("error")
-        print(e)
         return e
     
 @app.route('/stop')
 async def control_stop():
     try:
-        request.args.get('http://10.128.65.57/stop')
-        return render_template('index.html')
+        # request.args.get('http://${IP}/stop')
+        return redirect('/')
     except  Exception as e:
         print("error")
-        print(e)
-
+        return e
 
 @app.route('/off')
 async def control_off():
     try:
-        await request.args.get('http://10.128.65.57/off')
-        return render_template('index.html')
+        await request.args.get('http://${IP}/off')
+        return redirect('/')
     except Exception as e:
         print("error")
         return e

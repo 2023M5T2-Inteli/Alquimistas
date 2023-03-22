@@ -46,7 +46,6 @@ class Dobot():
         else:
             state = DType.ConnectDobot(self.api, "", 115200)[0]
             if(state == DType.DobotConnect.DobotConnect_NoError):
-                print("AAAAAAAAAAAAAA")
                 print("Connect Status: ", CON_STR[state])
                 DType.SetQueuedCmdClear(self.api)
 

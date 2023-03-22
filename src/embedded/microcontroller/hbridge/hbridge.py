@@ -20,6 +20,7 @@ class Componentes:
         self.IN2.low()
         return("Eletromagnet is off")
     
+componentes = Componentes(0, 1, 4, 5, 15, 17)
 
     # def ligar_componentes(self):
     #     if self.Button1.value() == 1:
@@ -30,8 +31,6 @@ class Componentes:
     #         self.IN1.low()
     #         self.IN2.low()
     #         print("Componentes desligados")
-
-componentes = Componentes(0, 1, 4, 5, 15, 17)
 
 # while True:
 #     sleep(2)
