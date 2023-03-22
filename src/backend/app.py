@@ -1,8 +1,15 @@
 from flask import Flask, render_template, redirect, request
 
 from Dobot import Dobot
+from pdf import PDF
 import asyncio
+from datetime import datetime
 from flask_sqlalchemy import SQLAlchemy
+
+PDF_WIDTH = 210
+PDF_HEIGHT = 297
+
+header = []
 
 db = SQLAlchemy()
 app = Flask(__name__)
@@ -24,11 +31,11 @@ def createdb():
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    return render_template('report.html')
 
 @app.route('/report')
 def report():
-    return render_template('report.html')
+    return render_template('index.html')
 
 
 @app.route('/routine')
@@ -79,6 +86,29 @@ async def control_off():
     except Exception as e:
         print("error")
         return e
+
+
+@app.route('/post', methods=["POST"])
+async def postForm():
+    print(request.form)
+    header.clear()
+    for i in request.form:
+        header.append((i.capitalize(), request.form[i]))
+    return render_template('index.html', project=request.form['projeto'], client=request.form['cliente'], sample=request.form['amostra'])
+
+@app.route('/pdf')
+async def generatePDF():
+    pdf = PDF(orientation='P', unit='mm', format='A4')
+    pdf.add_page()
+    pdf.header()
+    a = [10,10]
+    side = True
+    for i in header:
+        pdf.element(i[0] + ': ' + i[1], a, side)
+        a[1] += 5 if(not side) else 0
+        side = not side 
+    pdf.generate(datetime.now().strftime("%d-%m-%Y-%H%M%S"))
+    return redirect('/')
 
 
 app.run(host = '0.0.0.0', port=3000, debug=True)

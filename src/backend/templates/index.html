@@ -35,7 +35,40 @@
         />
       </div>
       <div class="form" id="form">
-        <!-- Depending on the system status, a different content will appear -->
+        <div class="info-label">
+          <p>Projeto: <span class="info-span-label" id="span_project">{{project}}</span></p>
+          <p>Cliente: <span class="info-span-label" id="span_client">{{client}}</span> </p>
+          <p>Amostra: <span class="info-span-label" id="span_sample">{{sample}}</span></p>
+      </div>
+      <div class="container-btn">
+          <button onclick="changeDobotStatus(this)" class="btn-off">
+          Iniciar rotina
+          </button>
+      </div>
+      <p id="error">Error</p>
+      <div class="dobot">
+          <div class="seletion-group">
+              <div class="">
+              <p class="title">Dobot Magician Lite</p>
+              <p class="sub-title">Flask app v1.4</p>
+                  <div class="slider">
+                      <label for="fader">Ímã</label>
+                      <input type="range" min="0" max="3" value="0" id="fader"oninput="rangeValue.innerText = this.value">
+                      <p id="rangeValue">0</p>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div class="report">
+          <a class="report-btn" href="/pdf">
+              <div class="report-text">
+                  Gerar relatório
+              </div>
+              <div class="report-img">
+                  <img class="next" src="../static/images/right-arrow.png">
+              </div>
+          </a>
+      </div>
       </div>
     </div>
 
