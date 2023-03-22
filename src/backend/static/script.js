@@ -74,7 +74,7 @@ const routine = `
                 Gerar relatório
             </div>
             <div class="report-img">
-                <img class="next" src="../static/images/right-arrow.png">
+                <img class="next" src="../static/images/right-arrow.png" alt="seta">
             </div>
         </a>
     </div>
@@ -100,11 +100,10 @@ function toggleContent(){
 }
 
 function changeDobotStatus(button) {
-
     if (button.className == "btn-off") {
     button.className = "btn-on";
     button.innerHTML = "Parar";
-    fetch(URL + "on")
+    fetch("http://10.128.64.202:3000//" + "on")
     .then(function (data) {
         document.getElementById("error").style.display = "none";
     })
@@ -115,7 +114,7 @@ function changeDobotStatus(button) {
         console.log("Fetch Error :-S", err);
     });
     } else {
-    fetch(URL + "stop")
+    fetch("http://10.128.64.202:3000//" + "stop")
     .then(function (data) {
         document.getElementById("error").style.display = "none";
 
