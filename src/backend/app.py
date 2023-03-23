@@ -3,13 +3,13 @@ from flask import Flask, render_template, redirect, request
 from Dobot import Dobot
 import asyncio
 from flask_sqlalchemy import SQLAlchemy
+
 IP ="10.128.66.31"
 
 db = SQLAlchemy()
 app = Flask(__name__)
 app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///test.db"
 db.init_app(app)
-
 
 class Products(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -31,11 +31,8 @@ def index():
 def report():
     return render_template('report.html')
 
-
-@app.route('/routine')
 async def routine():
     arm = Dobot(225, 3, 140, 0)
-
     arm.moveHome()
 
     arm.pickToggle()
@@ -49,7 +46,6 @@ async def routine():
     arm.moveArmXY(189, -183, 151, 41)
     arm.drawLine(200, -183, -10, 41, -150)
     arm.rotateTool(720)
-    return redirect('/')
 
 @app.route('/on')
 async def control_on():
@@ -60,11 +56,12 @@ async def control_on():
     except Exception as e:
         print("error")
         return e
-    
+
 @app.route('/stop')
 async def control_stop():
     try:
         # request.args.get('http://${IP}/stop')
+        # arm = Dobot(225, 3, 140, 0)
         return redirect('/')
     except  Exception as e:
         print("error")

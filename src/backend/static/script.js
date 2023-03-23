@@ -103,9 +103,11 @@ function changeDobotStatus(button) {
     if (button.className == "btn-off") {
     button.className = "btn-on";
     button.innerHTML = "Parar";
-    fetch("http://10.128.64.202:3000//" + "on")
+    fetch("http://10.128.1.63:3000/" + "on")
     .then(function (data) {
         document.getElementById("error").style.display = "none";
+        button.className = "btn-off";
+        button.innerHTML = "Iniciar Rotina";
     })
     .catch(function (err) {
         document.getElementById("error").innerHTML = "";
@@ -114,12 +116,11 @@ function changeDobotStatus(button) {
         console.log("Fetch Error :-S", err);
     });
     } else {
-    fetch("http://10.128.64.202:3000//" + "stop")
+    button.className = "btn-off";
+    button.innerHTML = "Iniciar Rotina";
+    fetch("http://10.128.1.63:3000/" + "stop")
     .then(function (data) {
         document.getElementById("error").style.display = "none";
-
-        button.className = "btn-off";
-        button.innerHTML = "Iniciar Rotina";
     })
     .catch(function (err) {
         document.getElementById("error").innerHTML = "";
