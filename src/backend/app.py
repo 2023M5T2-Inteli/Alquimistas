@@ -7,6 +7,7 @@ from datetime import datetime
 from flask_sqlalchemy import SQLAlchemy
 from threading import Thread
 import threading
+from time import sleep
 
 IP ="10.128.66.31"
 
@@ -50,29 +51,30 @@ def routine():
     # #bandeja 1
     arm.moveArmXY(174, 222, 77, 51)
 
-    arm.moveArmXY(268, 175, -10, 32)
-    arm.moveArmXY(66, 169, -10, 67)
-    arm.moveArmXY(278, 202, -10, 35)
-    arm.moveArmXY(68, 195, -10, 69)
-    arm.moveArmXY(270, 241, -10, 41)
-    arm.moveArmXY(65, 271, -10, 75)
-    arm.moveArmXY(263, 266, -10, 44)
+    arm.moveArmXY(265, 175, -11, 32)
+    arm.moveArmXY(64, 169, -11, 67)
+    arm.moveArmXY(276, 202, -11, 35)
+    arm.moveArmXY(66, 195, -11, 69)
+    arm.moveArmXY(268, 241, -11, 41)
+    arm.moveArmXY(64, 271, -11, 75)
+    arm.moveArmXY(260, 266, -11, 44)
 
     arm.moveArmXY(174, 222, 77, 51)
     
     # #bandeja 2
     arm.moveHome()
-    arm.moveArmXY(325, -36, -10, -7)
+    arm.moveArmXY(325, -36, -8, -7)
     arm.rotateTool(-90)
-    arm.moveArmXY(181, -18, -10, -6)
-    arm.moveArmXY(313, 52, -10, 8)
-    arm.rotateTool(-90)
-    arm.moveArmXY(177, 43, -10, 12)
+    arm.moveArmXY(181, -18, -8, -6)
+    arm.moveArmXY(313, 52, -8, 8)
+    arm.rotateTool(-80)
+    arm.moveArmXY(177, 43, -8, 12)
     arm.moveHome()
 
     # #bandeja 3
     arm.moveArmXY(185, -229, 77, -51)
     arm.moveArmXY(185, -229, -10, -51)
+    sleep(2)
 
 @app.route('/on')
 async def control_on():
