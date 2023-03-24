@@ -1,5 +1,15 @@
 const URL = "http://10.128.66.31:3000/";
 
+const btnAdd = document.querySelector('.btn-add');
+btnCancel.addEventListener('click', function() {
+  window.location.href = ('/report');
+});
+
+const btnCancel = document.querySelector('.btn-cancel');
+btnCancel.addEventListener('click', function() {
+  window.location.href = ('/about');
+});
+
 function changeDobotStatus(button) {
     if (button.className == "btn-off") {
     button.className = "btn-on";
