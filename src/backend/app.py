@@ -5,10 +5,14 @@ from pdf import PDF
 import asyncio
 from datetime import datetime
 from flask_sqlalchemy import SQLAlchemy
+from threading import Thread
+import threading
+
 IP ="10.128.66.31"
 
 PDF_WIDTH = 210
 PDF_HEIGHT = 297
+process = None
 
 header = []
 
@@ -30,6 +34,16 @@ class Products(db.Model):
 def createdb():
     db.create_all()
 
+# class StoppableThread(threading.Thread):
+#     def __init__(process, args=()):
+#         process._stop_event = threading.Event()
+
+#     def stop(process):
+#         process._stop_event.set()
+
+#     def stopped(process):
+#         return process._stop_event.is_set()
+
 @app.route('/')
 def index():
     return render_template('report.html')
@@ -38,30 +52,29 @@ def index():
 def report():
     return render_template('index.html')
 
-
-@app.route('/routine')
-async def routine():
+def routine():
     arm = Dobot(225, 3, 140, 0)
-
     arm.moveHome()
-
     arm.pickToggle()
     arm.moveArmXY(189, 183, 151, 41)
     arm.drawLine(200, 183, -10, 41, -150)
-    arm.rotateTool(360)
+    arm.rotateTool(180)
     arm.moveHome()
     arm.drawLine(302, 0, -10, 0, -100)
     arm.rotateTool(180)
     arm.moveHome()
     arm.moveArmXY(189, -183, 151, 41)
     arm.drawLine(200, -183, -10, 41, -150)
-    arm.rotateTool(720)
+    arm.rotateTool(-180)
 
 @app.route('/on')
 async def control_on():
+    global process
     try:
         # request.args.get('http://${IP}/on')
-        await routine()
+        process = Thread(target=routine, args=())
+        process.start()
+        process.join()
         return redirect('/')
     except Exception as e:
         print("error")
@@ -72,6 +85,7 @@ async def control_stop():
     try:
         # request.args.get('http://${IP}/stop')
         # arm = Dobot(225,3,140,0)
+        # StoppableThread.stop()
         return redirect('/')
     except  Exception as e:
         print("error")
