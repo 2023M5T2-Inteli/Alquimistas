@@ -46,16 +46,33 @@ def routine():
     arm = Dobot(225, 3, 140, 0)
     arm.moveHome()
     arm.pickToggle()
-    arm.moveArmXY(189, 183, 151, 41)
-    arm.drawLine(200, 183, -10, 41, -150)
-    arm.rotateTool(180)
+
+    # #bandeja 1
+    arm.moveArmXY(174, 222, 77, 51)
+
+    arm.moveArmXY(268, 175, -10, 32)
+    arm.moveArmXY(66, 169, -10, 67)
+    arm.moveArmXY(278, 202, -10, 35)
+    arm.moveArmXY(68, 195, -10, 69)
+    arm.moveArmXY(270, 241, -10, 41)
+    arm.moveArmXY(65, 271, -10, 75)
+    arm.moveArmXY(263, 266, -10, 44)
+
+    arm.moveArmXY(174, 222, 77, 51)
+    
+    # #bandeja 2
     arm.moveHome()
-    arm.drawLine(302, 0, -10, 0, -100)
-    arm.rotateTool(180)
+    arm.moveArmXY(325, -36, -10, -7)
+    arm.rotateTool(-90)
+    arm.moveArmXY(181, -18, -10, -6)
+    arm.moveArmXY(313, 52, -10, 8)
+    arm.rotateTool(-90)
+    arm.moveArmXY(177, 43, -10, 12)
     arm.moveHome()
-    arm.moveArmXY(189, -183, 151, 41)
-    arm.drawLine(200, -183, -10, 41, -150)
-    arm.rotateTool(-180)
+
+    # #bandeja 3
+    arm.moveArmXY(185, -229, 77, -51)
+    arm.moveArmXY(185, -229, -10, -51)
 
 @app.route('/on')
 async def control_on():
