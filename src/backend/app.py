@@ -34,16 +34,6 @@ class Products(db.Model):
 def createdb():
     db.create_all()
 
-# class StoppableThread(threading.Thread):
-#     def __init__(process, args=()):
-#         process._stop_event = threading.Event()
-
-#     def stop(process):
-#         process._stop_event.set()
-
-#     def stopped(process):
-#         return process._stop_event.is_set()
-
 @app.route('/')
 def index():
     return render_template('report.html')
@@ -85,7 +75,6 @@ async def control_stop():
     try:
         # request.args.get('http://${IP}/stop')
         # arm = Dobot(225,3,140,0)
-        # StoppableThread.stop()
         return redirect('/')
     except  Exception as e:
         print("error")
