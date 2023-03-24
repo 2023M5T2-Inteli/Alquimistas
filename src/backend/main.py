@@ -4,31 +4,23 @@ from Dobot import Dobot
 from pdf import PDF
 import asyncio
 from datetime import datetime
-from flask_sqlalchemy import SQLAlchemy
+from sqlalchemy import create_engine
+from sqlalchemy.orm import Session, sessionmaker
+from models.base import Base
+from models.report import Report
+
 IP ="10.128.66.31"
 
 PDF_WIDTH = 210
 PDF_HEIGHT = 297
 
-header = []
-
-db = SQLAlchemy()
 app = Flask(__name__)
-app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///test.db"
-db.init_app(app)
+header = []
+engine = create_engine("sqlite+pysqlite:///reports.db", echo=True)
+Session = sessionmaker(bind = engine)
+session = Session()
 
-
-class Products(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    produto = db.Column(db.String(100))
-    amostra = db.Column(db.String(100))
-    data = db.Column(db.Date)
-    material = db.Column(db.String(100))
-    massa = db.Column(db.Float)
-
-@app.cli.command()
-def createdb():
-    db.create_all()
+Base.metadata.create_all(engine)
 
 @app.route('/')
 def index():
@@ -93,6 +85,11 @@ async def postForm():
     header.clear()
     for i in request.form:
         header.append((i.capitalize(), request.form[i]))
+
+    r1 = Report(project=request.form['projeto'], client=request.form['cliente'], sample=request.form['amostra'], operator=request.form['operador'], cycles=request.form['ciclos'], liquid_initial_mass=request.form['peso solido'], solid_initial_mass=request.form['peso solido'])
+
+    session.add(r1)
+    session.commit()
     return render_template('index.html', project=request.form['projeto'], client=request.form['cliente'], sample=request.form['amostra'])
 
 @app.route('/pdf')
