@@ -17,7 +17,6 @@ app = Flask(__name__)
 app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///test.db"
 db.init_app(app)
 
-
 class Products(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     produto = db.Column(db.String(100))
@@ -30,6 +29,10 @@ class Products(db.Model):
 def createdb():
     db.create_all()
 
+@app.route('/about')
+def introduction():
+    return render_template('about.html')
+
 @app.route('/')
 def index():
     return render_template('report.html')
@@ -37,7 +40,6 @@ def index():
 @app.route('/report')
 def report():
     return render_template('index.html')
-
 
 @app.route('/routine')
 async def routine():
