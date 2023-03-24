@@ -31,7 +31,7 @@ body{
     border-radius: 25px;
     padding: 1.5rem;
     background: #000000;
-    margin-top: 4%;
+    margin-top: 2%;
     margin-right: 4%;
 }
 
@@ -129,7 +129,7 @@ input{
 }
 
 .report-btn{
-    margin: 10% 0 0 0;
+    margin: 3.5% 0 0 0;
     font-family: 'Montserrat', sans-serif;
     display: flex;
     padding: 0.75rem;

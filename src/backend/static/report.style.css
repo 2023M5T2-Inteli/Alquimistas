@@ -23,11 +23,11 @@ body{
 
 .form {
     width: 500px;
-    height: 500px;
+    height: 85vh;
     border-radius: 25px;
     padding: 1.5rem;
     background: #000000;
-    margin-top: 4%;
+    margin-top: 2%;
     margin-right: 4%;
 }
 
@@ -108,11 +108,11 @@ input{
     transition: 0.3s;
     justify-content: center;
     margin-right: 5%;
-    font-size: 14px;
+    font-size: 18px;
 }
 
 .button-group{
     display: flex;
     justify-content: flex-end;
-    margin-top: 10%;
+    margin-top: 4%;
 }
