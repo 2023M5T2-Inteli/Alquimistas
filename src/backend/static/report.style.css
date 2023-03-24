@@ -79,6 +79,7 @@ input{
     text-decoration: none;
     background-color: #ffffff;
     color: rgb(23, 23, 24);
+    align-items: center;
     border-radius: 15px;
     border: none;
     width: 25%;
