@@ -14,7 +14,7 @@ function changeDobotStatus(button) {
     if (button.className == "btn-off") {
     button.className = "btn-on";
     button.innerHTML = "Parar";
-    fetch("http://10.128.1.99:3000/" + "on")
+    fetch("http://10.128.66.238:3000/" + "on")
     .then(function (data) {
         document.getElementById("error").style.display = "none";
         button.className = "btn-off";
@@ -30,7 +30,7 @@ function changeDobotStatus(button) {
         button.className = "btn-off";
         button.innerHTML = "Iniciar Rotina";
 
-    fetch("http://10.128.1.99:3000/" + "stop")
+    fetch("http://10.128.66.238:3000/" + "stop")
     .then(function (data) {
         document.getElementById("error").style.display = "none";
     })
