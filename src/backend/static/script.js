@@ -1,10 +1,5 @@
 const URL = "http://10.128.66.31:3000/";
 
-const btnBegin = document.getElementById('btn-begin');
-btnBegin.addEventListener('click', function() {
-    window.location.href = ('/');
-});
-
 const btnAdd = document.querySelector('.btn-add');
 btnCancel.addEventListener('click', function() {
   window.location.href = ('/report');

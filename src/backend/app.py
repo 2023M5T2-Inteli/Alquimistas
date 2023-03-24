@@ -29,17 +29,17 @@ class Products(db.Model):
 def createdb():
     db.create_all()
 
-@app.route('/about')
-def introduction():
-    return render_template('about.html')
-
 @app.route('/')
 def index():
-    return render_template('report.html')
+    return render_template('about.html')
+
+@app.route('/home')
+def home():
+    return render_template('index.html')
 
 @app.route('/report')
 def report():
-    return render_template('index.html')
+    return render_template('report.html')
 
 @app.route('/routine')
 async def routine():
