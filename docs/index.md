@@ -227,6 +227,7 @@ Personalidade: Dinâmico, curioso e apaixonado por soluções tecnológicas inov
 ![img](https://github.com/2023M5T2-Inteli/alquimistas/blob/main/docs/img/sprint1/arquitetura-da-solucao-v1.png)
 
 ## Arquitetura da Solução - Versão 2
+![img](https://github.com/2023M5T2-Inteli/alquimistas/blob/dev/docs/img/sprint1/arquitetura-da-solucao-v2.png)
 
 ## Módulos do Sistema e Visão Geral (Big Picture)
 
@@ -377,7 +378,6 @@ A seguir temos a representação lógica do projeto de acordo com a estrutura de
 
 ![img](https://github.com/2023M5T2-Inteli/alquimistas/blob/dev/docs/img/sprint4/logic_model.png)
 
-
 # Teste de Software
 ### Implementação de Servidor 
 Para estruturar a renderização das páginas construídas para o software, desenvolvemos um servidor utilizando a biblioteca Flask para Python. O Flask é um framework web leve e flexível para a construção de aplicativos web de maneira fácil e eficiente, permitindo a criação de rotas de acesso às páginas do aplicativo e o gerenciamento das solicitações e respostas HTTP.
@@ -406,8 +406,12 @@ Desenvolvimento de um suporte para PCB (placa com o circuito eletrônico), produ
 
 Além do suporte, as conexões por fio serão fixadas no corpo do robô com fita adesiva/isolante.
 
+![img](https://github.com/2023M5T2-Inteli/alquimistas/blob/dev/docs/img/sprint4/caixa.png)
+
 ### Suporte dos eletroimãs:
 Até a Sprint 4, os eletroimãs estavam grudados com fita na própria garra do Dobot. Contudo, observamos a necessidade de criar um suporte para imãs, o qual a garra ainda estará segurando. Assim, a imagem abaixo representa o que a garra irá segurar, a 'caixinha' onde estarão os dois eletroimãs e em sua borda criamos um design inspirado no rastelo. 
+
+![img](https://github.com/2023M5T2-Inteli/alquimistas/blob/dev/docs/img/sprint4/rastelo.png)
 
 ### Lista de materiais:
 
