@@ -129,7 +129,7 @@ async def generatePDF():
         a[1] += 5 if(not side) else 0
         side = not side 
     pdf.generate(datetime.now().strftime("%d-%m-%Y-%H%M%S"))
-    return redirect('/')
+    return render_template("index.html")
 
 
 app.run(host = '0.0.0.0', port=3000, debug=True)
