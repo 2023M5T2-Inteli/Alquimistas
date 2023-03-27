@@ -60,7 +60,15 @@
           </div>
       </div>
       <div class="report">
-          <a class="report-btn" href="/pdf" target="_blank" onClick="alert('Seu Relatório foi Baixado');">
+          <a class="report-btn" href="/pdf" target="_blank" id="myBtn">
+            <!-- onClick="alert('Seu Relatório foi Baixado');"> -->
+              <div id="myModal" class="modal">
+                <div class="modal-content">
+                  <span class="close">&times;</span>
+                  <p>Seu relatório foi baixado</p>
+                </div>
+              
+              </div>
               <div class="report-text">
                   Gerar relatório
               </div>
