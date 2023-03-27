@@ -351,6 +351,14 @@ Ao iniciar a navegação na aplicação, o usuário é apresentado à tela Home,
 Na parte inferior da tela, há a opção de adicionar um relatório à análise. Ao clicar nesta opção, o usuário é redirecionado para um formulário onde serão solicitadas informações importantes, tais como o projeto, a massa e a amostra, para compor os dados referentes ao relatório do processo. 
   
 # Projeto de Banco de Dados
+O Modelo de Banco de Dados foi criado para registrar relatórios de informações sobre cada análise de amostra realizada. O objetivo desse modelo de banco de dados é armazenar e organizar informações relevantes sobre cada análise, como o nome do projeto, o cliente, a amostra, o operador, a quantidade de ciclos, a massa inicial líquida e a massa inicial sólida.
+
+Esses parâmetros são utilizados para caracterizar cada relatório e fornecer informações importantes sobre a análise de amostra realizada. O nome do projeto pode ser usado para categorizar as análises de acordo com a finalidade do projeto, enquanto o cliente pode ser usado para identificar quem solicitou a análise. A amostra, por sua vez, é a matéria-prima analisada, enquanto o operador é a pessoa responsável pela realização da análise. A quantidade de ciclos, a massa inicial líquida e a massa inicial sólida são parâmetros que descrevem a natureza da análise.
+
+Para integrar o banco de dados ao sistema, foi utilizada a SQLAlchemy como ORM (Object-Relational Mapping). A SQLAlchemy é uma biblioteca de mapeamento objeto-relacional para Python que permite a comunicação entre o código Python e o banco de dados relacional. Através da SQLAlchemy, foi possível criar uma classe em Python que define a estrutura padrão dos registros do banco de dados.
+
+A classe em Python pode ser usada para criar objetos que representam os registros do banco de dados, seguindo a estrutura definida pelos parâmetros fornecidos. Dessa forma, é possível armazenar e recuperar informações de forma organizada e eficiente. A integração do banco de dados ao sistema através da SQLAlchemy também permite que as informações sejam facilmente acessadas e atualizadas conforme necessário.
+
 
 ## Modelo Lógico
 De acordo com a descrição ja inicialmente indicada para a construção do modelo lógico do banco de dados, nossa estrutura atual se baseia em uma unica entidade chamada de "report".
