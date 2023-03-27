@@ -298,7 +298,7 @@ Assim como o eletroimã, e a partir da arquitetura da solução, para o funciona
 
 Posto isso, é possível observar o teste do shaker sendo acionado: 
 
-[Vídeo do Shaker](https://youtube.com/shorts/p4DXiTl25Kk?feature=share)
+[Vídeo de Controle de Movimentação](https://youtube.com/shorts/p4DXiTl25Kk?feature=share)
 
 ## Testes de Componentes - Versão 2
 Para a segunda versão do teste de componentes do hardware focamos no acionamento simultâneo dos seguintes componentes: 
