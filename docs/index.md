@@ -354,9 +354,23 @@ A seguir apresentamos a estrutura com exemplos de preenchimento do banco de dado
 
 ![img](https://github.com/2023M5T2-Inteli/alquimistas/blob/dev/docs/img/sprint4/db.png)
 
-## Modelo Conceitual
-
 ## Modelo Lógico
+De acordo com a descrição ja inicialmente indicada para a construção do modelo lógico do banco de dados, nossa estrutura atual se baseia em uma unica entidade chamada de "report".
+
+Constituida pela seguinte estrutura: 
+- id: Integer 
+- project: String
+- client: String
+- sample: String
+- operator: String
+- cycles: Integer
+- liquid_initial_mass: Float 
+- solid_initial_mass: Float 
+
+A seguir temos a representação lógica do projeto de acordo com a estrutura de dados listada acima: 
+
+![img](https://github.com/2023M5T2-Inteli/alquimistas/blob/dev/docs/img/sprint4/logic_model.png)
+
 
 # Teste de Software
 ### Implementação de Servidor 
