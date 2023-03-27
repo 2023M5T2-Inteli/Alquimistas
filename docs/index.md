@@ -227,7 +227,7 @@ Personalidade: Dinâmico, curioso e apaixonado por soluções tecnológicas inov
 ![img](https://github.com/2023M5T2-Inteli/alquimistas/blob/main/docs/img/sprint1/arquitetura-da-solucao-v1.png)
 
 ## Arquitetura da Solução - Versão 2
-![img](https://github.com/2023M5T2-Inteli/alquimistas/blob/dev/docs/img/sprint1/arquitetura-da-solucao-v2.png)
+![img](https://github.com/2023M5T2-Inteli/alquimistas/blob/dev/docs/img/sprint4/arquitetura-da-solucao-v2.png)
 
 ## Módulos do Sistema e Visão Geral (Big Picture)
 
