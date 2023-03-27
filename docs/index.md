@@ -226,6 +226,8 @@ Personalidade: Dinâmico, curioso e apaixonado por soluções tecnológicas inov
 
 ![img](https://github.com/2023M5T2-Inteli/alquimistas/blob/main/docs/img/sprint1/arquitetura-da-solucao-v1.png)
 
+## Arquitetura da Solução - Versão 2
+
 ## Módulos do Sistema e Visão Geral (Big Picture)
 
 ## Descrição dos Subsistemas
@@ -246,6 +248,13 @@ Sistema integrado que abarca o código do servidor de interface, assim como os c
 2. Ponte H: A ponte H é um circuito que serve para variar o sentido da corrente em uma determinada carga, bem como controlar sua potência.
   <br>2.1. Elétroimã: O eletroímã é um dispositivo formado por um núcleo de ferro envolto por um solenoide (bobina) que, mediante uma indução de corrente, gera campo magnético.
   <br>2.2. Shaker: O Micro Motor Vibracall é um tipo de motor de tamanho bem reduzido, responsável por produzir vibrações.
+
+#### Soft AP
+A Raspberry Pi Pico é uma placa microcontroladora de baixo custo que oferece diversas possibilidades de projetos e configurações, dessa maneira optamos por usar a Raspberry Pi Pico como Soft AP (ponto de acesso), permitindo que ela seja usada para gerar uma rede Wi-Fi para outros dispositivos. Nesse caso específico, usamos uma Raspberry Pi Pico como Soft AP para gerar rede para outro Raspberry Pi Pico, ou seja, usamos uma placa para criar uma rede sem fio que permite que o outro dispositivo possa se conectar e trocar informações com ela.
+
+Para configurar a Raspberry Pi Pico como Soft AP, é necessário utilizar o modo de operação de rede chamado de "Access Point" ou "Ponto de Acesso", tal modo permite que a placa seja configurada como um roteador Wi-Fi que cria sua própria rede e permite que outros dispositivos se conectem a ela. Uma vez que a Raspberry Pi Pico esteja configurada como Soft AP, o outro Raspberry Pi Pico poderá se conectar à rede criada pela primeira placa. Dessa forma, é possível criar uma rede local (LAN) entre as duas placas e permitir a troca de informações entre elas.
+
+Em resumo, usar uma Raspberry Pi Pico como Soft AP permite que ela seja usada para gerar uma rede sem fio e permitir que outros dispositivos se conectem a ela. No caso do projeto, utilizamos uma placa para gerar rede para outra placa, criando uma LAN entre as duas.
 
 ## Relatório de entrada e saídas
 Com base na estrutura de Arquitetura desenvolvida para a solução proposta, avaliamos os inputs e outputs esperados para cada sistema de blocos e cada componente do sistema. 
@@ -342,17 +351,6 @@ Ao iniciar a navegação na aplicação, o usuário é apresentado à tela Home,
 Na parte inferior da tela, há a opção de adicionar um relatório à análise. Ao clicar nesta opção, o usuário é redirecionado para um formulário onde serão solicitadas informações importantes, tais como o projeto, a massa e a amostra, para compor os dados referentes ao relatório do processo. 
   
 # Projeto de Banco de Dados
-O Modelo de Banco de dados foi criado para registrar relatórios de informações sobre cada análise de amostra realizada. O objetivo desse modelo de banco de dados é armazenar e organizar informações relevantes sobre cada análise, como o nome do projeto, o cliente, a amostra, o operador, a quantidade de ciclos, a massa inicial líquida e a massa inicial sólida.
-
-Esses parâmetros são utilizados para caracterizar cada relatório e fornecer informações importantes sobre a análise de amostra realizada. O nome do projeto pode ser usado para categorizar as análises de acordo com a finalidade do projeto, enquanto o cliente pode ser usado para identificar quem solicitou a análise. A amostra, por sua vez, é a matéria-prima analisada, enquanto o operador é a pessoa responsável pela realização da análise. A quantidade de ciclos, a massa inicial líquida e a massa inicial sólida são parâmetros que descrevem a natureza da análise.
-
-Para integrar o banco de dados ao sistema, foi utilizada a SQLAlchemy como ORM (Object-Relational Mapping). A SQLAlchemy é uma biblioteca de mapeamento objeto-relacional para Python que permite a comunicação entre o código Python e o banco de dados relacional. Através da SQLAlchemy, foi possível criar uma classe em Python que define a estrutura padrão dos registros do banco de dados.
-
-A classe em Python pode ser usada para criar objetos que representam os registros do banco de dados, seguindo a estrutura definida pelos parâmetros fornecidos. Dessa forma, é possível armazenar e recuperar informações de forma organizada e eficiente. A integração do banco de dados ao sistema através da SQLAlchemy também permite que as informações sejam facilmente acessadas e atualizadas conforme necessário.
-
-A seguir apresentamos a estrutura com exemplos de preenchimento do banco de dados de acordo com a modelagem idealizada: 
-
-![img](https://github.com/2023M5T2-Inteli/alquimistas/blob/dev/docs/img/sprint4/db.png)
 
 ## Modelo Conceitual
 
@@ -382,10 +380,21 @@ Dessa forma, com a conexão estabelecida e o Módulo Sensor devidamente configur
 O projeto mecânico consiste em duas peças desenhadas e fabricadas com o auxílio do software Onshape (sistema de software de design auxiliado por computador, fornecido pela Internet por meio de um modelo de software como serviço) e impressora 3D.
 
 ### Suporte de Placa:
-Para o circuito eletrônico com os dois microcontroladores foi desenvolvida um suporte para apoiar a placa. Além disso, com o auxílio da placa, as conexões por fio serão fixadas no corpo do robô com fita adesiva/isolante.
+Desenvolvimento de um suporte para PCB (placa com o circuito eletrônico), produzido pela impressora 3D e posicionado atrás do braço robótico. Assim, o suporte otimiza a experiência do usuário e organiza a arquitetura do projeto.
+
+Além do suporte, as conexões por fio serão fixadas no corpo do robô com fita adesiva/isolante.
 
 ### Suporte dos eletroimãs:
-Até a Sprint 4, os eletroimãs estavam grudados com fita na própria garra do Dobot. Contudo, vimos a necessidade de criar uma 'caixinha' para os imãs, onde a garra ainda estará segurando o suporte. Além disso, para melhorar a eficiência da limpeza das bandejas, criamos um design inspirado no rastelo na borda da caixinha onde estarão os imãs.
+Até a Sprint 4, os eletroimãs estavam grudados com fita na própria garra do Dobot. Contudo, observamos a necessidade de criar um suporte para imãs, o qual a garra ainda estará segurando. Assim, a imagem abaixo representa o que a garra irá segurar, a 'caixinha' onde estarão os dois eletroimãs e em sua borda criamos um design inspirado no rastelo. 
+
+### Lista de materiais:
+
+### Método de fabricação:
+1) Inicialmente foi desenvolvido o desenho 3D das peças por meio do software Onshape.
+2) Em seguida foi realizado o 'fatiamento' dos desenhos, para realizar a impressão 3D.
+
+### Fabricação dos dispositivos mecânicos:
+
 
 ## Projeto dos dispositivos eletrônicos
 ### Listagem de Placa: 
