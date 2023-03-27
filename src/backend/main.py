@@ -128,7 +128,7 @@ async def generatePDF():
         pdf.element(i[0] + ': ' + i[1], a, side)
         a[1] += 5 if(not side) else 0
         side = not side 
-    pdf.generate(datetime.now().strftime("%d-%m-%Y-%H%M%S"))
+    # pdf.generate(datetime.now().strftime("%d-%m-%Y-%H%M%S"))
     return render_template("index.html")
 
 
