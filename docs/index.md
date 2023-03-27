@@ -368,9 +368,13 @@ Dessa forma, com a conexão estabelecida e o Módulo Sensor devidamente configur
 
 # Prototipação de Hardware
 ## Projeto dos dispositivos mecânicos
-Inicialmente o projeto consiste na utilização dos dispositivos disponibilizados pelo laboratório de eletrônica. E os sistêmas mecânicos se baseiam em uma integração entre componentes eletrônicos e as estruturas disponíveis do Dobot Magician Lite. 
+O projeto mecânico consiste em duas peças desenhadas e fabricadas com o auxílio do software Onshape (sistema de software de design auxiliado por computador, fornecido pela Internet por meio de um modelo de software como serviço) e impressora 3D.
 
-Na Sprint 4, estaremos explorando opções para aprimorar o suporte das bandejas.
+### Suporte de Placa:
+Para o circuito eletrônico com os dois microcontroladores foi desenvolvida um suporte para apoiar a placa. Além disso, com o auxílio da placa, as conexões por fio serão fixadas no corpo do robô com fita adesiva/isolante.
+
+### Suporte dos eletroimãs:
+Até a Sprint 4, os eletroimãs estavam grudados com fita na própria garra do Dobot. Contudo, vimos a necessidade de criar uma 'caixinha' para os imãs, onde a garra ainda estará segurando o suporte. Além disso, para melhorar a eficiência da limpeza das bandejas, criamos um design inspirado no rastelo na borda da caixinha onde estarão os imãs.
 
 ## Projeto dos dispositivos eletrônicos
 ### Listagem de Placa: 
