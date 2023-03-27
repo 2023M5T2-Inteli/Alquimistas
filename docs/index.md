@@ -300,6 +300,16 @@ Posto isso, é possível observar o teste do shaker sendo acionado:
 
 [Vídeo do Shaker](https://youtube.com/shorts/p4DXiTl25Kk?feature=share)
 
+## Testes de Componentes - Versão 2
+Para a segunda versão do teste de componentes do hardware focamos no acionamento simultâneo dos seguintes componentes: 
+
+- Melhoria de Rota - Movimentação 
+- Acionamento do Imã 
+
+### Controle de Movimentação 
+
+[Vídeo do Shaker](https://www.youtube.com/shorts/R82z4bbFPFQ)
+
 ### Requisitos de software
 
 ## Tecnologias Utilizadas
