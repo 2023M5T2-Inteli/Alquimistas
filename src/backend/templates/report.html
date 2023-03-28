@@ -29,15 +29,15 @@
                 <p class="sub-title">Preencha as informações relacionadas a amostra em análise</p>
                 <div class="input-group" style="margin-right: 10%; width: 100%;">
                     <label for="project">Projeto</label>
-                    <input type="text" name="projeto" id="project">
+                    <input required type="text" name="projeto" id="project">
                 </div>
                 <div class="input-group" style="margin-right: 10%; width: 100%;">
                     <label for="client">Cliente</label>
-                    <input type="text" name="cliente" id="client">
+                    <input required type="text" name="cliente" id="client">
                 </div>
                 <div class="input-group" style="margin-right: 10%; width: 100%;">
                     <label for="sample">Nome da amostra</label>
-                    <input type="text" name="amostra" id="sample">
+                    <input required type="text" name="amostra" id="sample">
                 </div>
                 <div style="display: flex;">
                     <div class="input-group" style="margin-right: 10%;">
@@ -52,16 +52,16 @@
                 <div style="display: flex; width:100%;">
                     <div class="input-group" style="margin-right: 10%;">
                         <label for="solid_weight">Massa inicial de sólido (g)</label>
-                        <input style="width: 100%;" type="number" name="peso solido" id="solid_weight">
+                        <input  style="width: 100%;" type="number" name="peso solido" id="solid_weight">
                     </div>
                     <div class="input-group" style="margin-right: 10%;">
                         <label for="liquid_weight">Massa inicial de líquido (g)</label>
-                        <input type="number" name="peso liquido" id="liquid_weight">
+                        <input  type="number" name="peso liquido" id="liquid_weight">
                     </div>
                 </div>
                 <div class="button-group">
                     <a href="" class="btn-cancel">Cancelar</a>
-                    <input type="submit" class="btn-add" value="Adicionar">
+                    <input type="submit" class="btn-add" onclick="valida_form()" value="Adicionar">
                 </div>
             </form>
         </div>
