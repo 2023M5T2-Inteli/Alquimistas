@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IPT | Instituto de Pesquisas Tecnológicas</title>
+
+    <!-- Custom fonts for this template -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Custom CSS -->
+    <link
+      rel="icon"
+      href="{{ url_for('static', filename = 'images/icon-ipt.png') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename = 'index.style.css') }}"
+    />
+  </head>
+
+  <body>
+    <div class="flex">
+      <div>
+        <img class="logo" src="../static/images/logo_ipt.png" alt="logo ipt" />
+        <img
+          class="arm"
+          src="../static/images/braco_mecanico_2.png"
+          alt="braço robótico"
+        />
+      </div>
+      
+      <div class="flex">
+        <div>
+            <div>
+                {plot}  
+            </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <script src="{{url_for('static', filename='script.js')}}"></script>
+  </body>
+</html>

@@ -4,13 +4,17 @@ from Dobot import Dobot
 from pdf import PDF
 import asyncio
 from datetime import datetime
-from sqlalchemy import create_engine
+from sqlalchemy import create_engine, delete
 from sqlalchemy.orm import Session, sessionmaker
 from models.base import Base
 from models.report import Report
+from models.cycle import Cycle
 from threading import Thread
 import threading
 from time import sleep
+
+import plotly
+import plotly.graph_objs as go
 
 IP ="10.128.66.31"
 
@@ -25,6 +29,28 @@ Session = sessionmaker(bind = engine)
 session = Session()
 
 Base.metadata.create_all(engine)
+
+session.query(Report).delete()
+session.query(Cycle).delete()
+session.commit()
+
+# cycle = Cycle(magnetic_field=100, speed=20, cycle_mass=31, cycle_duration=150, report_id=1)
+# cycle2 = Cycle(magnetic_field=200, speed=12, cycle_mass=20, cycle_duration=150, report_id=1)
+# cycle3 = Cycle(magnetic_field=300, speed=24, cycle_mass=18, cycle_duration=150, report_id=1)
+# cycle4 = Cycle(magnetic_field=400, speed=55, cycle_mass=19, cycle_duration=150, report_id=1)
+# cycle5 = Cycle(magnetic_field=500, speed=4, cycle_mass=5, cycle_duration=150, report_id=1)
+# cycle6 = Cycle(magnetic_field=600, speed=30, cycle_mass=1, cycle_duration=150, report_id=1)
+# cycle7 = Cycle(magnetic_field=100, speed=20, cycle_mass=31, cycle_duration=150, report_id=2)
+
+# session.add(cycle)
+# session.add(cycle2)
+# session.add(cycle3)
+# session.add(cycle4)
+# session.add(cycle5)
+# session.add(cycle6)
+# session.add(cycle7)
+
+# session.commit()
 
 @app.route('/')
 def index():
@@ -111,7 +137,7 @@ async def postForm():
     for i in request.form:
         header.append((i.capitalize(), request.form[i]))
 
-    r1 = Report(project=request.form['projeto'], client=request.form['cliente'], sample=request.form['amostra'], operator=request.form['operador'], cycles=request.form['ciclos'], liquid_initial_mass=request.form['peso solido'], solid_initial_mass=request.form['peso solido'])
+    r1 = Report(project=request.form['projeto'], client=request.form['cliente'], sample=request.form['amostra'], operator=request.form['operador'], cycle_number=request.form['ciclos'], liquid_initial_mass=request.form['peso solido'], solid_initial_mass=request.form['peso solido'])
 
     session.add(r1)
     session.commit()
@@ -131,5 +157,29 @@ async def generatePDF():
     pdf.generate(datetime.now().strftime("%d-%m-%Y-%H%M%S"))
     return render_template("index.html")
 
+
+@app.route('/dashboard')
+def dashboard():
+    query = session.query(Report).all()
+    
+    x = []
+    y = []
+    for report in query:
+        for cycle in report.children:
+            x.append(cycle.id)
+            y.append(cycle.cycle_mass)
+
+    data = [go.Scatter(x=x, y=y)]
+    layout = go.Layout(
+                        title= f"{report.project}",
+                        xaxis=dict(title='Iteração'),
+                        yaxis=dict(title='Massa Coletada'),
+                        title_x=0.5
+                        )
+    fig = go.Figure(data=data, layout=layout)
+
+    plotly.offline.plot(fig, filename='test.html', config={'displayModeBar': False})
+
+    return render_template("dashboard.html")
 
 app.run(host = '0.0.0.0', port=3000, debug=True)
