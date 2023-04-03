@@ -143,57 +143,89 @@ A seguir estão os objetivos/benefícios esperados com o desenvolvimento do proj
 
 # Análise do Problema
 
-*Descrição_da_análise_do_problema*
-
 ## Análise da área de atuação
 
-*Descrição_da_análise_da_área_de_atuação*
+O IPT é formado por diversos departamentos, dentre os quais destaca-se o Departamento de Materiais Avançados, que se dedica a desenvolver materiais capazes de atender às demandas do mercado atual em relação a desempenho, ciclo de vida e impacto socioambiental. O projeto em questão está relacionado a este departamento, mais especificamente ao Laboratório de Processos Metalúrgicos, responsável pelo tratamento de minérios. Nesse laboratório, é utilizada a técnica de separação magnética, a qual permite dissociar elementos que apresentam propriedades ferromagnéticas nas amostras.
 
-## Análise do cenário: Matriz SWOT
+A seguir, apresentam-se as etapas do processo de separação magnética realizado no laboratório:
 
-*Matriz_SWOT*
+1. Dissolve-se a amostra, contendo os minerais, em uma bandeja com água. Em seguida, um ímã, envolvido em plástico, é colocado próximo à amostra, de modo a projetar seu campo magnético e aderir o material magnético.
+2. O ímã é então imerso em uma segunda bandeja contendo apenas água, com o intuito de desprender qualquer material não magnético por arraste.
+3. As partículas magnéticas são descarregadas em uma terceira bandeja, obtendo-se, dessa forma, o produto final contendo apenas os materiais de interesse.
+
+## Ideação da proposta da solução 
+
+Para as etapas de ideação na proposta de solução, foram realizadas as seguintes atividades:
+
+Entrevista: Utilizamos esta ferramenta para compreender diretamente as necessidades e problemas dos stakeholders. Inicialmente, apresentamos a empresa e, em seguida, conduzimos uma sessão interativa de perguntas e respostas.
+
+Experimentação: Após a sessão de Q&A, realizamos uma visita monitorada, acompanhada por técnicos e pesquisadores, para conhecer o ambiente de trabalho e os processos de separação magnética. Essa experiência nos permitiu entender melhor as dificuldades enfrentadas pelos profissionais e identificar oportunidades de melhoria.
 
 ## Proposta de Valor: Value Proposition Canvas
 
+O Value Proposition Canvas (ou Quadro de Proposta de Valor) é uma ferramenta visual que ajuda as empresas a entenderem as necessidades e desejos de seus clientes e a desenvolverem produtos e serviços que os atendam de forma única e valiosa. 
+
+Sendo assim, ele é dividido em duas partes: a Proposta de Valor do Cliente (trabalhos, dores e ganhos dos clientes) e a Proposta de Valor da Empresa (soluções, benefícios e diferenciais da empresa).
+
 ![img](https://github.com/2023M5T2-Inteli/alquimistas/blob/main/docs/img/sprint1/proposta-de-valor.png)
 
+#### Proposta de Valor do Cliente
+1.Ganhos: Padronização de análises; Agilidade e precisão na produção de relatórios.
+2.Tarefas do Cliente: Reazlizar o processo manual de captação de minérios por meio da utilização de um imã.
+3.Dores: Excesso de trabalho braçal; Necessidade de variações de imãs; Falta de precisão nas informações.
+
+#### Proposta de Valor da Empresa 
+1.Criadores de ganho: Confiabilidade no resultado das amostras; O colaborador poderá exercer outras funções enquanto o robô faz o serviço.
+2.Produtos e serviços: Automatização por meio de um braço robótico para automatizar o serviço realizado pelo colaborador ao IPT na separação.
+3.Aliviam as dores: Utilização de um único eletroimã que varia seu magnetismo; Processo automatizado e adaptável; Substitui a necessidade de um colaborador realizando o processo.
+
 ## Matriz de Risco
+
+A matriz de risco é uma ferramenta de gerenciamento que permite identificar, avaliar e priorizar os riscos associados ao projeto, sendo uma representação visual dos riscos que podem afetar o sucesso do projeto, organizados em uma tabela que combina a probabilidade de ocorrência de um evento com o impacto que teria no resultado final. 
 
 ![img](https://github.com/2023M5T2-Inteli/alquimistas/blob/main/docs/img/sprint1/matriz-de-risco.png)
 
 ## Matriz Oceano Azul
 
+A matriz Oceano Azul é uma ferramenta estratégica que ajuda a identificar novas oportunidades de mercado e a criar um espaço de mercado inexplorado, conhecido como "Oceano Azul".
+
 ![img](https://github.com/2023M5T2-Inteli/alquimistas/blob/main/docs/img/sprint1/matriz-oceano-azul.png)
+
+ A matriz é composta por quatro quadrantes que avaliam as características do mercado atual e das novas ideias de negócios, levando em consideração fatores como preço, qualidade, conveniência e experiência do cliente. Desse modo, a ideia é que, ao encontrar um Oceano Azul, a empresa possa explorar novas demandas e criar novos mercados, em vez de lutar pelo mesmo espaço limitado de mercado com a concorrência existente.
+
+#### Eliminar
+Valores de medições imprecisos; Valores com erros causados pelo uso manual do processo; Intervenção humana.
+#### Elevar
+Maior confiabilidade dos valores gerados; Agilidade e precisão.
+#### Reduzir
+Mão de obra manual; Diminuição de gastos operacionais.
+#### Criar
+Automatização robotizada de um processo manual.
+
+Além disso, o gráfico mostra pontos de comparação entre a solução proposta e o método atual manual. 
 
 ## Análise Financeira
 
 ### Análise de custo do processo atual
 
-Inicialmente, os custos relacionados ao processo atual provém da compra dos
-equipamentos (ímãs de neodímio) e remuneração de mão de obra. Em um primeiro
-momento, projetamos que o salário médio de um Técnico é de R$ 2.833/mês.
-Considerando uma carga horária de 8 horas por dia, podemos chegar na estimativa de
-R11,80/hora. Através de entrevistas com o parceiro, cada sessão de separação
-magnética dura cerca de 30 minutos. Consequentemente, o custo do processo é de
-R$5,90. Somado à isso o custo médio dos ímãs projetados em R$663,00 cada, que
-devido à sua natureza, não precisam ser substituídos a curto prazo.
+Inicialmente, os custos relacionados ao processo atual provêm da compra dos equipamentos (ímãs de neodímio) e da remuneração da mão de obra. Em um primeiro momento, projetamos que o salário médio de um técnico é de R$ 2.833/mês. Considerando uma carga horária de 8 horas por dia, podemos chegar à estimativa de R$11,80/hora. Através de entrevistas com o parceiro, constatou-se que cada sessão de separação magnética dura cerca de 30 minutos. Consequentemente, o custo do processo é de R$5,90 por sessão. Além disso, deve ser adicionado o custo médio dos ímãs projetados em R$663,00 cada, que devido à sua natureza, não precisam ser substituídos a curto prazo.
 
 ### Análise de custo da solução
-A solução contempla a utilização de um braço robótico (Dobot Magician Lite),
-microcontroladores Raspberry Pi Pico W, sensores e atuadores como componentes
-físicos.
+
+A solução proposta inclui o uso de um braço robótico Dobot Magician Lite, microcontroladores Raspberry Pi Pico W, além de sensores e atuadores como componentes físicos. Esses componentes foram cuidadosamente selecionados para garantir eficiência e qualidade na operação do sistema, e uma análise de custo se faz necessária para avaliar a viabilidade financeira da implementação da solução.
+
+A análise de custo é essencial para determinar se a solução é economicamente viável e para identificar possíveis pontos de otimização de recursos. Além disso, a análise permite avaliar o retorno sobre o investimento (ROI) e o tempo necessário para que a solução se pague.
 
 ![img](https://github.com/2023M5T2-Inteli/alquimistas/blob/main/docs/img/sprint1/analise_financeira.png)
 
-### ROI - Return Over Investment
-Analisando os gastos atuais e os custos com equipamento, pode-se estimar o tempo
-necessário para recuperar o valor do investimento. Segue a análise:
+Com base nos custos dos componentes físicos, incluindo o braço robótico, os microcontroladores, sensores e atuadores, bem como os custos de mão de obra, transporte e montagem, a análise de custo fornecerá uma estimativa precisa do investimento necessário para implementar a solução proposta. A partir dessa estimativa, é possível avaliar a viabilidade financeira do projeto e tomar decisões informadas sobre sua implementação.
+
+#### ROI - Return Over Investment
+Ao analisar os gastos atuais e os custos relacionados aos equipamentos adquiridos, é possível estimar o tempo necessário para recuperar o valor do investimento. Essa análise visa avaliar o Retorno sobre o Investimento (ROI), ou seja, quanto lucro será gerado em relação ao montante investido. É importante destacar que essa análise não se resume apenas aos custos iniciais, mas leva em consideração os custos contínuos, como manutenção e reposição de peças, por exemplo. Com base nessas informações, é possível tomar decisões estratégicas em relação ao investimento em questão.
 
 ![img](https://github.com/2023M5T2-Inteli/alquimistas/blob/main/docs/img/sprint1/roi.png)
 
 # Requisitos do Sistema
-
-*Descrição_dos_requisitos*
 
 ## Personas
 
@@ -212,19 +244,24 @@ Personalidade: Dinâmico, curioso e apaixonado por soluções tecnológicas inov
 
 ## Jornada do Usuário
 
+A jornada do usuário é um processo que mapeia as interações entre os usuários e um produto ou serviço. Esta jornada é um guia que oferece uma visão geral de todas as etapas pelas quais a persona passa, desde a descoberta do produto ou serviço até o uso e a conclusão da sua interação. 
+
 ![img](https://github.com/2023M5T2-Inteli/alquimistas/blob/main/docs/img/sprint1/jornada-do-usuario.png)
 
 ## Histórias dos usuários (user stories)
 
-1. Como pesquisador, eu quero acionar o robô, para que ele inicie o processo de limpar a amostra.
-2. Como supervisor, eu quero automatizar o processo, para melhorar a acurácia do relatório.
-3. Como supervisor, eu quero automatizar o processo, para melhorar a gestão de tempo com a equipe.
+1. Como pesquisador, eu quero ter a capacidade de acionar o robô para que ele possa começar a limpar a amostra de forma automática, a fim de aumentar a eficiência e a precisão do processo de limpeza.
+2. Como supervisor, eu quero automatizar o processo para melhorar a precisão do relatório, permitindo que o sistema execute as tarefas repetitivas e de rotina de forma autônoma, evitando erros humanos e aumentando a eficiência.
+3. Como supervisor, eu quero automatizar o processo para melhorar a gestão do tempo da equipe, permitindo que eles possam se concentrar em tarefas mais importantes, reduzindo o tempo gasto em tarefas rotineiras e repetitivas, além de minimizar a possibilidade de erros humanos e melhorar a qualidade do trabalho.
 
 # Arquitetura do Sistema
 
 ## Arquitetura da Solução - Versão 1
 
 ![img](https://github.com/2023M5T2-Inteli/alquimistas/blob/main/docs/img/sprint1/arquitetura-da-solucao-v1.png)
+
+## Arquitetura da Solução - Versão 2
+![img](https://github.com/2023M5T2-Inteli/alquimistas/blob/dev/docs/img/sprint4/arquitetura-da-solucao-v2.png)
 
 ## Módulos do Sistema e Visão Geral (Big Picture)
 
@@ -246,6 +283,13 @@ Sistema integrado que abarca o código do servidor de interface, assim como os c
 2. Ponte H: A ponte H é um circuito que serve para variar o sentido da corrente em uma determinada carga, bem como controlar sua potência.
   <br>2.1. Elétroimã: O eletroímã é um dispositivo formado por um núcleo de ferro envolto por um solenoide (bobina) que, mediante uma indução de corrente, gera campo magnético.
   <br>2.2. Shaker: O Micro Motor Vibracall é um tipo de motor de tamanho bem reduzido, responsável por produzir vibrações.
+
+#### Soft AP
+A Raspberry Pi Pico é uma placa microcontroladora de baixo custo que oferece diversas possibilidades de projetos e configurações, dessa maneira optamos por usar a Raspberry Pi Pico como Soft AP (ponto de acesso), permitindo que ela seja usada para gerar uma rede Wi-Fi para outros dispositivos. Nesse caso específico, usamos uma Raspberry Pi Pico como Soft AP para gerar rede para outro Raspberry Pi Pico, ou seja, usamos uma placa para criar uma rede sem fio que permite que o outro dispositivo possa se conectar e trocar informações com ela.
+
+Para configurar a Raspberry Pi Pico como Soft AP, é necessário utilizar o modo de operação de rede chamado de "Access Point" ou "Ponto de Acesso", tal modo permite que a placa seja configurada como um roteador Wi-Fi que cria sua própria rede e permite que outros dispositivos se conectem a ela. Uma vez que a Raspberry Pi Pico esteja configurada como Soft AP, o outro Raspberry Pi Pico poderá se conectar à rede criada pela primeira placa. Dessa forma, é possível criar uma rede local (LAN) entre as duas placas e permitir a troca de informações entre elas.
+
+Em resumo, usar uma Raspberry Pi Pico como Soft AP permite que ela seja usada para gerar uma rede sem fio e permitir que outros dispositivos se conectem a ela. No caso do projeto, utilizamos uma placa para gerar rede para outra placa, criando uma LAN entre as duas.
 
 ## Relatório de entrada e saídas
 Com base na estrutura de Arquitetura desenvolvida para a solução proposta, avaliamos os inputs e outputs esperados para cada sistema de blocos e cada componente do sistema. 
@@ -288,7 +332,17 @@ Assim como o eletroimã, e a partir da arquitetura da solução, para o funciona
 
 Posto isso, é possível observar o teste do shaker sendo acionado: 
 
-[Vídeo do Shaker](https://youtube.com/shorts/p4DXiTl25Kk?feature=share)
+[Vídeo de Controle de Movimentação](https://youtube.com/shorts/p4DXiTl25Kk?feature=share)
+
+## Testes de Componentes - Versão 2
+Para a segunda versão do teste de componentes do hardware focamos no acionamento simultâneo dos seguintes componentes: 
+
+- Melhoria de Rota - Movimentação 
+- Acionamento do Imã 
+
+### Controle de Movimentação 
+
+[Vídeo do Shaker](https://www.youtube.com/shorts/R82z4bbFPFQ)
 
 ### Requisitos de software
 
@@ -342,10 +396,31 @@ Ao iniciar a navegação na aplicação, o usuário é apresentado à tela Home,
 Na parte inferior da tela, há a opção de adicionar um relatório à análise. Ao clicar nesta opção, o usuário é redirecionado para um formulário onde serão solicitadas informações importantes, tais como o projeto, a massa e a amostra, para compor os dados referentes ao relatório do processo. 
   
 # Projeto de Banco de Dados
+O Modelo de Banco de Dados foi criado para registrar relatórios de informações sobre cada análise de amostra realizada. O objetivo desse modelo de banco de dados é armazenar e organizar informações relevantes sobre cada análise, como o nome do projeto, o cliente, a amostra, o operador, a quantidade de ciclos, a massa inicial líquida e a massa inicial sólida.
 
-## Modelo Conceitual
+Esses parâmetros são utilizados para caracterizar cada relatório e fornecer informações importantes sobre a análise de amostra realizada. O nome do projeto pode ser usado para categorizar as análises de acordo com a finalidade do projeto, enquanto o cliente pode ser usado para identificar quem solicitou a análise. A amostra, por sua vez, é a matéria-prima analisada, enquanto o operador é a pessoa responsável pela realização da análise. A quantidade de ciclos, a massa inicial líquida e a massa inicial sólida são parâmetros que descrevem a natureza da análise.
+
+Para integrar o banco de dados ao sistema, foi utilizada a SQLAlchemy como ORM (Object-Relational Mapping). A SQLAlchemy é uma biblioteca de mapeamento objeto-relacional para Python que permite a comunicação entre o código Python e o banco de dados relacional. Através da SQLAlchemy, foi possível criar uma classe em Python que define a estrutura padrão dos registros do banco de dados.
+
+A classe em Python pode ser usada para criar objetos que representam os registros do banco de dados, seguindo a estrutura definida pelos parâmetros fornecidos. Dessa forma, é possível armazenar e recuperar informações de forma organizada e eficiente. A integração do banco de dados ao sistema através da SQLAlchemy também permite que as informações sejam facilmente acessadas e atualizadas conforme necessário.
+
 
 ## Modelo Lógico
+De acordo com a descrição ja inicialmente indicada para a construção do modelo lógico do banco de dados, nossa estrutura atual se baseia em uma unica entidade chamada de "report".
+
+Constituida pela seguinte estrutura: 
+- id: Integer 
+- project: String
+- client: String
+- sample: String
+- operator: String
+- cycles: Integer
+- liquid_initial_mass: Float 
+- solid_initial_mass: Float 
+
+A seguir temos a representação lógica do projeto de acordo com a estrutura de dados listada acima: 
+
+![img](https://github.com/2023M5T2-Inteli/alquimistas/blob/dev/docs/img/sprint4/logic_model.png)
 
 # Teste de Software
 ### Implementação de Servidor 
@@ -368,9 +443,28 @@ Dessa forma, com a conexão estabelecida e o Módulo Sensor devidamente configur
 
 # Prototipação de Hardware
 ## Projeto dos dispositivos mecânicos
-Inicialmente o projeto consiste na utilização dos dispositivos disponibilizados pelo laboratório de eletrônica. E os sistêmas mecânicos se baseiam em uma integração entre componentes eletrônicos e as estruturas disponíveis do Dobot Magician Lite. 
+O projeto mecânico consiste em duas peças desenhadas e fabricadas com o auxílio do software Onshape (sistema de software de design auxiliado por computador, fornecido pela Internet por meio de um modelo de software como serviço) e impressora 3D.
 
-Na Sprint 4, estaremos explorando opções para aprimorar o suporte das bandejas.
+### Suporte de Placa:
+Desenvolvimento de um suporte para PCB (placa com o circuito eletrônico), produzido pela impressora 3D e posicionado atrás do braço robótico. Assim, o suporte otimiza a experiência do usuário e organiza a arquitetura do projeto.
+
+Além do suporte, as conexões por fio serão fixadas no corpo do robô com fita adesiva/isolante.
+
+![img](https://github.com/2023M5T2-Inteli/alquimistas/blob/dev/docs/img/sprint4/caixa.png)
+
+### Suporte dos eletroimãs:
+Até a Sprint 4, os eletroimãs estavam grudados com fita na própria garra do Dobot. Contudo, observamos a necessidade de criar um suporte para imãs, o qual a garra ainda estará segurando. Assim, a imagem abaixo representa o que a garra irá segurar, a 'caixinha' onde estarão os dois eletroimãs e em sua borda criamos um design inspirado no rastelo. 
+
+![img](https://github.com/2023M5T2-Inteli/alquimistas/blob/dev/docs/img/sprint4/rastelo.png)
+
+### Lista de materiais:
+
+### Método de fabricação:
+1) Inicialmente foi desenvolvido o desenho 3D das peças por meio do software Onshape.
+2) Em seguida foi realizado o 'fatiamento' dos desenhos, para realizar a impressão 3D.
+
+### Fabricação dos dispositivos mecânicos:
+
 
 ## Projeto dos dispositivos eletrônicos
 ### Listagem de Placa: 

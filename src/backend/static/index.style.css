@@ -1,5 +1,5 @@
 body{
-    background: black;
+    background: rgb(23, 23, 24);
 }
 
 .flex{
@@ -27,12 +27,12 @@ body{
 
 .form {
     width: 500px;
-    height: 500px;
+    height: fit-content;
     border-radius: 25px;
     padding: 1.5rem;
-    background: #161616;
-    margin-top: 4%;
-    margin-right: 5%;
+    background: #000000;
+    margin-top: 2%;
+    margin-right: 4%;
 }
 
 .title{
@@ -41,7 +41,7 @@ body{
     display: grid;
     color: #FFFFFF;
     margin-bottom: 4%;
-    font-size: 24px;
+    font-size: 32px;
 }
 
 .sub-title{
@@ -49,30 +49,32 @@ body{
     margin: 0;
     display: grid;
     color: #ffffff79;
-    justify-content: center;
-}
-#error{
-    color: #ff0000;text-align: center;
-display: none;
-}
-.seletion-group{
-    display: grid;
-    gap: 0.5rem;
+    font-size: 18px;
     justify-content: center;
 }
 
-.container-btn{
-    display: flex;
-    justify-content: center;
+input{
+    display: block;
+    width: 90%;
+    padding: 0.75rem;
+    border-radius: 15px;
+    border: none;
+    background-color: #FFFFFF29;
+    color:#ffffff64;
 }
 
+.input-group{
+    margin-top: 3%;
+}
+
+/* esse ta como parar */
 .btn-on{
     font-family: 'Montserrat', sans-serif;
     display: grid;
     padding: 0.35rem;
     text-decoration: none;
     background-color: #ffffff;
-    color: #000000;
+    color: rgb(23, 23, 24);
     align-items: center;
     border-radius: 50%;
     border: none;
@@ -81,15 +83,20 @@ display: none;
     cursor: pointer;
     transition: 0.3s;
     margin-bottom: 6%;
-    margin-top: 15%;
+    margin-top: 8%;
 }
 
+.btn-on:hover{
+    box-shadow: 0 0 0 2px #FFFFFF;
+}
+
+/* esse ta como iniciar */
 .btn-off{
     font-family: 'Montserrat', sans-serif;
     display: grid;
     padding: 0.35rem;
     text-decoration: none;
-    background-color: #FFFFFF29;
+    background-color: rgb(23, 23, 24);
     color: #FFFFFF;
     align-items: center;
     border-radius: 50%;
@@ -99,12 +106,22 @@ display: none;
     cursor: pointer;
     transition: 0.3s;
     margin-bottom: 6%;
-    margin-top: 15%;
+    margin-top: 8%;
     text-align: center;
 }
 
+.btn-off:hover{
+    box-shadow: 0 0 0 2px #FFFFFF;
+}
+
+.container-btn{
+    display: flex;
+    justify-content: center;
+    height: fit-content;
+}
+
 .report-img{
-    width: 15%;
+    width: 10%;
 }
 
 .report-text{
@@ -112,7 +129,7 @@ display: none;
 }
 
 .report-btn{
-    margin-top: 8%;
+    margin: 3.5% 0 0 0;
     font-family: 'Montserrat', sans-serif;
     display: flex;
     padding: 0.75rem;
@@ -123,7 +140,7 @@ display: none;
     border: none;
     cursor: pointer;
     transition: 0.3s;
-    width: 100%;
+    /* width: 100%; */
     align-items: center;
     justify-content: space-between;
 }
@@ -132,16 +149,21 @@ display: none;
     box-shadow: 0 0 0 2px #fff;
 }
 
-.btn-init:hover{
-    box-shadow: 0 0 0 2px #fff;
+#error{
+    font-family: 'Montserrat', sans-serif;
+    color: #ff0000;
+    text-align: center;
+    display: none;
 }
 
-.btn-end:hover{
-    box-shadow: 0 0 0 2px #000000;
+.seletion-group{
+    display: grid;
+    gap: 0.5rem;
+    justify-content: center;
 }
 
 .slider {
-    margin-top: 7%;
+    margin-top: 5%;
     width: 100%;
     background: none;
     border-radius: 20px;
@@ -160,4 +182,29 @@ display: none;
     width: 100%;
     height: 2px;
     background: #ffffff;
+    }
+
+.info-label{
+    padding-top: 8%;
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    flex-direction: column;
+    padding: 0.75rem;
+    text-decoration: none;
+    background-color: #FFFFFF29;
+    border-radius: 15px;
+    border: none;
+    transition: 0.3s;
+    /* width: 100%; */
+    align-items: start;
+    font-size: 16px;
+}
+
+    .info-label p{
+        color: #FFFFFF;
+        line-height: 1px;
+    }
+
+    .info-span-label{
+        color: grey;
     }
