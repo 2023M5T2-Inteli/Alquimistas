@@ -170,14 +170,16 @@ Sendo assim, ele é dividido em duas partes: a Proposta de Valor do Cliente (tra
 ![img](https://github.com/2023M5T2-Inteli/alquimistas/blob/main/docs/img/sprint1/proposta-de-valor.png)
 
 #### Proposta de Valor do Cliente
-1.Ganhos: Padronização de análises; Agilidade e precisão na produção de relatórios.
-2.Tarefas do Cliente: Reazlizar o processo manual de captação de minérios por meio da utilização de um imã.
-3.Dores: Excesso de trabalho braçal; Necessidade de variações de imãs; Falta de precisão nas informações.
+
+1. Ganhos: Padronização de análises; Agilidade e precisão na produção de relatórios.
+2. Tarefas do Cliente: Reazlizar o processo manual de captação de minérios por meio da utilização de um imã.
+3. Dores: Excesso de trabalho braçal; Necessidade de variações de imãs; Falta de precisão nas informações.
 
 #### Proposta de Valor da Empresa 
-1.Criadores de ganho: Confiabilidade no resultado das amostras; O colaborador poderá exercer outras funções enquanto o robô faz o serviço.
-2.Produtos e serviços: Automatização por meio de um braço robótico para automatizar o serviço realizado pelo colaborador ao IPT na separação.
-3.Aliviam as dores: Utilização de um único eletroimã que varia seu magnetismo; Processo automatizado e adaptável; Substitui a necessidade de um colaborador realizando o processo.
+
+1. Criadores de ganho: Confiabilidade no resultado das amostras; O colaborador poderá exercer outras funções enquanto o robô faz o serviço.
+2. Produtos e serviços: Automatização por meio de um braço robótico para automatizar o serviço realizado pelo colaborador ao IPT na separação.
+3. Aliviam as dores: Utilização de um único eletroimã que varia seu magnetismo; Processo automatizado e adaptável; Substitui a necessidade de um colaborador realizando o processo.
 
 ## Matriz de Risco
 
@@ -263,17 +265,18 @@ A jornada do usuário é um processo que mapeia as interações entre os usuári
 ## Arquitetura da Solução - Versão 2
 ![img](https://github.com/2023M5T2-Inteli/alquimistas/blob/dev/docs/img/sprint4/arquitetura-da-solucao-v2.png)
 
-## Módulos do Sistema e Visão Geral (Big Picture)
+## Arquitetura da Solução - Versão final
+![img](https://github.com/2023M5T2-Inteli/alquimistas/blob/dev/docs/img/sprint4/arquitetura-da-solucao-v2.png)
 
 ## Descrição dos Subsistemas
 
 ### Bloco de Interface 
-O Bloco de Interface consiste em um sistema visual para o usuário poder realizar o controle dos componentes do projeto. Sendo o principal processo o ciclo de coleta de materiais por meio de campos magnéticos. Mas podendo também interagir de forma individual com os demais componentes do sistema. 
+O Bloco de Interface é um sistema visual que permite ao usuário controlar os componentes do projeto. O principal processo é o ciclo de coleta de materiais por meio de campos magnéticos, mas também é possível interagir individualmente com os demais componentes do sistema.
 
 ### Braço Robótico
-O componente do braço robótico é o Dobot Magician Lite, desse modo, esse é o principal responsável por executar a trajetória do processo descrito no item "Bloco de Interface". 
+O componente do braço robótico é o Dobot Magician Lite, que é o principal responsável por executar a trajetória do processo descrito no item “Bloco de Interface”. 
 
-O Magician Lite é um braço robótico inteligente leve e multifuncional, tornou-se um excelente produto para educação e aprendizado em inteligência artificial.
+O Magician Lite é um braço robótico inteligente, leve e multifuncional que se tornou um excelente produto para educação e aprendizado em inteligência artificial.
 
 ### Backend - Computador
 Sistema integrado que abarca o código do servidor de interface, assim como os controles do Microcontrolador Raspberry Pi Pico. 
@@ -304,7 +307,7 @@ Com base na estrutura de Arquitetura desenvolvida para a solução proposta, ava
 |7	   |Interface	       |Computador 	         |Acionamento do Shaker           |Shaker 	           |Vibração do Shaker 	                |Ao acionar o shaker via interface, ele inicia sua atuação.                                                                      |
 |8	   |Interface	       |Computador 	         |Acionamento do Eletroimã	      |Eletroimã	       |Criação de Campo Magnético	        |Ao acionar o eletroimã via interface, ele inicia sua atuação.                                                                   |
 
-## Testes de Componentes - Versão 1 
+## Testes de Componentes
 
 ### Braço robótico (Dobot Magician)
 O braço mecânico foi testado nas seguintes etapas.
@@ -542,15 +545,6 @@ A validação do dispositivo eletrônico foi realizada por meio da execução do
 |Circuito (imãs + interface + módulo sensor)|Pressionar o botão 'start' na interface para acionar os imãs e o módulo sensor magnético de efeito hall|Os imãs emitirem campo magnético e atrair objetos magnéticos e o módulo sensor magnético identificar o valor do campo magnético|Sucesso. Ao pressionar o botão na aplicação web os imãs atraem os objetos magnéticos e o módulo sensor de efeito hall faz a leitura do campo magnético (contudo não tem uma granularidade dos valores)|
 
 # Análise de Dados
-
-# Manuais
-
-## Manual de Implantação
-
-## Manual do Usuário
-
-## Manual do Administrador
-
 
 # Referências
 
