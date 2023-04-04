@@ -20,30 +20,33 @@
     />
     <link
       rel="stylesheet"
-      href="{{ url_for('static', filename = 'index.style.css') }}"
+      href="{{ url_for('static', filename = 'dashboard.style.css') }}"
     />
   </head>
 
   <body>
-    <div class="flex">
+    <div class="flex" style="display: flex; flex-direction: row;">
       <div>
         <img class="logo" src="../static/images/logo_ipt.png" alt="logo ipt" />
-        <img
-          class="arm"
-          src="../static/images/braco_mecanico_2.png"
-          alt="braço robótico"
-        />
       </div>
-      <div class="flex">
-
-        <div>
-          <canvas id="myChart"></canvas>
+      <div class="set-down">
+        <div class="form">
+                <p class="title">Dados</p>
+                <p class="sub-title">Selecione os dados que serão mostrados no dashboard</p>
+                <div class="button-group">
+                  <input type="submit" class="btn-add" onclick="" value="Campo Magnético">
+                  <input type="submit" class="btn-add" onclick="" value="Velocidade de movimentação">
+                  <input type="submit" class="btn-add" onclick="" value="Massa por ciclo">
+                  <input type="submit" class="btn-add" onclick="" value="Tempo por ciclo">
+                  <input type="submit" class="btn-add" onclick="" value="Altura até o fundo">
+                </div>
         </div>
-
       </div>
-
+      
+      <div class="dashboard">
+          <canvas id="myChart"></canvas>
+      </div>
     </div>
-
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
     <script>
