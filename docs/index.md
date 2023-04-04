@@ -307,7 +307,92 @@ Com base na estrutura de Arquitetura desenvolvida para a solução proposta, ava
 |7	   |Interface	       |Computador 	         |Acionamento do Shaker           |Shaker 	           |Vibração do Shaker 	                |Ao acionar o shaker via interface, ele inicia sua atuação.                                                                      |
 |8	   |Interface	       |Computador 	         |Acionamento do Eletroimã	      |Eletroimã	       |Criação de Campo Magnético	        |Ao acionar o eletroimã via interface, ele inicia sua atuação.                                                                   |
 
-## Testes de Componentes
+## Tecnologias Utilizadas
+
+### Bloco de Interface 
+- HTML 
+- CSS 
+- JavaScript 
+- Bootstrap
+- Python (DType)
+
+### Braço Robótico
+- Dobot Magician Lite 
+- Software - Dobot 
+- Python (DType)
+
+### Backend - Computador
+- IDE: Thonny 
+- Python 
+- MicroPython 
+
+### Embarcados 
+- IDE: Thonny 
+- Python 
+- MicroPython 
+
+# UX e UI Design
+
+## Wireframe + Storyboard
+
+Para o desenvolvimento da interface do usuário, optamos por criar uma aplicação web, com uma estrutura elaborada de acordo com as necessidades de entradas e saídas relacionadas ao bloco de Interface na Arquitetura da Solução.
+
+Dessa forma, a primeira versão da nossa interface consiste em uma página principal com um modal que permite ao usuário acionar os componentes do sistema, como o Wifi, o Shaker e o Eletroimã.
+
+![img](https://github.com/2023M5T2-Inteli/alquimistas/blob/main/docs/img/sprint2/interface.png)
+
+[Wireframe no Figma](https://www.figma.com/file/SURaYJTPLilelYLFrS4gdi/Front-IPT?node-id=0%3A1&t=6frlueaWTHFUkmnN-0)
+
+
+## Design de Interface - Guia de Estilos
+
+Para garantir a qualidade da nossa interface gráfica, desenvolvemos um guia de estilo que busca proporcionar uma experiência visual coesa e intuitiva para o usuário. 
+
+O objetivo principal da nossa interface é permitir o acionamento do ciclo/rotina do robô, além de poder inserir os dados do relatório e conseguir posteriormente gerar um pdf. Abaixo, apresentamos algumas diretrizes que seguimos durante o desenvolvimento da interface gráfica no Figma:
+
+1. Cores: utilizamos uma paleta de cores sóbrias e contrastantes para destacar os botões. Optamos por tons de cinza e preto para o fundo da interface e adicionamos um toque de cor nas bordas dos botões, o que torna a experiência visual mais agradável e fácil de entender.
+2. Tipografia: escolhemos uma fonte legível e limpa para a interface. Utilizamos fontes serifadas para os títulos e fontes sans-serif para os textos, garantindo uma hierarquia visual clara e facilitando a leitura.
+3. Layout: desenvolvemos uma estrutura simples e organizada para a nossa interface. 
+4. Ícones/Formas: utilizamos ícones/formas simples e intuitivos para representar cada um dos componentes do sistema, tornando a interface mais fácil de entender e acessível.
+
+Ao seguir essas diretrizes, conseguimos desenvolver uma interface gráfica coesa e intuitiva, que cumpre seu objetivo de permitir o acionamento do sistema de forma clara e eficiente.
+
+## Detalhamento da interface de usuário
+
+Ao projetar a interface de controle do processo de limpeza de amostras com o Dobot, foi adotado um design minimalista, visando proporcionar um controle visual eficiente e simplificado. A seguir, apresentaremos as principais características da interface e suas funcionalidades, com o objetivo de ajudar os usuários a atingirem seus objetivos em poucas ações.
+
+1. Tela Home: A 'home' trata-se de uma página explicando sobre o objetivo do projeto e com um botão para inserir o relatório.
+2. Tela de Inserir Relatório: Na parte inferior da tela anterior, há a opção de adicionar um relatório. Ao clicar nesta opção, o usuário é redirecionado para um formulário onde serão solicitadas informações importantes, tais como o projeto, a massa e a amostra, para compor os dados referentes ao relatório do processo.
+3. Tela de Acionamento de ciclo: A página possui um botão circular para iniciar o processo de limpeza com apenas um clique. Caso necessário, o processo pode ser interrompido instantaneamente pelo mesmo botão, que terá seu estado alterado para exibir o texto "Parar", ademais existe um botão para regular a corrente dos eletroimãs. Por fim, adicionamos um botão para gerar um pdf com informações inseridas no relatório e sobre a rotina/ciclo.
+
+# Projeto de Banco de Dados
+
+O Modelo de Banco de Dados foi criado para registrar relatórios de informações sobre cada análise de amostra realizada. O objetivo desse modelo de banco de dados é armazenar e organizar informações relevantes sobre cada análise, como o nome do projeto, o cliente, a amostra, o operador, a quantidade de ciclos, a massa inicial líquida e a massa inicial sólida.
+
+Esses parâmetros são utilizados para caracterizar cada relatório e fornecer informações importantes sobre a análise de amostra realizada. O nome do projeto pode ser usado para categorizar as análises de acordo com a finalidade do projeto, enquanto o cliente pode ser usado para identificar quem solicitou a análise. A amostra, por sua vez, é a matéria-prima analisada, enquanto o operador é a pessoa responsável pela realização da análise. A quantidade de ciclos, a massa inicial líquida e a massa inicial sólida são parâmetros que descrevem a natureza da análise.
+
+Para integrar o banco de dados ao sistema, foi utilizada a SQLAlchemy como ORM (Object-Relational Mapping). A SQLAlchemy é uma biblioteca de mapeamento objeto-relacional para Python que permite a comunicação entre o código Python e o banco de dados relacional. Através da SQLAlchemy, foi possível criar uma classe em Python que define a estrutura padrão dos registros do banco de dados.
+
+A classe em Python pode ser usada para criar objetos que representam os registros do banco de dados, seguindo a estrutura definida pelos parâmetros fornecidos. Dessa forma, é possível armazenar e recuperar informações de forma organizada e eficiente. A integração do banco de dados ao sistema através da SQLAlchemy também permite que as informações sejam facilmente acessadas e atualizadas conforme necessário.
+
+## Modelo Lógico
+De acordo com a descrição ja inicialmente indicada para a construção do modelo lógico do banco de dados, nossa estrutura atual se baseia em uma unica entidade chamada de "report".
+
+Constituida pela seguinte estrutura: 
+- id: Integer 
+- project: String
+- client: String
+- sample: String
+- operator: String
+- cycles: Integer
+- liquid_initial_mass: Float 
+- solid_initial_mass: Float 
+
+A seguir temos a representação lógica do projeto de acordo com a estrutura de dados listada acima: 
+
+![img](https://github.com/2023M5T2-Inteli/alquimistas/blob/dev/docs/img/sprint4/logic_model.png)
+
+## Teste de Componentes - Versão 1
 
 ### Braço robótico (Dobot Magician)
 O braço mecânico foi testado nas seguintes etapas.
@@ -337,7 +422,7 @@ Posto isso, é possível observar o teste do shaker sendo acionado:
 
 [Vídeo de Controle de Movimentação](https://youtube.com/shorts/p4DXiTl25Kk?feature=share)
 
-## Testes de Componentes - Versão 2
+## Teste de Componentes - Versão 2
 Para a segunda versão do teste de componentes do hardware focamos no acionamento simultâneo dos seguintes componentes: 
 
 - Melhoria de Rota - Movimentação 
@@ -349,83 +434,8 @@ Para a segunda versão do teste de componentes do hardware focamos no acionament
 
 ### Requisitos de software
 
-## Tecnologias Utilizadas
-
-### Bloco de Interface 
-- HTML 
-- CSS 
-- JavaScript 
-- Bootstrap
-- Python (DType)
-
-### Braço Robótico
-- Dobot Magician Lite 
-- Software - Dobot 
-- Python (DType)
-
-### Backend - Computador
-- IDE: Thonny 
-- Python 
-- MicroPython 
-
-### Embarcados 
-- IDE: Thonny 
-- Python 
-- MicroPython 
-
-# UX e UI Design
-
-## Wireframe + Storyboard
-
-Para o desenvolvimento da interface do usuário optamos por uma aplicação web, com uma estrutura desenvolvida com base nas necessidades de entradas e saídas vinculadas ao bloco de Interface na Arquitetura da Solução.
-
-Dessa maneira, a primeira versão consiste em uma página com um modal para realizar o acionamento dos componentes do sistema: Wifi, Shaker e Eletroimã.
-
-![img](https://github.com/2023M5T2-Inteli/alquimistas/blob/main/docs/img/sprint2/interface.png)
-
-[Wireframe no Figma](https://www.figma.com/file/SURaYJTPLilelYLFrS4gdi/Front-IPT?node-id=0%3A1&t=6frlueaWTHFUkmnN-0)
-
-
-## Design de Interface - Guia de Estilos
-
-Desse modo, foi desenvolvida uma interface gráfica no Figma que tem como objetivo o acionamento de componentes do sistema: 
-
-## Detalhamento da interface de usuário
-
-Com o objetivo de proporcionar um controle visual da sistemática do processo de limpeza da amostra realizada pelo Dobot, a interface foi pensada de forma minimalista, para que o usuário possa atingir o objetivo em poucas ações. 
-
-Ao iniciar a navegação na aplicação, o usuário é apresentado à tela Home, onde é possível iniciar o processo de limpeza com apenas um clique em um botão circular. Caso necessário, o processo pode ser interrompido instantaneamente pelo mesmo botão, que terá seu estado alterado para exibir o texto "Parar". Logo abaixo, uma legenda orienta o usuário sobre o que está acontecendo no processo, além de informações sobre o aplicativo e sua versão.
-
-Na parte inferior da tela, há a opção de adicionar um relatório à análise. Ao clicar nesta opção, o usuário é redirecionado para um formulário onde serão solicitadas informações importantes, tais como o projeto, a massa e a amostra, para compor os dados referentes ao relatório do processo. 
-  
-# Projeto de Banco de Dados
-O Modelo de Banco de Dados foi criado para registrar relatórios de informações sobre cada análise de amostra realizada. O objetivo desse modelo de banco de dados é armazenar e organizar informações relevantes sobre cada análise, como o nome do projeto, o cliente, a amostra, o operador, a quantidade de ciclos, a massa inicial líquida e a massa inicial sólida.
-
-Esses parâmetros são utilizados para caracterizar cada relatório e fornecer informações importantes sobre a análise de amostra realizada. O nome do projeto pode ser usado para categorizar as análises de acordo com a finalidade do projeto, enquanto o cliente pode ser usado para identificar quem solicitou a análise. A amostra, por sua vez, é a matéria-prima analisada, enquanto o operador é a pessoa responsável pela realização da análise. A quantidade de ciclos, a massa inicial líquida e a massa inicial sólida são parâmetros que descrevem a natureza da análise.
-
-Para integrar o banco de dados ao sistema, foi utilizada a SQLAlchemy como ORM (Object-Relational Mapping). A SQLAlchemy é uma biblioteca de mapeamento objeto-relacional para Python que permite a comunicação entre o código Python e o banco de dados relacional. Através da SQLAlchemy, foi possível criar uma classe em Python que define a estrutura padrão dos registros do banco de dados.
-
-A classe em Python pode ser usada para criar objetos que representam os registros do banco de dados, seguindo a estrutura definida pelos parâmetros fornecidos. Dessa forma, é possível armazenar e recuperar informações de forma organizada e eficiente. A integração do banco de dados ao sistema através da SQLAlchemy também permite que as informações sejam facilmente acessadas e atualizadas conforme necessário.
-
-
-## Modelo Lógico
-De acordo com a descrição ja inicialmente indicada para a construção do modelo lógico do banco de dados, nossa estrutura atual se baseia em uma unica entidade chamada de "report".
-
-Constituida pela seguinte estrutura: 
-- id: Integer 
-- project: String
-- client: String
-- sample: String
-- operator: String
-- cycles: Integer
-- liquid_initial_mass: Float 
-- solid_initial_mass: Float 
-
-A seguir temos a representação lógica do projeto de acordo com a estrutura de dados listada acima: 
-
-![img](https://github.com/2023M5T2-Inteli/alquimistas/blob/dev/docs/img/sprint4/logic_model.png)
-
 # Teste de Software
+
 ### Implementação de Servidor 
 Para estruturar a renderização das páginas construídas para o software, desenvolvemos um servidor utilizando a biblioteca Flask para Python. O Flask é um framework web leve e flexível para a construção de aplicativos web de maneira fácil e eficiente, permitindo a criação de rotas de acesso às páginas do aplicativo e o gerenciamento das solicitações e respostas HTTP.
 
@@ -445,41 +455,65 @@ O Módulo Sensor Magnético - Efeito Hall desempenha um papel importante nesse p
 Dessa forma, com a conexão estabelecida e o Módulo Sensor devidamente configurado, o servidor pode iniciar o funcionamento do Eletroímã por meio de um endpoint específico que aponta diretamente para o endpoint do microcontrolador responsável pela Ponte H. Quando acionado, o microcontrolador ativa o funcionamento da Ponte H, permitindo que o Eletroímã seja controlado e operado de acordo com as instruções recebidas do servidor.
 
 # Prototipação de Hardware
+
 ## Projeto dos dispositivos mecânicos
-O projeto mecânico consiste em duas peças desenhadas e fabricadas com o auxílio do software Onshape (sistema de software de design auxiliado por computador, fornecido pela Internet por meio de um modelo de software como serviço) e impressora 3D.
+
+O projeto mecânico envolve a criação de peças customizadas, fabricadas com o auxílio do software Onshape. O Onshape é um sistema de design auxiliado por computador disponibilizado na internet por meio de um modelo de software como serviço, permitindo o acesso remoto às ferramentas de design e colaboração em tempo real. Além disso, a impressora 3D é utilizada para a fabricação das peças projetadas, proporcionando precisão e rapidez na produção.
 
 ### Suporte de Placa:
 Desenvolvimento de um suporte para PCB (placa com o circuito eletrônico), produzido pela impressora 3D e posicionado atrás do braço robótico. Assim, o suporte otimiza a experiência do usuário e organiza a arquitetura do projeto.
 
-Além do suporte, as conexões por fio serão fixadas no corpo do robô com fita adesiva/isolante.
+O desenvolvimento de um suporte para PCB é essencial para a organização e otimização da arquitetura do projeto robótico. A PCB, ou placa com o circuito eletrônico, é um componente crucial para o funcionamento do robô e o suporte, produzido pela impressora 3D, proporciona uma solução eficiente e personalizada para a sua fixação. O suporte é posicionado atrás do braço robótico, aprimorando a experiência do usuário e facilitando a manutenção do dispositivo.
+
+Com a utilização da impressora 3D, o suporte pode ser fabricado com precisão e agilidade, permitindo a personalização de acordo com as necessidades do projeto. Além disso, o uso de materiais resistentes garante a durabilidade e segurança da estrutura, evitando danos à PCB e minimizando a necessidade de manutenção.
+
+Adicionalmente, as conexões por fio serão fixadas no corpo do robô com fita adesiva/isolante, proporcionando uma organização mais eficiente do sistema. Essa solução, combinada com o suporte para PCB, permite um controle mais preciso e confiável do robô, aumentando sua eficiência e desempenho.
 
 ![img](https://github.com/2023M5T2-Inteli/alquimistas/blob/dev/docs/img/sprint4/caixa.png)
 
+PS: Esse suporte não foi fabricado, por motivos de tempo de impressão.
+
 ### Suporte dos eletroimãs:
-Até a Sprint 4, os eletroimãs estavam grudados com fita na própria garra do Dobot. Contudo, observamos a necessidade de criar um suporte para imãs, o qual a garra ainda estará segurando. Assim, a imagem abaixo representa o que a garra irá segurar, a 'caixinha' onde estarão os dois eletroimãs e em sua borda criamos um design inspirado no rastelo. 
+
+Os eletroimãs são componentes cruciais para o funcionamento do Dobot, um robô manipulador multifuncional. Até a Sprint 4, os eletroimãs eram fixados com fita adesiva na própria garra do robô. No entanto, foi identificada a necessidade de criar um suporte personalizado para os imãs, que ainda seria segurado pela garra.
+
+Para atender a essa demanda, foi desenvolvido um suporte com design inspirado no rastelo, onde os imãs estarão em uma 'caixa'. Esse suporte proporciona maior estabilidade e segurança para os eletroimãs, além de simplificar a manutenção do sistema.
+
+A imagem abaixo representa o protótipo do suporte, que será fixado na garra do Dobot. Com a utilização desse suporte personalizado, é possível garantir a eficiência e confiabilidade do sistema, permitindo um controle mais preciso e seguro dos eletroimãs.
 
 ![img](https://github.com/2023M5T2-Inteli/alquimistas/blob/dev/docs/img/sprint4/rastelo.png)
 
 ### Lista de materiais:
 
+1. Impressora 3D
+2. Filamentos PLA
+
 ### Método de fabricação:
-1) Inicialmente foi desenvolvido o desenho 3D das peças por meio do software Onshape.
-2) Em seguida foi realizado o 'fatiamento' dos desenhos, para realizar a impressão 3D.
 
-### Fabricação dos dispositivos mecânicos:
+1. Inicialmente foi desenvolvido o desenho 3D das peças por meio do software Onshape.
+2. Em seguida foi realizado o 'fatiamento' dos desenhos, para realizar a impressão 3D.
 
+## Validação dos Dipositivos Mecânicos
+
+### Métodos de Validação e Testes 
+A validação do dispositivo mecânico (no caso do projeto somente o suporte de eletroimãs) foi realizada por meio da implementação no projeto.
 
 ## Projeto dos dispositivos eletrônicos
+
 ### Listagem de Placa: 
-1) Placa Central: Foi desenvolvida a proposta de uma placa central única para o acionamento dos dispositivos eletrônicos do sistema em questão. A placa em questão engloba os sistemas principais que serão acionados, como a Ponte H, o Elétroimã, o Módulo de Transistor de Efeito Hall e o Raspberry Pi Pico.
+
+A Placa Central foi desenvolvida com a proposta de criar uma placa única para o acionamento dos dispositivos eletrônicos do sistema em questão. Essa placa engloba os principais sistemas que serão acionados, como a Ponte H, o Eletroímã, o Módulo Sensor Magnético Efeito Hall e o Raspberry Pi Pico.
 
 A escolha por uma única placa de acionamento se justifica pela necessidade de uma integração eficiente dos sistemas, visando maximizar a eficiência e a segurança do sistema como um todo. A placa central permite que os diversos sistemas sejam conectados e acionados de maneira mais organizada e simplificada, minimizando a ocorrência de erros e falhas de comunicação.
 
-Dentre os sistemas presentes na placa central, destaca-se a presença do Raspberry Pi Pico, responsável pela conexão com o servidor em Flask descrito no item "Teste de Software". Este dispositivo é capaz de realizar diversas funções, como o processamento de dados, a execução de códigos e a comunicação com outros dispositivos, tornando-se peça fundamental do sistema como um todo.
+A placa central também conta com a presença do Raspberry Pi Pico, responsável pela conexão com o servidor em Flask descrito no item "Teste de Software". Este dispositivo é capaz de realizar diversas funções, como o processamento de dados, a execução de códigos e a comunicação com outros dispositivos, tornando-se peça fundamental do sistema como um todo.
 
-Em resumo, a placa central desenvolvida para o acionamento dos dispositivos eletrônicos do sistema foi projetada de forma cuidadosa e criteriosa, visando a integração eficiente dos diversos sistemas e a maximização da eficiência e segurança do sistema. A presença do Raspberry Pi Pico, por sua vez, permite uma conexão eficiente com o servidor em Flask e a execução de diversas funções essenciais para o funcionamento do sistema.
+A listagem de placa apresentada no projeto é essencial para garantir a integridade e organização do sistema. Com a placa central, é possível realizar uma conexão mais eficiente entre os dispositivos eletrônicos, otimizando o desempenho e minimizando a ocorrência de falhas.
+
+Em resumo, o desenvolvimento da placa central representa um importante aprimoramento do projeto, permitindo a integração eficiente dos sistemas eletrônicos e maximizando a eficiência e segurança do sistema como um todo. A presença do Raspberry Pi Pico também permite uma conexão eficiente com o servidor em Flask e a execução de diversas funções essenciais para o funcionamento do sistema.
 
 ### Esquemático da Placa:
+
 A seguir, apresentamos o diagrama esquemático da estrutura eletrônica da placa em questão. Este diagrama foi elaborado com base nas informações e descrições previamente mencionadas referentes à placa principal.
 
 O processo de desenvolvimento do esquemático envolveu uma análise minuciosa das especificações técnicas da placa e das funcionalidades desejadas. Foram considerados aspectos como a configuração dos componentes eletrônicos, a disposição física dos mesmos na placa, bem como as conexões elétricas necessárias entre eles.
@@ -491,6 +525,7 @@ Em resumo, o esquemático da estrutura eletrônica da placa foi desenvolvido de 
 <img src="https://github.com/2023M5T2-Inteli/alquimistas/blob/dev/docs/img/sprint3/Esquemático_v1.png" width="30%">
 
 ### Layout da Placa:
+
 Com base no diagrama desenvolvido por meio do software EasyEDA, tornou-se possível estruturar o layout fundamental da placa.
 
 <img src="https://github.com/2023M5T2-Inteli/alquimistas/blob/dev/docs/img/sprint3/Layout_v1.png" style="width: 20%"/>
@@ -498,33 +533,33 @@ Com base no diagrama desenvolvido por meio do software EasyEDA, tornou-se possí
 
 
 ### Lista de Materiais:
-1) Placa de Trilhas com Fenolite 
-2) Raspberry Pi Pico W 
-3) Soquete para Raspberry Pi Pico W 
-4) Conjunto de Jumpers 
-5) Ponte H - L298N
-6) Amplificador 
-7) Módulo de Transistor de Efeito Hall 
-8) 2 Eletroimãs 
-9) Fonte de 5V - Alimentação 
+
+1. Placa de Trilhas com Fenolite 
+2. Raspberry Pi Pico W 
+3. Soquete para Raspberry Pi Pico W 
+4. Conjunto de Jumpers 
+5. Ponte H - L298N
+6. Amplificador 
+7. Módulo Sensor Magnético Efeito Hall 
+8. 2 Eletroimãs 
+9. Fonte de 5V - Alimentação 
 
 ### Método de fabricação:
-1) Inicialmente foi desenvolvido o esquemático de base para o circuito por meio do software EasyEDA: O processo de desenvolvimento do esquemático envolve a elaboração de um diagrama que representa as conexões elétricas entre os componentes eletrônicos que compõem o circuito. Nesta etapa, é considerado aspectos como a disposição dos componentes e as conexões elétricas necessárias. Contudo, encontramos limitações na nossa primeira versão desenvolvida com o EasyEDA (ferramenta de design eletrônico que permite a criação de esquemas e layouts de placas de circuito impresso), com isso desenvolvemos uma segunda versão com o software Fritzing (ambos os esquemáticos estão na pasta 'docs/img/sprint3').
 
-2) Em seguida foi realizado o posicionamento de componentes: Com base no esquemático desenvolvido na etapa anterior, os componentes eletrônicos são posicionados fisicamente na placa de circuito impresso. Nesta etapa, é importante considerar aspectos como a disposição física dos componentes, o espaço disponível na placa e as conexões elétricas necessárias.
-
-3) A próxima etapa foi a soldagem de componentes: Após o posicionamento dos componentes na placa, é necessário realizar a soldagem dos mesmos. Este processo consiste na aplicação de calor em pontos específicos da placa, de modo a fixar os componentes eletrônicos na placa. A soldagem deve ser realizada com cuidado e precisão, visando garantir a qualidade e a segurança do circuito.
-
-4) Por fim, foram realizados testes de funcionamento do circuito utilizando instrumentos como multímetros e osciloscópios para medir e analisar os sinais elétricos do circuito. Os resultados dos testes foram utilizados para verificar se o circuito está operando de acordo com as especificações previamente definidas e para realizar ajustes ou correções, se necessário.
+1. Inicialmente foi desenvolvido o esquemático de base para o circuito por meio do software EasyEDA: O processo de desenvolvimento do esquemático envolve a elaboração de um diagrama que representa as conexões elétricas entre os componentes eletrônicos que compõem o circuito. Nesta etapa, é considerado aspectos como a disposição dos componentes e as conexões elétricas necessárias. Contudo, encontramos limitações na nossa primeira versão desenvolvida com o EasyEDA (ferramenta de design eletrônico que permite a criação de esquemas e layouts de placas de circuito impresso), com isso desenvolvemos uma segunda versão com o software Fritzing (ambos os esquemáticos estão na pasta 'docs/img/sprint3').
+2. Em seguida foi realizado o posicionamento de componentes: Com base no esquemático desenvolvido na etapa anterior, os componentes eletrônicos são posicionados fisicamente na placa de circuito impresso. Nesta etapa, é importante considerar aspectos como a disposição física dos componentes, o espaço disponível na placa e as conexões elétricas necessárias.
+3. A próxima etapa foi a soldagem de componentes: Após o posicionamento dos componentes na placa, é necessário realizar a soldagem dos mesmos. Este processo consiste na aplicação de calor em pontos específicos da placa, de modo a fixar os componentes eletrônicos na placa. A soldagem deve ser realizada com cuidado e precisão, visando garantir a qualidade e a segurança do circuito.
+4. Por fim, foram realizados testes de funcionamento do circuito utilizando instrumentos como multímetros e osciloscópios para medir e analisar os sinais elétricos do circuito. Os resultados dos testes foram utilizados para verificar se o circuito está operando de acordo com as especificações previamente definidas e para realizar ajustes ou correções, se necessário.
 
 ## Fabricação dos Dispositivos Eletrônicos
-1) Inicialmente foi realizado o teste com o circuito em protoboard para garantir o funcionamento do circuito. 
-2) Posicionamento dos componentes na placa 
-3) Soldagem do Soquete - Principal 
-4) Soldagem de Jumpers 
-5) Posicionamento do Amplificador e Soldagem 
-6) Posicionamento do Módulo do Transistor de Efeito Hall e Soldagem 
-7) Conexão de Jumpers 
+
+1. Inicialmente foi realizado o teste com o circuito em protoboard para garantir o funcionamento do circuito. 
+2. Posicionamento dos componentes na placa 
+3. Soldagem do Soquete - Principal 
+4. Soldagem de Jumpers 
+5. Posicionamento do Amplificador e Soldagem 
+6. Posicionamento do Módulo do Transistor de Efeito Hall e Soldagem 
+7. Conexão de Jumpers 
 
 Estruturadas todas as etapas, foi desenvolvido o circuito demonstrado nas imagens abaixo:
 <br>
@@ -534,6 +569,7 @@ Estruturadas todas as etapas, foi desenvolvido o circuito demonstrado nas imagen
 <img src="https://github.com/2023M5T2-Inteli/alquimistas/blob/dev/docs/img/sprint3/circuito4.jpeg" style="width: 20%"/>
 
 ## Validação dos Dipositivos Eletrônicos
+
 ### Métodos de Validação e Testes 
 A validação do dispositivo eletrônico foi realizada por meio da execução do código-fonte ("src"), juntamente com a aplicação da interface da aplicação web ("src/frontend"). A tabela abaixo apresenta os testes realizados, incluindo as entradas e saídas esperadas, bem como os resultados obtidos:
 
@@ -544,8 +580,7 @@ A validação do dispositivo eletrônico foi realizada por meio da execução do
 |Módulo Sensor Magnético de Efeito Hall     |Acionar o botão de on/off                                                                              |O sensor identifica o campo magnético em mv/Gauss                                                                              |Sucesso. O módulo sensor responde o valor do campo magnético                                                                                                                                          |
 |Circuito (imãs + interface + módulo sensor)|Pressionar o botão 'start' na interface para acionar os imãs e o módulo sensor magnético de efeito hall|Os imãs emitirem campo magnético e atrair objetos magnéticos e o módulo sensor magnético identificar o valor do campo magnético|Sucesso. Ao pressionar o botão na aplicação web os imãs atraem os objetos magnéticos e o módulo sensor de efeito hall faz a leitura do campo magnético (contudo não tem uma granularidade dos valores)|
 
-# Análise de Dados
+# Validação da eficácia do sistema
 
-# Referências
-
+## Teste de Barreira
 
