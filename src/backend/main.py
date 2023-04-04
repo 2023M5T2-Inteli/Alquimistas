@@ -12,11 +12,12 @@ from models.cycle import Cycle
 from threading import Thread
 import threading
 from time import sleep
+import json
 
 import plotly
 import plotly.graph_objs as go
 
-IP ="10.128.66.31"
+IP = "10.128.66.31"
 
 PDF_WIDTH = 210
 PDF_HEIGHT = 297
@@ -25,14 +26,14 @@ process = None
 app = Flask(__name__)
 header = []
 engine = create_engine("sqlite+pysqlite:///reports.db", echo=True)
-Session = sessionmaker(bind = engine)
+Session = sessionmaker(bind=engine)
 session = Session()
 
 Base.metadata.create_all(engine)
 
-session.query(Report).delete()
-session.query(Cycle).delete()
-session.commit()
+# session.query(Report).delete()
+# session.query(Cycle).delete()
+# session.commit()
 
 # cycle = Cycle(magnetic_field=100, speed=20, cycle_mass=31, cycle_duration=150, report_id=1)
 # cycle2 = Cycle(magnetic_field=200, speed=12, cycle_mass=20, cycle_duration=150, report_id=1)
@@ -52,17 +53,21 @@ session.commit()
 
 # session.commit()
 
+
 @app.route('/')
 def index():
     return render_template('about.html')
+
 
 @app.route('/home')
 def home():
     return render_template('index.html')
 
+
 @app.route('/report')
 def report():
     return render_template('report.html')
+
 
 def routine():
     arm = Dobot(225, 3, 140, 0)
@@ -81,7 +86,7 @@ def routine():
     arm.moveArmXY(260, 266, -11, 44)
 
     arm.moveArmXY(174, 222, 77, 51)
-    
+
     # #bandeja 2
     arm.moveHome()
     arm.moveArmXY(325, -36, -8, -7)
@@ -97,6 +102,7 @@ def routine():
     arm.moveArmXY(185, -229, -10, -51)
     sleep(2)
 
+
 @app.route('/on')
 async def control_on():
     global process
@@ -109,21 +115,23 @@ async def control_on():
     except Exception as e:
         print("error")
         return e
-    
+
+
 @app.route('/stop')
 async def control_stop():
     try:
         # request.args.get('http://${IP}/stop')
         # arm = Dobot(225,3,140,0)
         return redirect('/')
-    except  Exception as e:
+    except Exception as e:
         print("error")
         return e
+
 
 @app.route('/off')
 async def control_off():
     try:
-        #await request.args.get('http://${IP}/off')
+        # await request.args.get('http://${IP}/off')
         return redirect('/')
     except Exception as e:
         print("error")
@@ -137,23 +145,25 @@ async def postForm():
     for i in request.form:
         header.append((i.capitalize(), request.form[i]))
 
-    r1 = Report(project=request.form['projeto'], client=request.form['cliente'], sample=request.form['amostra'], operator=request.form['operador'], cycle_number=request.form['ciclos'], liquid_initial_mass=request.form['peso solido'], solid_initial_mass=request.form['peso solido'])
+    r1 = Report(project=request.form['projeto'], client=request.form['cliente'], sample=request.form['amostra'], operator=request.form['operador'],
+                cycle_number=request.form['ciclos'], liquid_initial_mass=request.form['peso solido'], solid_initial_mass=request.form['peso solido'])
 
     session.add(r1)
     session.commit()
     return render_template('index.html', project=request.form['projeto'], client=request.form['cliente'], sample=request.form['amostra'])
+
 
 @app.route('/pdf')
 async def generatePDF():
     pdf = PDF(orientation='P', unit='mm', format='A4')
     pdf.add_page()
     pdf.header()
-    a = [10,10]
+    a = [10, 10]
     side = True
     for i in header:
         pdf.element(i[0] + ': ' + i[1], a, side)
-        a[1] += 5 if(not side) else 0
-        side = not side 
+        a[1] += 5 if (not side) else 0
+        side = not side
     pdf.generate(datetime.now().strftime("%d-%m-%Y-%H%M%S"))
     return render_template("index.html")
 
@@ -161,25 +171,20 @@ async def generatePDF():
 @app.route('/dashboard')
 def dashboard():
     query = session.query(Report).all()
-    
-    x = []
-    y = []
+
+    label = []
+    data = []
     for report in query:
         for cycle in report.children:
-            x.append(cycle.id)
-            y.append(cycle.cycle_mass)
+            label.append(cycle.id)
+            data.append(cycle.cycle_mass)
 
-    data = [go.Scatter(x=x, y=y)]
-    layout = go.Layout(
-                        title= f"{report.project}",
-                        xaxis=dict(title='Iteração'),
-                        yaxis=dict(title='Massa Coletada'),
-                        title_x=0.5
-                        )
-    fig = go.Figure(data=data, layout=layout)
+    json_string = json.dumps([{'label': label, 'data': data}
+                             for label, data in zip(label, data)], indent=1)
+    json_object = json.loads(json_string)
+    print(json_object)
 
-    plotly.offline.plot(fig, filename='test.html', config={'displayModeBar': False})
+    return render_template("dashboard.html", data=json_object, title=report.project)
 
-    return render_template("dashboard.html")
 
-app.run(host = '0.0.0.0', port=3000, debug=True)
+app.run(host='0.0.0.0', port=3000, debug=True)

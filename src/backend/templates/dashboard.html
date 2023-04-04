@@ -34,18 +34,51 @@
           alt="braço robótico"
         />
       </div>
-      
       <div class="flex">
+
         <div>
-            <div>
-                {plot}  
-            </div>
+          <canvas id="myChart"></canvas>
         </div>
 
       </div>
 
     </div>
 
-    <script src="{{url_for('static', filename='script.js')}}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script>
+      const ctx = document.getElementById('myChart');
+
+      var json = JSON.parse('{{ data|tojson|safe}}')
+      var data = []
+      var label = []
+      for (let i = 0; i < json.length; i++) {
+        label.push(json[i].label)
+        data.push(json[i].data)
+      }
+
+      console.log(data, label)
+
+      new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels: label,
+          datasets: [{
+            label: '{{ title }}',
+            data: data,
+            borderWidth: 1
+          }]
+        },
+        options: {
+          aspectRatio: 2,
+          
+          scales: {
+            y: {
+              beginAtZero: true
+            }
+          }
+        }
+      });
+    </script>
   </body>
 </html>
