@@ -16,9 +16,13 @@ while True:
     print("Tensão analógica: ", analog_value)
 
     # calculate the magnetic field in Gauss
-    campo_magnetico = analog_value / sensitivity
+    valor_campo = analog_value / sensitivity
     print("Campo magnético: ", campo_magnetico, "Gauss")
 
+    campo_magnetico = valor_campo * 50.65 * e^-6 * 1.6
+
+# min = 800G
+# max = 12 KG
     utime.sleep(5)
     
 # a sensibilidade do módulo sensor magnético FE01 é de 1.6 mV/Gauss
