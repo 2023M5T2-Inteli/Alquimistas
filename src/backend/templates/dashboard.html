@@ -34,11 +34,11 @@
                 <p class="title">Dados</p>
                 <p class="sub-title">Selecione os dados que serão mostrados no dashboard</p>
                 <div class="button-group">
-                  <input type="submit" class="btn-add" onclick="" value="Campo Magnético">
-                  <input type="submit" class="btn-add" onclick="" value="Velocidade de movimentação">
-                  <input type="submit" class="btn-add" onclick="" value="Massa por ciclo">
-                  <input type="submit" class="btn-add" onclick="" value="Tempo por ciclo">
-                  <input type="submit" class="btn-add" onclick="" value="Altura até o fundo">
+                  <input type="submit" class="btn-add" onclick="loadChart('magnetic')" value="Campo Magnético">
+                  <input type="submit" class="btn-add" onclick="loadChart('speed')" value="Velocidade de movimentação">
+                  <input type="submit" class="btn-add" onclick="loadChart('mass')" value="Massa por ciclo">
+                  <input type="submit" class="btn-add" onclick="loadChart('duration')" value="Tempo por ciclo">
+                  <!-- <input type="submit" class="btn-add" onclick="loadChart('magnetic')" value="Altura até o fundo"> -->
                 </div>
         </div>
       </div>
@@ -50,38 +50,49 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
     <script>
-      const ctx = document.getElementById('myChart');
+      var chart = null;
 
-      var json = JSON.parse('{{ data|tojson|safe}}')
-      var data = []
-      var label = []
-      for (let i = 0; i < json.length; i++) {
-        label.push(json[i].label)
-        data.push(json[i].data)
-      }
+      function loadChart(information){
 
-      console.log(data, label)
+        console.log(information);
+        if (chart != null) {
+          chart.destroy();
+        }
 
-      new Chart(ctx, {
-        type: 'line',
-        data: {
-          labels: label,
-          datasets: [{
-            label: '{{ title }}',
-            data: data,
-            borderWidth: 1
-          }]
-        },
-        options: {
-          aspectRatio: 2,
-          
-          scales: {
-            y: {
-              beginAtZero: true
+        const ctx = document.getElementById('myChart');
+
+        var json = JSON.parse('{{ data|tojson|safe}}')
+        var data = []
+        var label = []
+        for (let i = 0; i < json.length; i++) {
+          label.push(json[i].label)
+          data.push(json[i][information])
+        }
+
+        // console.log(data, label)
+
+        chart = new Chart(ctx, {
+          type: 'line',
+          data: {
+            labels: label,
+            datasets: [{
+              label: '{{ title }}',
+              data: data,
+              borderWidth: 1
+            }]
+          },
+          options: {
+            aspectRatio: 2,
+            
+            scales: {
+              y: {
+                beginAtZero: true
+              }
             }
           }
-        }
-      });
+        });
+
+      }
     </script>
   </body>
 </html>

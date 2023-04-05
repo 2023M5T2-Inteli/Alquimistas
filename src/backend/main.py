@@ -173,14 +173,22 @@ def dashboard():
     query = session.query(Report).all()
 
     label = []
-    data = []
+    magnetic = []
+    speed = []
+    mass = []
+    duration = []
     for report in query:
         for cycle in report.children:
+            print(cycle)
             label.append(cycle.id)
-            data.append(cycle.cycle_mass)
+            magnetic.append(cycle.magnetic_field)
+            speed.append(cycle.speed)
+            mass.append(cycle.cycle_mass)
+            duration.append(cycle.cycle_duration)
 
-    json_string = json.dumps([{'label': label, 'data': data}
-                             for label, data in zip(label, data)], indent=1)
+
+    json_string = json.dumps([{'label': label, 'magnetic': magnetic, 'speed': speed, 'mass': mass, 'duration': duration}
+                             for label, magnetic, speed, mass, duration in zip(label, magnetic, speed, mass, duration)], indent=1)
     json_object = json.loads(json_string)
     print(json_object)
 
