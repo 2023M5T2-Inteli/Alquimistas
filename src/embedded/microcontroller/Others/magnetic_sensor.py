@@ -17,13 +17,16 @@ while True:
 
     # calculate the magnetic field in Gauss
     valor_campo = analog_value / sensitivity
-    print("Campo magnético: ", campo_magnetico, "Gauss")
 
     campo_magnetico = valor_campo * 50.65 * e^-6 * 1.6
+    print("Campo magnético: ", campo_magnetico, "Gauss")
 
-# min = 800G
-# max = 12 KG
-    utime.sleep(5)
+# minimum and maximum magnetic field values in Gauss
+min_gauss = 800
+max_gauss = 2062.5 
+
+
+utime.sleep(5)
     
 # a sensibilidade do módulo sensor magnético FE01 é de 1.6 mV/Gauss
 # para calcular o campo magnético em Gauss, precisa dividir a tensão analógica lida
