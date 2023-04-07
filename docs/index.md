@@ -582,5 +582,7 @@ A validação do dispositivo eletrônico foi realizada por meio da execução do
 
 # Validação da eficácia do sistema
 
+Além dos testes de componentes e dispositivos mecânicos e eletrônicos, foi necessário haver uma validação do sistema integrado completo (movimentação do robô, frontend e backend). 
+
 ## Teste de Barreira
 
