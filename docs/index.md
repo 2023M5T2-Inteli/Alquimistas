@@ -593,3 +593,16 @@ Além dos testes de componentes e dispositivos mecânicos e eletrônicos, foi ne
 
 ## Teste de Barreira
 
+[Vídeo da Versão Final do Protótipo](https://www.youtube.com/shorts/ck_-ao5tGDo)
+
+# Adicional 
+
+A equipe de desenvolvimento criou uma estrutura seguindo o padrão de arquitetura MVC (Model-View-Controller) para o projeto. O MVC é um padrão amplamente utilizado na engenharia de software que separa as responsabilidades do sistema em três componentes principais: o Modelo (Model), a Visão (View) e o Controlador (Controller).
+Essa estrutura MVC inclui a integração de um sistema que é ativado por meio do uso do protocolo MQTT (Message Queuing Telemetry Transport). O MQTT é um protocolo de comunicação leve e eficiente, frequentemente usado para a troca de mensagens em redes de dispositivos IoT (Internet of Things).
+
+Devido a desafios encontrados na implementação da integração do sistema com o protótipo, a equipe decidiu utilizar a versão inicial do sistema em funcionamento como a versão final do projeto. Isso significa que a estrutura MVC desenvolvida foi considerada como um adicional para atender aos requisitos do projeto e não foi adotada como a versão final.
+
+No entanto, a equipe considerou importante disponibilizar a estrutura de conexão MQTT entre os diferentes componentes do sistema, mesmo que a versão de funcionamento por meio do SOFTAP tenha sido adotada como a versão final. Isso foi feito para permitir a possibilidade de evolução e integração do sistema no futuro, caso seja necessário fazer atualizações ou expandir suas funcionalidades.
+
+A pasta compacta contendo a estrutura de MQTT está disponível dentro da pasta `src`. 
+
