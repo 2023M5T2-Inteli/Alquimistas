@@ -1,34 +1,37 @@
-from Modules import HBridge, WifiClient
-from time import sleep
-from machine import Pin
+from Modules import h_bridge, mqtt_client
+
 
 class Components:
     def __init__(self):
-        self.HB = HBridge.HBridge(2, 1, 4, 5)
+        self.MC = mqtt_client.MQTT(
+            client_id="henriquemarlon",
+            server="192.168.4.17",
+            port=1883,
+            topic="response"
+        )
+        self.HB = h_bridge.HBridge(2, 1)
 
-    def start(self):
-        self.HB.enable_first_component()
+    def routine(self):
+        def callback(topic, msg):
+            response = int(msg.decode("utf-8"))
+            print(response)
+            if response == 1:
+                self.HB.enable_first_component()
 
-    def stop_eletromagnet(self):
-        self.HB.disable_first_component()
+            elif response == 0:
+                self.HB.disable_first_component()
 
-class Network:
-    def __init__(self):
-        self.AP = WifiClient.WifiClient('Alquimistas', '12345678')
+        self.MC.set_callback(callback)
+        self.MC.connect()
+        print("Connected to MQTT Broker")
+        self.MC.subscribe()
 
-    def accessing_network(self):
-        self.AP.connect()
+        while True:
+            self.MC.wait_message()
 
-network = Network()
-components = Components()
 
-led = Pin("LED", Pin.OUT)
-led.on()
-# network.accessing_network()
-# sleep(5)
-components.start()
-print('passei aqui')
-sleep(50) # time to third table
-components.stop_eletromagnet()
-print("hello stop")
-led.off()
+MW = Components()
+
+if __name__ == '__main__':
+    while True:
+        MW.routine()
