@@ -18,27 +18,32 @@ Abaixo encontra-se a árvore de pastas do repositório:
 
 ``` bash
 .
-├── LICENSE
-├── README.md
 ├── docs
-│   ├── README.md
-│   ├── _config.yml
 │   ├── img
-│   │   ├── relatorio
+│   │   ├── sprint1
+│   │   ├── sprint2
+│   │   ├── sprint3
+│   │   ├── sprint4
 │   │   └── tutoriais
-|   ├── infografico
-│   │   └── infografico.pdf
-│   └── index.md
+│   ├── infografico
+│   ├── sprint_1
+│   ├── sprint_2
+│   ├── sprint_3
+│   └── video
 ├── media
-│   └── README.md
 └── src
-    ├── README.md
     ├── backend
-    │   └── README.md
-    ├── embedded
-    │   └── README.md
-    └── frontend
-        └── README.md
+    │   ├── models
+    │   ├── Scripts
+    │   ├── static
+    │   │   └── images
+    │   └── templates
+    └── embedded
+        └── microcontroller
+            ├── HBridge
+            │   └── Modules
+            └── SoftAP
+                └── Modules
 ```
 
 Os principais diretórios do repositório são: 
