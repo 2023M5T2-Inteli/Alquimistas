@@ -291,6 +291,13 @@ Para configurar a Raspberry Pi Pico como Soft AP, é necessário utilizar o modo
 
 Em resumo, usar uma Raspberry Pi Pico como Soft AP permite que ela seja usada para gerar uma rede sem fio e permitir que outros dispositivos se conectem a ela. No caso do projeto, utilizamos uma placa para gerar rede para outra placa, criando uma LAN entre as duas.
 
+#### MQTT
+Mais conhecido como Message Queuing Telemetry Transport, MQTT é um protocolo de comunicação leve e de baixo consumo de energia projetado para conectar dispositivos com capacidades de processamento limitadas em redes de comunicação de baixa largura de banda. Ele foi desenvolvido pela IBM em 1999 e, desde então, tornou-se um protocolo padrão em muitas soluções de IoT (Internet das Coisas).
+
+Utilizamos tal protocolo com o objetivo de aprimorar e dar estabilidade à comunicação com o eletroimã. Nesse sentido, o microcontrolador ( Raspberry Pi Pico W ) atua como subscriber de um tópico, vide arquitetura padrão do protocolo, no qual o backend da solução é publisher. Dessa forma, criamos a lógica de que, quando o microcontrolador receber "0" no tópico, ele mantém os eletroimãs desligados, mas quando recebe "1" aciona os eletroimãs.
+
+Nesse mesmo fluxo, dadas as limitações de rede, pensando na implemetação do sistema, criamos um broker, vide arquitetura padrão do protocolo, que roda na rede local fornecida pelo SoftAP/Hostpot e que faz o intermédio entre as entidades "publisher" (Backend) e "subscriber" (microcontrolador) do sistema.
+
 ## Relatório de entrada e saídas
 Com base na estrutura de Arquitetura desenvolvida para a solução proposta, avaliamos os inputs e outputs esperados para cada sistema de blocos e cada componente do sistema. 
 |Indice|Bloco              |Componente de Entrada|Leitura da Entrada              |Componente de Saída |Leitura da Saída                    |Descrição                                                                                                                       |
